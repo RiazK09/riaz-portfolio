@@ -481,3 +481,13 @@ body.signature-assets-ready .hero-canva .hello{
     transform:translateX(-50%) rotate(-8deg);
   }
 }
+
+
+/* Final clean Hello World rendering */
+.hero-canva .hello-signature{
+  filter:none!important;
+  box-shadow:none!important;
+  border:0!important;
+  outline:0!important;
+  background:transparent!important;
+}
