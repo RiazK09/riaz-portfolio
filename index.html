@@ -14,19 +14,20 @@
 <body>
   <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
 
-  <header class="site-header">
-    <a class="brand" href="#home" aria-label="Riaz Karolia home">RK<span>.</span></a>
-    <nav class="nav" aria-label="Primary navigation">
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#work">Work</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+  <header class="site-header tech-header">
+    <a class="brand" href="#home" aria-label="Riaz Karolia home"><span class="prompt-mark">&gt;</span> RK<span class="brand-slash">://</span></a>
+    <nav class="nav tech-nav" aria-label="Primary navigation">
+      <a href="#about"><b>01</b> ABOUT</a>
+      <a href="#skills"><b>02</b> SKILLS</a>
+      <a href="#work"><b>03</b> WORK</a>
+      <a href="#projects"><b>04</b> PROJECTS</a>
+      <a href="#contact"><b>05</b> CONTACT</a>
     </nav>
-    <button class="menu-button" aria-expanded="false" aria-controls="mobile-nav">Menu</button>
+    <button class="menu-button" aria-expanded="false" aria-controls="mobile-nav"><span class="menu-led"></span> NAV</button>
   </header>
-  <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation">
-    <a href="#about">About</a><a href="#skills">Skills</a><a href="#work">Work</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+  <nav id="mobile-nav" class="mobile-nav tech-mobile-nav" aria-label="Mobile navigation">
+    <span class="mobile-nav-label">&gt; select_route</span>
+    <a href="#about"><b>01</b> ABOUT</a><a href="#skills"><b>02</b> SKILLS</a><a href="#work"><b>03</b> WORK</a><a href="#projects"><b>04</b> PROJECTS</a><a href="#contact"><b>05</b> CONTACT</a>
   </nav>
 
   <main>
@@ -34,8 +35,7 @@
       <div class="hero-kicker">FULL STACK WEB DEVELOPER<br>&amp; WORDPRESS SPECIALIST</div>
       <div class="hero-scribble" aria-hidden="true">My</div>
       <h1>Portfolio<span>.</span></h1>
-      <span class="hero-dot" aria-hidden="true"></span>
-      <img class="hero-person" src="assets/hero-portrait.jpg" alt="Riaz Karolia in formal wear" />
+      <img class="hero-person" src="assets/hero-cutout.png" alt="Riaz Karolia in formal wear" />
       <div class="pill pill-left">RIAZ KAROLIA</div>
       <div class="pill pill-right">CODING SINCE 2020</div>
       <p class="hello">Hello World...</p>
@@ -180,6 +180,11 @@
   </main>
 
   <footer class="site-footer"><span>© <span id="year"></span> Riaz Karolia</span><a href="#home">Back to top ↑</a></footer>
+  <div class="tech-cat-cursor" aria-hidden="true">
+    <span class="cat-ear cat-ear-left"></span><span class="cat-ear cat-ear-right"></span>
+    <span class="cat-face"><i></i><i></i></span>
+  </div>
+  <div class="tech-mouse-cursor" aria-hidden="true"><span></span></div>
   <script src="script.js"></script>
 </body>
 </html>
