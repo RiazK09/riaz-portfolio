@@ -253,3 +253,67 @@ body.hero-active .site-header{
   }
 }
 @media (pointer:coarse){.cursor-dot,.cursor-ring{display:none!important}}
+
+
+/* Exact Canva hero typography */
+.hero-canva h1{
+  font-family:"Bricolage Grotesque",sans-serif!important;
+  font-weight:500!important;
+  font-stretch:100%;
+  letter-spacing:-.055em!important;
+}
+
+body.signature-assets-ready .hero-scribble,
+body.signature-assets-ready .hero-canva .hello{
+  color:transparent!important;
+  font-size:0!important;
+  line-height:0!important;
+  background-repeat:no-repeat;
+  background-size:contain;
+  background-position:center;
+  transform:none!important;
+}
+body.signature-assets-ready .hero-scribble::after{display:none!important}
+body.signature-assets-ready .hero-scribble{
+  width:clamp(230px,15vw,310px);
+  height:clamp(170px,11.5vw,235px);
+  left:18.2%;
+  top:15.2%;
+  background-image:url("assets/signature-my.png");
+}
+body.signature-assets-ready .hero-canva .hello{
+  width:clamp(280px,18vw,360px);
+  height:clamp(118px,7.6vw,152px);
+  left:50%;
+  bottom:14.6%;
+  background-image:url("assets/signature-hello-world.png");
+}
+
+@media(max-width:1050px){
+  body.signature-assets-ready .hero-scribble{
+    width:clamp(190px,30vw,290px);
+    height:clamp(145px,23vw,220px);
+    left:6%;
+    top:20%;
+  }
+  body.signature-assets-ready .hero-canva .hello{
+    width:clamp(250px,42vw,350px);
+    height:clamp(105px,18vw,148px);
+    left:50%;
+    bottom:12%;
+  }
+}
+@media(max-width:650px){
+  body.signature-assets-ready .hero-scribble{
+    width:42vw;
+    height:31vw;
+    left:3%;
+    top:24%;
+  }
+  body.signature-assets-ready .hero-canva .hello{
+    width:62vw;
+    height:26vw;
+    left:50%;
+    bottom:13%;
+  }
+}
