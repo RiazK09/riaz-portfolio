@@ -117,7 +117,7 @@ if (cursorDot && cursorRing && window.matchMedia('(pointer:fine)').matches) {
 
 const signatureAssets = [
   'assets/signature-my.png',
-  'assets/signature-hello-world.png'
+  'assets/signature-hello-world-white.png'
 ];
 
 Promise.all(signatureAssets.map((src) => new Promise((resolve, reject) => {
