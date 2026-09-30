@@ -331,3 +331,74 @@ body.signature-assets-ready .hero-canva .hello{
     width:min(82vw,430px)!important;
   }
 }
+
+
+/* White Signature "Hello World..." */
+body.signature-assets-ready .hero-canva .hello{
+  background-image:none!important;
+  background:#ffffff!important;
+  -webkit-mask-image:url("assets/signature-hello-world.png");
+  mask-image:url("assets/signature-hello-world.png");
+  -webkit-mask-repeat:no-repeat;
+  mask-repeat:no-repeat;
+  -webkit-mask-size:contain;
+  mask-size:contain;
+  -webkit-mask-position:center;
+  mask-position:center;
+}
+
+/* Hero scroll cue to Table of Contents */
+.hero-scroll{
+  position:absolute;
+  z-index:8;
+  left:50%;
+  bottom:2.6%;
+  transform:translateX(-50%);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:5px;
+  color:#ff751f;
+  text-decoration:none;
+  font-family:"DM Mono",monospace;
+  font-size:10px;
+  letter-spacing:.18em;
+  user-select:none;
+}
+.scroll-label{
+  opacity:.8;
+  transition:opacity .2s ease;
+}
+.hero-scroll:hover .scroll-label,
+.hero-scroll:focus-visible .scroll-label{opacity:1}
+
+.scroll-arrows{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:0;
+}
+.scroll-arrows i{
+  width:15px;
+  height:15px;
+  border-right:2px solid currentColor;
+  border-bottom:2px solid currentColor;
+  transform:rotate(45deg);
+  opacity:.18;
+  transition:opacity .18s ease,filter .18s ease,transform .18s ease;
+  margin-top:-7px;
+}
+.scroll-arrows i:first-child{margin-top:0}
+.scroll-arrows i.is-active{
+  opacity:1;
+  filter:drop-shadow(0 0 7px rgba(255,117,31,.85));
+  transform:rotate(45deg) scale(1.08);
+}
+.hero-scroll:hover .scroll-arrows i{
+  opacity:.75;
+}
+
+@media(max-width:650px){
+  .hero-scroll{bottom:2%;font-size:9px}
+  .scroll-arrows i{width:13px;height:13px}
+}
