@@ -317,3 +317,17 @@ body.signature-assets-ready .hero-canva .hello{
     bottom:13%;
   }
 }
+
+
+/* Hero kicker alignment — matched to original Canva positioning */
+.hero-canva .hero-kicker{
+  left:42.7%!important;
+  width:clamp(360px,21.72vw,430px)!important;
+  max-width:none!important;
+}
+@media(max-width:1050px){
+  .hero-canva .hero-kicker{
+    left:50%!important;
+    width:min(82vw,430px)!important;
+  }
+}
