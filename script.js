@@ -113,3 +113,20 @@ if (cursorDot && cursorRing && window.matchMedia('(pointer:fine)').matches) {
     element.addEventListener('pointerleave', () => document.body.classList.remove('cursor-hover'));
   });
 }
+
+
+const signatureAssets = [
+  'assets/signature-my.png',
+  'assets/signature-hello-world.png'
+];
+
+Promise.all(signatureAssets.map((src) => new Promise((resolve, reject) => {
+  const img = new Image();
+  img.onload = resolve;
+  img.onerror = reject;
+  img.src = src;
+}))).then(() => {
+  document.body.classList.add('signature-assets-ready');
+}).catch(() => {
+  // Keep the existing script-font fallback until both exact Canva assets are present.
+});
