@@ -38,10 +38,31 @@ document.querySelectorAll('[data-asset]').forEach(el => {
   const key = el.dataset.asset;
   const src = assetMap[key];
   if (!src) return;
+
   const probe = new Image();
   probe.onload = () => {
     el.style.backgroundImage = `url("${src}")`;
     el.classList.add('has-image');
   };
   probe.src = src;
+});
+
+document.querySelectorAll('[data-video]').forEach(el => {
+  const src = `assets/${el.dataset.video}`;
+  const video = document.createElement('video');
+  video.muted = true;
+  video.loop = true;
+  video.playsInline = true;
+  video.autoplay = true;
+  video.preload = 'metadata';
+  video.setAttribute('aria-label', 'Website project preview');
+  video.src = src;
+
+  video.addEventListener('canplay', () => {
+    el.appendChild(video);
+    el.classList.add('has-video');
+    video.play().catch(() => {});
+  }, { once: true });
+
+  video.addEventListener('error', () => video.remove(), { once: true });
 });
