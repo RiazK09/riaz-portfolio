@@ -67,6 +67,15 @@ document.querySelectorAll('[data-video]').forEach(el => {
   video.addEventListener('error', () => video.remove(), { once: true });
 });
 
+const heroSection = document.querySelector('#home');
+if (heroSection) {
+  const syncHeroHeader = () => {
+    document.body.classList.toggle('hero-active', window.scrollY < Math.max(120, heroSection.offsetHeight * 0.72));
+  };
+  syncHeroHeader();
+  window.addEventListener('scroll', syncHeroHeader, { passive: true });
+}
+
 const heroPerson = document.querySelector('.hero-person');
 heroPerson?.addEventListener('error', () => {
   const fallback = heroPerson.dataset.fallback;
@@ -76,25 +85,20 @@ heroPerson?.addEventListener('error', () => {
   }
 });
 
+
 const cursorDot = document.querySelector('.cursor-dot');
 const cursorRing = document.querySelector('.cursor-ring');
-
 if (cursorDot && cursorRing && window.matchMedia('(pointer:fine)').matches) {
-  let x = window.innerWidth / 2;
-  let y = window.innerHeight / 2;
-  let ringX = x;
-  let ringY = y;
+  let x = window.innerWidth / 2, y = window.innerHeight / 2;
+  let ringX = x, ringY = y;
 
   const animateCursor = () => {
     ringX += (x - ringX) * 0.16;
     ringY += (y - ringY) * 0.16;
-
     cursorDot.style.transform = `translate3d(${x}px,${y}px,0)`;
     cursorRing.style.transform = `translate3d(${ringX}px,${ringY}px,0)`;
-
     requestAnimationFrame(animateCursor);
   };
-
   animateCursor();
 
   window.addEventListener('pointermove', (event) => {
@@ -103,10 +107,7 @@ if (cursorDot && cursorRing && window.matchMedia('(pointer:fine)').matches) {
     document.body.classList.add('cursor-ready');
   }, { passive:true });
 
-  window.addEventListener('pointerleave', () => {
-    document.body.classList.remove('cursor-ready');
-  });
-
+  window.addEventListener('pointerleave', () => document.body.classList.remove('cursor-ready'));
   document.querySelectorAll('a,button,[role="button"]').forEach((element) => {
     element.addEventListener('pointerenter', () => document.body.classList.add('cursor-hover'));
     element.addEventListener('pointerleave', () => document.body.classList.remove('cursor-hover'));
