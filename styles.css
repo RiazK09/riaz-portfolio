@@ -446,3 +446,38 @@ body.signature-assets-ready .hero-canva .hello{
   .hero-scroll{right:5vw!important;bottom:4.5vh!important}
   .scroll-arrows i{width:18px!important;height:18px!important}
 }
+
+
+/* Render Hello World as a real image, not a background on text */
+.hero-canva .hello{display:none!important}
+.hero-canva .hello-signature{
+  position:absolute;
+  z-index:6;
+  left:50%;
+  bottom:14.6%;
+  width:clamp(280px,18vw,360px);
+  height:auto;
+  transform:translateX(-43%) rotate(-8deg);
+  object-fit:contain;
+  pointer-events:none;
+  filter:
+    drop-shadow(1px 0 0 #fff)
+    drop-shadow(-1px 0 0 #fff)
+    drop-shadow(0 1px 0 #fff)
+    drop-shadow(0 -1px 0 #fff);
+}
+@media(max-width:1050px){
+  .hero-canva .hello-signature{
+    width:clamp(250px,42vw,350px);
+    left:50%;
+    bottom:12%;
+  }
+}
+@media(max-width:650px){
+  .hero-canva .hello-signature{
+    width:62vw;
+    left:50%;
+    bottom:13%;
+    transform:translateX(-50%) rotate(-8deg);
+  }
+}
