@@ -1,0 +1,1 @@
+Place the exported portfolio image assets in this folder using the filenames listed in the root README.
