@@ -130,3 +130,25 @@ Promise.all(signatureAssets.map((src) => new Promise((resolve, reject) => {
 }).catch(() => {
   // Keep the existing script-font fallback until both exact Canva assets are present.
 });
+
+
+const heroScroll = document.querySelector('.hero-scroll');
+const scrollArrows = [...document.querySelectorAll('.scroll-arrows i')];
+
+if (heroScroll && scrollArrows.length) {
+  let arrowIndex = 0;
+
+  setInterval(() => {
+    scrollArrows.forEach((arrow, index) => {
+      arrow.classList.toggle('is-active', index === arrowIndex);
+    });
+    arrowIndex = (arrowIndex + 1) % scrollArrows.length;
+  }, 320);
+
+  heroScroll.addEventListener('click', (event) => {
+    const target = document.querySelector('#contents');
+    if (!target) return;
+    event.preventDefault();
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+}
