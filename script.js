@@ -66,3 +66,21 @@ document.querySelectorAll('[data-video]').forEach(el => {
 
   video.addEventListener('error', () => video.remove(), { once: true });
 });
+
+const heroSection = document.querySelector('#home');
+if (heroSection) {
+  const syncHeroHeader = () => {
+    document.body.classList.toggle('hero-active', window.scrollY < Math.max(120, heroSection.offsetHeight * 0.72));
+  };
+  syncHeroHeader();
+  window.addEventListener('scroll', syncHeroHeader, { passive: true });
+}
+
+const heroPerson = document.querySelector('.hero-person');
+heroPerson?.addEventListener('error', () => {
+  const fallback = heroPerson.dataset.fallback;
+  if (fallback && !heroPerson.dataset.fallbackUsed) {
+    heroPerson.dataset.fallbackUsed = 'true';
+    heroPerson.src = fallback;
+  }
+});
