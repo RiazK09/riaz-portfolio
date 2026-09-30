@@ -402,3 +402,47 @@ body.signature-assets-ready .hero-canva .hello{
   .hero-scroll{bottom:2%;font-size:9px}
   .scroll-arrows i{width:13px;height:13px}
 }
+
+
+/* Fix Hello World visibility using real white transparent artwork */
+body.signature-assets-ready .hero-canva .hello{
+  background:#0000!important;
+  background-image:url("assets/signature-hello-world-white.png")!important;
+  background-repeat:no-repeat!important;
+  background-size:contain!important;
+  background-position:center!important;
+  -webkit-mask-image:none!important;
+  mask-image:none!important;
+}
+
+/* Cleaner hero scroll cue */
+.hero-scroll{
+  left:auto!important;
+  right:5.2vw!important;
+  bottom:5.2vh!important;
+  transform:none!important;
+  gap:0!important;
+}
+.scroll-label{display:none!important}
+.scroll-arrows{
+  gap:1px!important;
+}
+.scroll-arrows i{
+  width:22px!important;
+  height:22px!important;
+  border-right:2.5px solid currentColor!important;
+  border-bottom:2.5px solid currentColor!important;
+  margin-top:-5px!important;
+  opacity:.16!important;
+}
+.scroll-arrows i:first-child{margin-top:0!important}
+.scroll-arrows i.is-active{
+  opacity:1!important;
+  filter:drop-shadow(0 0 8px rgba(255,117,31,.9))!important;
+  transform:rotate(45deg) scale(1.12)!important;
+}
+.hero-scroll:hover .scroll-arrows i{opacity:.7!important}
+@media(max-width:650px){
+  .hero-scroll{right:5vw!important;bottom:4.5vh!important}
+  .scroll-arrows i{width:18px!important;height:18px!important}
+}
