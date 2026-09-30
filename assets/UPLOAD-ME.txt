@@ -1,0 +1,3 @@
+Upload all files in this folder into the existing /assets folder of RiazK09/riaz-portfolio.
+Do not rename them.
+workspace.jpg is intentionally not included because the Canva workspace visual is a Canva stock asset rather than one of the user's uploaded files.
