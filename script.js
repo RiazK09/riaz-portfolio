@@ -1,0 +1,47 @@
+const menuButton = document.querySelector('.menu-button');
+const mobileNav = document.querySelector('.mobile-nav');
+
+menuButton?.addEventListener('click', () => {
+  const open = mobileNav.classList.toggle('open');
+  menuButton.setAttribute('aria-expanded', String(open));
+});
+
+document.querySelectorAll('.mobile-nav a').forEach(link => link.addEventListener('click', () => {
+  mobileNav.classList.remove('open');
+  menuButton?.setAttribute('aria-expanded', 'false');
+}));
+
+const progress = document.getElementById('progress-bar');
+const updateProgress = () => {
+  const max = document.documentElement.scrollHeight - window.innerHeight;
+  const pct = max > 0 ? (window.scrollY / max) * 100 : 0;
+  progress.style.width = `${Math.min(100, Math.max(0, pct))}%`;
+};
+window.addEventListener('scroll', updateProgress, { passive: true });
+updateProgress();
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+const assetMap = {
+  'hero-portrait.jpg': 'assets/hero-portrait.jpg',
+  'about-portrait.jpg': 'assets/about-portrait.jpg',
+  'workspace.jpg': 'assets/workspace.jpg',
+  'project-cloud-faction.jpg': 'assets/project-cloud-faction.jpg',
+  'project-little-lanterns.jpg': 'assets/project-little-lanterns.jpg',
+  'project-the-ghetto.jpg': 'assets/project-the-ghetto.jpg',
+  'project-wedding.jpg': 'assets/project-wedding.jpg',
+  'project-zaakirah.jpg': 'assets/project-zaakirah.jpg',
+  'why-portrait.jpg': 'assets/why-portrait.jpg'
+};
+
+document.querySelectorAll('[data-asset]').forEach(el => {
+  const key = el.dataset.asset;
+  const src = assetMap[key];
+  if (!src) return;
+  const probe = new Image();
+  probe.onload = () => {
+    el.style.backgroundImage = `url("${src}")`;
+    el.classList.add('has-image');
+  };
+  probe.src = src;
+});
