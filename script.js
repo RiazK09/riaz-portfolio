@@ -152,3 +152,22 @@ if (heroScroll && scrollArrows.length) {
     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 }
+
+
+// Reveal web-font typography only after the requested fonts are ready.
+// This avoids the fallback-font jump on a cold page load.
+(() => {
+  const revealFonts = () => {
+    document.documentElement.classList.remove('fonts-loading');
+    document.documentElement.classList.add('fonts-ready');
+  };
+
+  if (document.fonts && document.fonts.ready) {
+    Promise.race([
+      document.fonts.ready,
+      new Promise((resolve) => setTimeout(resolve, 1800))
+    ]).then(revealFonts);
+  } else {
+    revealFonts();
+  }
+})();
