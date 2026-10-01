@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="fonts-loading signature-font-loading">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -8,8 +8,10 @@
   <title>Riaz Karolia | Full Stack Developer & WordPress Specialist</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
-  <script>document.documentElement.classList.add("fonts-loading");</script>
+  <link rel="preconnect" href="https://db.onlinewebfonts.com" crossorigin>
+  <link rel="preload" href="https://db.onlinewebfonts.com/t/2cb6945e21496bb0e860b0e319af7dfc.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/hero-cutout.png" as="image" fetchpriority="high">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -18,12 +20,12 @@
   <main>
     <section class="panel hero hero-canva" id="home" data-section="01">
       <div class="hero-kicker">FULL STACK WEB DEVELOPER<br>&amp; WORDPRESS SPECIALIST</div>
-      <div class="hero-scribble" aria-hidden="true">My</div>
+      <div class="hero-scribble signature-text" aria-hidden="true">My</div>
       <h1>Portfolio<span>.</span></h1>
-      <img class="hero-person" src="assets/hero-cutout.png" alt="Riaz Karolia in formal wear" />
+      <img class="hero-person" src="assets/hero-cutout.png" alt="Riaz Karolia in formal wear" fetchpriority="high" decoding="async" />
       <div class="pill pill-left">RIAZ KAROLIA</div>
       <div class="pill pill-right">CODING SINCE 2020</div>
-      <img class="hello-signature" src="assets/signature-hello-world-white.png" alt="Hello World..." />
+      <div class="hello-signature signature-text" aria-hidden="true">Hello World...</div>
       <a class="hero-scroll" href="#contents" aria-label="Scroll to Table of Contents">
         <span class="scroll-arrows" aria-hidden="true">
           <i></i><i></i><i></i>
@@ -34,7 +36,7 @@
     <section class="panel contents contents-canva" id="contents" data-section="02">
       <div class="toc-title" aria-label="Table of Contents">
         <span class="toc-title-main">Table of</span>
-        <span class="toc-title-signature" role="img" aria-label="Contents"></span>
+        <span class="toc-title-signature signature-text">Contents</span>
       </div>
 
       <div class="toc-columns">
@@ -57,12 +59,12 @@
 
     <section class="panel split about-canva" id="about" data-section="03">
       <div class="portrait-tall media-slot about-photo" data-asset="about-portrait.jpg" role="img" aria-label="Portrait of Riaz Karolia"><span>Portrait asset</span></div>
-      <div class="about-note" aria-hidden="true">From Construction<br>to Code</div>
+      <div class="about-note signature-text" aria-hidden="true">From Construction<br>to Code</div>
 
       <div class="split-copy about-copy">
         <div class="about-heading">
           <span>About</span>
-          <em>Me</em>
+          <em class="signature-text">Me</em>
         </div>
 
         <div class="about-label">BACKGROUND</div>
