@@ -9,7 +9,9 @@
   --line: rgba(21,21,21,.16);
   --radius: 28px;
   --mono: "DM Mono", monospace;
-  --sans: "Manrope", "Inter", sans-serif;
+  --sans: "Inter", sans-serif;
+  --display: "Bricolage Grotesque", sans-serif;
+  --script: "Allura", cursive;
   --serif: "Playfair Display", serif;
 }
 *{box-sizing:border-box}
@@ -61,7 +63,7 @@ main{width:100%}.panel{position:relative;min-height:100vh;padding:clamp(88px,8vw
   width:max-content;
   margin:0;
   color:var(--hero-orange);
-  font-family:"League Spartan",var(--sans);
+  font-family:var(--display);
   font-size:clamp(150px,15.2vw,295px);
   font-weight:600;
   line-height:.9;
@@ -754,4 +756,40 @@ body.signature-assets-ready .hero-canva .hello{
     rgba(255,255,255,.08) 82%,
     transparent 100%
   );
+}
+
+
+/* Typography cleanup — Canva roles */
+body,
+.toc-column span,
+.toc-column b,
+.about-copy,
+.about-label,
+.hero-canva .hero-kicker,
+.hero-canva .pill{
+  font-family:var(--sans)!important;
+}
+.hero-canva h1,
+.toc-title-main,
+.about-heading span{
+  font-family:var(--display)!important;
+}
+.toc-title-script{display:none!important}
+.toc-title-script-image{
+  position:absolute;
+  z-index:2;
+  left:-1.2%;
+  top:38%;
+  width:min(545px,60%);
+  height:auto;
+  object-fit:contain;
+  pointer-events:none;
+}
+.toc-illustration{display:none!important}
+
+@media(max-width:1100px){
+  .toc-title-script-image{
+    width:min(470px,66%);
+    top:39%;
+  }
 }
