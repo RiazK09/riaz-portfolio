@@ -248,27 +248,42 @@ main{width:100%}.panel{position:relative;min-height:100vh;padding:clamp(88px,8vw
 .contents-canva::before,
 .about-canva::before{display:none!important}
 
-/* Page 2 — Table of Contents */
+/* Page 2 — Table of Contents
+   Canva source geometry: 1920 × 1080. The stage preserves that 16:9 coordinate
+   system, so desktop spacing does not distort on wider browser windows. */
 .contents-canva{
   display:block!important;
   min-height:100svh;
   height:100svh;
   padding:0!important;
+  overflow:hidden;
 }
+.contents-stage{
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:min(100%,calc(100svh * 16 / 9));
+  aspect-ratio:16 / 9;
+  transform:translate(-50%,-50%);
+  container-type:size;
+}
+
+/* Exact Canva element origins:
+   Table of: 106.13,55.29
+   Contents: 108,197.80 */
 .toc-title{
   position:absolute;
-  left:9.1%;
-  top:9.8%;
-  width:46%;
-  height:31%;
+  inset:0;
 }
 .toc-title-main{
-  position:relative;
+  position:absolute;
   z-index:1;
+  left:5.5276%;
+  top:5.1193%;
   display:block;
   color:#ff751f;
   font-family:var(--display);
-  font-size:clamp(104px,9.4vw,180px);
+  font-size:12cqw;
   font-weight:500;
   line-height:.82;
   letter-spacing:-.065em;
@@ -277,32 +292,40 @@ main{width:100%}.panel{position:relative;min-height:100vh;padding:clamp(88px,8vw
 .toc-title-signature{
   position:absolute;
   z-index:3;
-  left:-1.2%;
-  top:38%;
+  left:5.625%;
+  top:18.3145%;
   display:block;
   color:#d6d6d6;
-  font-size:clamp(94px,7.3vw,140px);
-  line-height:.82;
+  font-size:10.9cqw;
+  line-height:.8;
   white-space:nowrap;
   pointer-events:none;
 }
+
+/* Exact Canva menu origins:
+   column X: 108 / 655.01 / 1244.80
+   first row Y: 652.49
+   circle: 83.31 × 83.31
+   text begins ~39.7px after each circle. */
 .toc-columns{
   position:absolute;
-  left:9.2%;
-  right:8.8%;
-  bottom:9.5%;
-  display:grid;
-  grid-template-columns:1fr 1.08fr 1.12fr;
-  column-gap:8%;
-  align-items:start;
+  inset:0;
 }
-.toc-column{display:grid;gap:25px}
+.toc-column{
+  position:absolute;
+  top:60.416%;
+  display:grid;
+  row-gap:3.2cqh;
+}
+.toc-column:nth-child(1){left:5.625%;width:25cqw}
+.toc-column:nth-child(2){left:34.115%;width:27cqw}
+.toc-column:nth-child(3){left:64.833%;width:29.5cqw}
 .toc-column a{
   display:grid;
-  grid-template-columns:58px 1fr;
+  grid-template-columns:4.34cqw 1fr;
   align-items:center;
-  gap:24px;
-  min-height:52px;
+  column-gap:2.067cqw;
+  height:7.714cqh;
   color:#d3d3d3;
   text-decoration:none;
   background:transparent;
@@ -312,26 +335,35 @@ main{width:100%}.panel{position:relative;min-height:100vh;padding:clamp(88px,8vw
 }
 .toc-column a:hover{
   color:#ff751f;
-  transform:translateX(4px);
+  transform:translateX(.25cqw);
 }
 .toc-column b{
   display:grid;
   place-items:center;
-  width:52px;
-  height:52px;
-  border:1.5px solid #ff751f;
+  width:4.34cqw;
+  aspect-ratio:1;
+  border:.078cqw solid #ff751f;
   border-radius:50%;
   color:#d3d3d3;
   font-family:var(--sans);
-  font-size:18px;
+  font-size:1.28cqw;
   font-weight:400;
+  line-height:1;
 }
 .toc-column span{
   font-family:var(--sans);
-  font-size:clamp(15px,1.03vw,20px);
+  font-size:1.36cqw;
   font-weight:400;
-  line-height:1.18;
+  line-height:1.12;
   letter-spacing:-.035em;
+}
+
+/* On narrower screens, keep the same stage coordinates until the dedicated
+   mobile reconstruction is done; the stage simply scales down as one unit. */
+@media(max-width:1100px){
+  .contents-stage{
+    width:min(100%,calc(100svh * 16 / 9));
+  }
 }
 
 /* Page 3 — About Me */
@@ -440,9 +472,6 @@ main{width:100%}.panel{position:relative;min-height:100vh;padding:clamp(88px,8vw
   .hero-canva .pill-left{left:6%;top:47%}
   .hero-canva .pill-right{right:5%;top:63%}
   .hero-canva .hello-signature{bottom:17%;font-size:clamp(58px,10vw,92px)}
-  .toc-title{left:6%;width:55%}
-  .toc-title-signature{font-size:clamp(88px,12vw,132px)}
-  .toc-columns{left:6%;right:5%;column-gap:4%}
   .about-canva{padding-left:6%!important;padding-right:6%!important;grid-template-columns:42% 1fr!important;gap:4%!important}
   .about-photo{width:90%}
   .about-note{left:39%}
