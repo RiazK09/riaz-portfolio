@@ -392,10 +392,10 @@ main{width:100%}.panel{position:relative;min-height:100vh;padding:clamp(88px,8vw
 /* Canva reference: portrait occupies roughly x 5.6–35.6%, y 10–90.5%. */
 .about-photo{
   position:absolute;
-  left:5.63cqw;
-  top:10.05cqh;
-  width:30.02cqw;
-  height:80.5cqh!important;
+  left:4.85cqw;
+  top:8.6cqh;
+  width:25.9cqw;
+  height:79.5cqh!important;
   border-radius:0!important;
   background-position:center 42%!important;
   background-size:cover!important;
@@ -406,11 +406,11 @@ main{width:100%}.panel{position:relative;min-height:100vh;padding:clamp(88px,8vw
 .about-note{
   position:absolute;
   z-index:3;
-  left:27.4cqw;
-  top:1.9cqh;
-  width:18.8cqw;
+  left:28.9cqw;
+  top:1.8cqh;
+  width:19.4cqw;
   color:#d7d7d7;
-  font-size:3.55cqw;
+  font-size:4.2cqw;
   line-height:.68;
   text-align:center;
   pointer-events:none;
@@ -457,8 +457,8 @@ main{width:100%}.panel{position:relative;min-height:100vh;padding:clamp(88px,8vw
    ~45.6% from the left. */
 .about-body{
   position:absolute;
-  left:45.65cqw;
-  top:31.45cqh;
+  left:45.7cqw;
+  top:36.15cqh;
   width:41.1cqw;
 }
 .about-label{
