@@ -491,3 +491,38 @@ body.signature-assets-ready .hero-canva .hello{
   outline:0!important;
   background:transparent!important;
 }
+
+
+/* Canva-accurate Hello World placement */
+.hero-canva .hello-signature{
+  left:50%!important;
+  bottom:19.2%!important;
+  width:clamp(270px,17.2vw,340px)!important;
+  transform:translateX(-50%) rotate(-9deg)!important;
+}
+
+/* Prevent fallback-font flash on first load */
+.fonts-loading .hero-canva h1,
+.fonts-loading .hero-canva .hero-kicker,
+.fonts-loading .hero-canva .pill{
+  visibility:hidden;
+}
+.fonts-ready .hero-canva h1,
+.fonts-ready .hero-canva .hero-kicker,
+.fonts-ready .hero-canva .pill{
+  visibility:visible;
+}
+
+@media(max-width:1050px){
+  .hero-canva .hello-signature{
+    bottom:17%!important;
+    width:clamp(245px,40vw,335px)!important;
+  }
+}
+@media(max-width:650px){
+  .hero-canva .hello-signature{
+    bottom:16%!important;
+    width:58vw!important;
+    transform:translateX(-50%) rotate(-9deg)!important;
+  }
+}
