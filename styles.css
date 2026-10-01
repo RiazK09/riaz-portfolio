@@ -46,13 +46,6 @@ main{width:100%}.panel{position:relative;min-height:100vh;padding:clamp(88px,8vw
 
 
 
-@font-face{
-  font-family:"Revive 80 Signature";
-  src:url("https://db.onlinewebfonts.com/t/2cb6945e21496bb0e860b0e319af7dfc.woff2") format("woff2");
-  font-weight:400;
-  font-style:normal;
-  font-display:block;
-}
 
 .signature-text{
   font-family:var(--script);
