@@ -526,3 +526,211 @@ body.signature-assets-ready .hero-canva .hello{
     transform:translateX(-50%) rotate(-9deg)!important;
   }
 }
+
+
+/* === Canva desktop reconstruction: Pages 2–3 === */
+.contents-canva,
+.about-canva{
+  background:#161a1d!important;
+  color:#f2f2f2!important;
+  border-bottom:0!important;
+}
+.contents-canva::before,
+.about-canva::before{display:none!important}
+
+/* Page 2 — Table of Contents */
+.contents-canva{
+  display:block!important;
+  min-height:100svh;
+  height:100svh;
+  padding:0!important;
+}
+.toc-title{
+  position:absolute;
+  left:9.1%;
+  top:9.8%;
+  width:46%;
+  height:31%;
+}
+.toc-title-main{
+  position:relative;
+  z-index:1;
+  display:block;
+  color:#ff751f;
+  font-family:"Bricolage Grotesque",sans-serif;
+  font-size:clamp(104px,9.4vw,180px);
+  font-weight:500;
+  line-height:.82;
+  letter-spacing:-.065em;
+  white-space:nowrap;
+}
+.toc-title-script{
+  position:absolute;
+  z-index:2;
+  left:-1%;
+  top:42%;
+  display:block;
+  color:#d6d6d6;
+  font-family:"Allura",cursive;
+  font-size:clamp(78px,6.9vw,132px);
+  font-weight:400;
+  line-height:.8;
+  letter-spacing:-.035em;
+  transform:rotate(-6deg);
+  white-space:nowrap;
+}
+.toc-illustration{
+  position:absolute;
+  top:7.2%;
+  right:10.1%;
+  width:20.5%;
+  color:#ff751f;
+}
+.toc-illustration svg{display:block;width:100%;height:auto}
+
+.toc-columns{
+  position:absolute;
+  left:9.2%;
+  right:8.8%;
+  bottom:9.5%;
+  display:grid;
+  grid-template-columns:1fr 1.08fr 1.12fr;
+  column-gap:8%;
+  align-items:start;
+}
+.toc-column{
+  display:grid;
+  gap:25px;
+}
+.toc-column a{
+  display:grid;
+  grid-template-columns:58px 1fr;
+  align-items:center;
+  gap:24px;
+  min-height:52px;
+  color:#d3d3d3;
+  text-decoration:none;
+  background:transparent!important;
+  border:0!important;
+  padding:0!important;
+  transition:color .2s ease, transform .2s ease;
+}
+.toc-column a:hover{
+  color:#ff751f!important;
+  transform:translateX(4px)!important;
+}
+.toc-column b{
+  display:grid;
+  place-items:center;
+  width:52px;
+  height:52px;
+  border:1.5px solid #ff751f;
+  border-radius:50%;
+  color:#d3d3d3;
+  font-family:"Inter",sans-serif;
+  font-size:18px;
+  font-weight:400;
+}
+.toc-column span{
+  font-family:"Inter",sans-serif;
+  font-size:clamp(15px,1.03vw,20px);
+  font-weight:400;
+  line-height:1.18;
+  letter-spacing:-.035em;
+}
+
+/* Page 3 — About Me */
+.about-canva{
+  position:relative;
+  display:grid!important;
+  grid-template-columns:39% 1fr!important;
+  gap:5.6%!important;
+  align-items:center!important;
+  min-height:100svh;
+  height:100svh;
+  padding:0 8.2% 0 8.4%!important;
+}
+.about-photo{
+  width:81%;
+  height:80.5vh!important;
+  justify-self:start;
+  border-radius:0!important;
+  background-position:center 42%!important;
+  filter:grayscale(1) contrast(1.03);
+}
+.about-note{
+  position:absolute;
+  z-index:3;
+  top:2.3%;
+  left:38.5%;
+  color:#d7d7d7;
+  font-family:"Allura",cursive;
+  font-size:clamp(30px,2.7vw,52px);
+  line-height:.72;
+  text-align:center;
+  transform:translateX(-50%) rotate(-8deg);
+  pointer-events:none;
+}
+.about-copy{
+  position:relative;
+  align-self:center;
+  margin-top:1%;
+}
+.about-heading{
+  position:relative;
+  height:clamp(125px,13.4vw,250px);
+  margin:0 0 8px;
+}
+.about-heading span{
+  position:absolute;
+  left:0;
+  top:0;
+  color:#ff751f;
+  font-family:"Bricolage Grotesque",sans-serif;
+  font-size:clamp(112px,10vw,192px);
+  font-weight:500;
+  line-height:.82;
+  letter-spacing:-.07em;
+}
+.about-heading em{
+  position:absolute;
+  left:64%;
+  top:8%;
+  color:#dedede;
+  font-family:"Allura",cursive;
+  font-size:clamp(86px,7.5vw,145px);
+  font-weight:400;
+  line-height:.8;
+  transform:rotate(-8deg);
+  white-space:nowrap;
+}
+.about-label{
+  margin:0 0 13px;
+  color:#ff751f;
+  font-family:"Inter",sans-serif;
+  font-size:clamp(14px,.9vw,18px);
+  font-weight:700;
+}
+.about-copy p{
+  max-width:820px!important;
+  margin:0 0 17px;
+  color:#fff;
+  font-family:"Inter",sans-serif;
+  font-size:clamp(13px,.82vw,16px)!important;
+  line-height:1.28!important;
+  letter-spacing:-.025em;
+}
+.about-copy strong{
+  color:#ff751f;
+  font-weight:700;
+}
+
+/* Keep these desktop-first; responsive reconstruction comes later. */
+@media(max-width:1100px){
+  .toc-title{left:6%;width:55%}
+  .toc-illustration{right:5%;width:25%}
+  .toc-columns{left:6%;right:5%;column-gap:4%}
+  .about-canva{padding-left:6%!important;padding-right:6%!important;grid-template-columns:42% 1fr!important;gap:4%!important}
+  .about-photo{width:90%}
+  .about-note{left:39%}
+}
