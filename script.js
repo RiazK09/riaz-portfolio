@@ -1,18 +1,6 @@
-const menuButton = document.querySelector('.menu-button');
-const mobileNav = document.querySelector('.mobile-nav');
-
-menuButton?.addEventListener('click', () => {
-  const open = mobileNav.classList.toggle('open');
-  menuButton.setAttribute('aria-expanded', String(open));
-});
-
-document.querySelectorAll('.mobile-nav a').forEach(link => link.addEventListener('click', () => {
-  mobileNav.classList.remove('open');
-  menuButton?.setAttribute('aria-expanded', 'false');
-}));
-
 const progress = document.getElementById('progress-bar');
 const updateProgress = () => {
+  if (!progress) return;
   const max = document.documentElement.scrollHeight - window.innerHeight;
   const pct = max > 0 ? (window.scrollY / max) * 100 : 0;
   progress.style.width = `${Math.min(100, Math.max(0, pct))}%`;
@@ -20,7 +8,8 @@ const updateProgress = () => {
 window.addEventListener('scroll', updateProgress, { passive: true });
 updateProgress();
 
-document.getElementById('year').textContent = new Date().getFullYear();
+const year = document.getElementById('year');
+if (year) year.textContent = new Date().getFullYear();
 
 const assetMap = {
   'hero-portrait.jpg': 'assets/hero-portrait.jpg',
@@ -34,21 +23,19 @@ const assetMap = {
   'why-portrait.jpg': 'assets/why-portrait.jpg'
 };
 
-document.querySelectorAll('[data-asset]').forEach(el => {
-  const key = el.dataset.asset;
-  const src = assetMap[key];
+document.querySelectorAll('[data-asset]').forEach((element) => {
+  const src = assetMap[element.dataset.asset];
   if (!src) return;
 
   const probe = new Image();
   probe.onload = () => {
-    el.style.backgroundImage = `url("${src}")`;
-    el.classList.add('has-image');
+    element.style.backgroundImage = `url("${src}")`;
+    element.classList.add('has-image');
   };
   probe.src = src;
 });
 
-document.querySelectorAll('[data-video]').forEach(el => {
-  const src = `assets/${el.dataset.video}`;
+document.querySelectorAll('[data-video]').forEach((element) => {
   const video = document.createElement('video');
   video.muted = true;
   video.loop = true;
@@ -56,41 +43,24 @@ document.querySelectorAll('[data-video]').forEach(el => {
   video.autoplay = true;
   video.preload = 'metadata';
   video.setAttribute('aria-label', 'Website project preview');
-  video.src = src;
+  video.src = `assets/${element.dataset.video}`;
 
   video.addEventListener('canplay', () => {
-    el.appendChild(video);
-    el.classList.add('has-video');
+    element.appendChild(video);
+    element.classList.add('has-video');
     video.play().catch(() => {});
   }, { once: true });
 
   video.addEventListener('error', () => video.remove(), { once: true });
 });
 
-const heroSection = document.querySelector('#home');
-if (heroSection) {
-  const syncHeroHeader = () => {
-    document.body.classList.toggle('hero-active', window.scrollY < Math.max(120, heroSection.offsetHeight * 0.72));
-  };
-  syncHeroHeader();
-  window.addEventListener('scroll', syncHeroHeader, { passive: true });
-}
-
-const heroPerson = document.querySelector('.hero-person');
-heroPerson?.addEventListener('error', () => {
-  const fallback = heroPerson.dataset.fallback;
-  if (fallback && !heroPerson.dataset.fallbackUsed) {
-    heroPerson.dataset.fallbackUsed = 'true';
-    heroPerson.src = fallback;
-  }
-});
-
-
 const cursorDot = document.querySelector('.cursor-dot');
 const cursorRing = document.querySelector('.cursor-ring');
 if (cursorDot && cursorRing && window.matchMedia('(pointer:fine)').matches) {
-  let x = window.innerWidth / 2, y = window.innerHeight / 2;
-  let ringX = x, ringY = y;
+  let x = window.innerWidth / 2;
+  let y = window.innerHeight / 2;
+  let ringX = x;
+  let ringY = y;
 
   const animateCursor = () => {
     ringX += (x - ringX) * 0.16;
@@ -105,36 +75,18 @@ if (cursorDot && cursorRing && window.matchMedia('(pointer:fine)').matches) {
     x = event.clientX;
     y = event.clientY;
     document.body.classList.add('cursor-ready');
-  }, { passive:true });
+  }, { passive: true });
 
   window.addEventListener('pointerleave', () => document.body.classList.remove('cursor-ready'));
+
   document.querySelectorAll('a,button,[role="button"]').forEach((element) => {
     element.addEventListener('pointerenter', () => document.body.classList.add('cursor-hover'));
     element.addEventListener('pointerleave', () => document.body.classList.remove('cursor-hover'));
   });
 }
 
-
-const signatureAssets = [
-  'assets/signature-my.png',
-  'assets/signature-hello-world-white.png'
-];
-
-Promise.all(signatureAssets.map((src) => new Promise((resolve, reject) => {
-  const img = new Image();
-  img.onload = resolve;
-  img.onerror = reject;
-  img.src = src;
-}))).then(() => {
-  document.body.classList.add('signature-assets-ready');
-}).catch(() => {
-  // Keep the existing script-font fallback until both exact Canva assets are present.
-});
-
-
 const heroScroll = document.querySelector('.hero-scroll');
 const scrollArrows = [...document.querySelectorAll('.scroll-arrows i')];
-
 if (heroScroll && scrollArrows.length) {
   let arrowIndex = 0;
 
@@ -153,21 +105,27 @@ if (heroScroll && scrollArrows.length) {
   });
 }
 
-
-// Reveal web-font typography only after the requested fonts are ready.
-// This avoids the fallback-font jump on a cold page load.
+/* Load only the critical hero fonts instead of waiting for every font on the page. */
 (() => {
-  const revealFonts = () => {
-    document.documentElement.classList.remove('fonts-loading');
-    document.documentElement.classList.add('fonts-ready');
-  };
+  const root = document.documentElement;
 
-  if (document.fonts && document.fonts.ready) {
-    Promise.race([
-      document.fonts.ready,
-      new Promise((resolve) => setTimeout(resolve, 1800))
-    ]).then(revealFonts);
-  } else {
-    revealFonts();
+  if (!document.fonts?.load) {
+    root.classList.remove('fonts-loading', 'signature-font-loading');
+    return;
   }
+
+  Promise.all([
+    document.fonts.load('500 180px "Bricolage Grotesque"'),
+    document.fonts.load('400 18px "Inter"')
+  ]).finally(() => {
+    root.classList.remove('fonts-loading');
+  });
+
+  document.fonts.load('400 160px "Revive 80 Signature"').then(() => {
+    root.classList.remove('signature-font-loading');
+  }).catch(() => {
+    /* Keep Signature accents hidden rather than showing a wrong fallback face. */
+  });
+
+  setTimeout(() => root.classList.remove('fonts-loading'), 1600);
 })();
