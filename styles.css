@@ -734,3 +734,24 @@ body.signature-assets-ready .hero-canva .hello{
   .about-photo{width:90%}
   .about-note{left:39%}
 }
+
+
+/* Subtle slide-to-slide divider */
+.panel::after{
+  content:"";
+  position:absolute;
+  z-index:20;
+  left:7%;
+  right:7%;
+  bottom:0;
+  height:1px;
+  pointer-events:none;
+  background:linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255,255,255,.08) 18%,
+    rgba(255,117,31,.38) 50%,
+    rgba(255,255,255,.08) 82%,
+    transparent 100%
+  );
+}
