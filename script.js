@@ -12,7 +12,6 @@ const year = document.getElementById('year');
 if (year) year.textContent = new Date().getFullYear();
 
 const assetMap = {
-  'hero-portrait.jpg': 'assets/hero-portrait.jpg',
   'about-portrait.jpg': 'assets/about-portrait.jpg',
   'workspace.jpg': 'assets/workspace.jpg',
   'project-cloud-faction.jpg': 'assets/project-cloud-faction.jpg',
@@ -23,36 +22,85 @@ const assetMap = {
   'why-portrait.jpg': 'assets/why-portrait.jpg'
 };
 
-document.querySelectorAll('[data-asset]').forEach((element) => {
+const loadBackground = (element) => {
+  if (element.dataset.assetLoaded === 'true') return;
   const src = assetMap[element.dataset.asset];
   if (!src) return;
 
   const probe = new Image();
+  probe.decoding = 'async';
   probe.onload = () => {
     element.style.backgroundImage = `url("${src}")`;
     element.classList.add('has-image');
+    element.dataset.assetLoaded = 'true';
   };
   probe.src = src;
-});
+};
 
-document.querySelectorAll('[data-video]').forEach((element) => {
+const backgroundTargets = [...document.querySelectorAll('[data-asset]')];
+if ('IntersectionObserver' in window) {
+  const imageObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      loadBackground(entry.target);
+      observer.unobserve(entry.target);
+    });
+  }, { rootMargin: '700px 0px' });
+
+  backgroundTargets.forEach((element) => imageObserver.observe(element));
+} else {
+  backgroundTargets.forEach(loadBackground);
+}
+
+const videoTargets = [...document.querySelectorAll('[data-video]')];
+const mountVideo = (element) => {
+  if (element.dataset.videoMounted === 'true') return null;
+
   const video = document.createElement('video');
   video.muted = true;
   video.loop = true;
   video.playsInline = true;
-  video.autoplay = true;
   video.preload = 'metadata';
   video.setAttribute('aria-label', 'Website project preview');
   video.src = `assets/${element.dataset.video}`;
 
-  video.addEventListener('canplay', () => {
-    element.appendChild(video);
+  video.addEventListener('loadeddata', () => {
+    if (!video.isConnected) element.appendChild(video);
     element.classList.add('has-video');
-    video.play().catch(() => {});
   }, { once: true });
 
-  video.addEventListener('error', () => video.remove(), { once: true });
-});
+  video.addEventListener('error', () => {
+    video.remove();
+    element.classList.remove('has-video');
+  }, { once: true });
+
+  element.dataset.videoMounted = 'true';
+  element._projectVideo = video;
+  return video;
+};
+
+if ('IntersectionObserver' in window) {
+  const videoObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      const element = entry.target;
+      let video = element._projectVideo;
+
+      if (entry.isIntersecting) {
+        video = video || mountVideo(element);
+        if (video) video.play().catch(() => {});
+      } else if (video) {
+        video.pause();
+      }
+    });
+  }, { rootMargin: '220px 0px', threshold: 0.08 });
+
+  videoTargets.forEach((element) => videoObserver.observe(element));
+} else {
+  videoTargets.forEach((element) => {
+    const video = mountVideo(element);
+    if (video) video.play().catch(() => {});
+  });
+}
 
 const cursorDot = document.querySelector('.cursor-dot');
 const cursorRing = document.querySelector('.cursor-ring');
@@ -89,8 +137,7 @@ const heroScroll = document.querySelector('.hero-scroll');
 const scrollArrows = [...document.querySelectorAll('.scroll-arrows i')];
 if (heroScroll && scrollArrows.length) {
   let arrowIndex = 0;
-
-  setInterval(() => {
+  const arrowTimer = window.setInterval(() => {
     scrollArrows.forEach((arrow, index) => {
       arrow.classList.toggle('is-active', index === arrowIndex);
     });
@@ -101,11 +148,15 @@ if (heroScroll && scrollArrows.length) {
     const target = document.querySelector('#contents');
     if (!target) return;
     event.preventDefault();
-    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    target.scrollIntoView({
+      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+      block: 'start'
+    });
   });
+
+  window.addEventListener('pagehide', () => clearInterval(arrowTimer), { once: true });
 }
 
-/* Load only the critical hero fonts instead of waiting for every font on the page. */
 (() => {
   const root = document.documentElement;
 
@@ -117,15 +168,11 @@ if (heroScroll && scrollArrows.length) {
   Promise.all([
     document.fonts.load('500 180px "Bricolage Grotesque"'),
     document.fonts.load('400 18px "Inter"')
-  ]).finally(() => {
-    root.classList.remove('fonts-loading');
-  });
+  ]).finally(() => root.classList.remove('fonts-loading'));
 
-  document.fonts.load('400 160px "Revive 80 Signature"').then(() => {
-    root.classList.remove('signature-font-loading');
-  }).catch(() => {
-    /* Keep Signature accents hidden rather than showing a wrong fallback face. */
-  });
+  document.fonts.load('400 160px "Revive 80 Signature"')
+    .then(() => root.classList.remove('signature-font-loading'))
+    .catch(() => {});
 
   setTimeout(() => root.classList.remove('fonts-loading'), 1600);
 })();
