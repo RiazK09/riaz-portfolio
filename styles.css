@@ -5,877 +5,36 @@
   font-style:normal;
   font-display:block;
 }
-:root {
-  --paper: #f3efe7;
-  --paper-2: #ebe4d9;
-  --ink: #151515;
-  --muted: #6e685f;
-  --accent: #ef6b46;
-  --accent-dark: #d9502f;
-  --white: #fffaf4;
-  --line: rgba(21,21,21,.16);
-  --radius: 28px;
-  --mono: "DM Mono", monospace;
-  --sans: "Inter", sans-serif;
-  --display: "Bricolage Grotesque", sans-serif;
-  --script: "Revive 80 Signature", cursive;
-  --serif: "Playfair Display", serif;
-  --section-pad-y: clamp(72px, 8svh, 96px);
-  --section-pad-x: clamp(28px, 5.7vw, 110px);
+
+:root{
+  --paper:#f3efe7;
+  --ink:#151515;
+  --muted:#6e685f;
+  --accent:#ff751f;
+  --white:#f2f2f2;
+  --line:rgba(255,255,255,.10);
+  --mono:"DM Mono",monospace;
+  --sans:"Inter",sans-serif;
+  --display:"Bricolage Grotesque",sans-serif;
+  --script:"Revive 80 Signature",cursive;
+  --section-pad-y:clamp(72px,8svh,96px);
+  --section-pad-x:clamp(28px,5.7vw,110px);
+  --slide-bg:#161a1d;
 }
+
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);overflow-x:hidden}
+html{scroll-behavior:smooth;background:var(--slide-bg)}
+body{margin:0;background:var(--slide-bg);color:var(--white);font-family:var(--sans);overflow-x:hidden}
 a{color:inherit}
-.progress{position:fixed;inset:0 0 auto;height:3px;z-index:1000;background:transparent}.progress span{display:block;height:100%;width:0;background:var(--accent)}
-
-main{width:100%}.panel{position:relative;min-height:100vh;padding:var(--section-pad-y) var(--section-pad-x);border-bottom:1px solid var(--line);overflow:hidden}.panel::before{content:attr(data-section);position:absolute;top:50%;right:24px;transform:translateY(-50%);writing-mode:vertical-rl;font-family:var(--mono);font-size:11px;letter-spacing:.25em;color:var(--muted)}
-.media-slot{background:linear-gradient(145deg,#d7c7b4,#afa08d);border-radius:var(--radius);display:grid;place-items:center;overflow:hidden;position:relative;background-size:cover;background-position:center}.media-slot span{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.15em;color:rgba(0,0,0,.45);background:rgba(255,255,255,.45);padding:9px 12px;border-radius:999px;backdrop-filter:blur(6px)}.media-slot.has-image span{display:none}
-
-.split{display:grid;grid-template-columns:minmax(320px,.8fr) 1.25fr;gap:7vw;align-items:center}.portrait-tall{height:min(80vh,860px)}.split-copy{position:relative}.eyebrow{font-family:var(--mono);text-transform:uppercase;letter-spacing:.12em;font-size:12px;color:var(--muted);margin-bottom:26px}.display-pair{font-size:clamp(76px,11vw,185px);line-height:.75;letter-spacing:-.075em;margin-bottom:50px}.display-pair span,.display-pair em{display:block}.display-pair em{font-family:var(--serif);font-weight:700;color:var(--accent)}.split-copy p,.why-copy p{font-size:clamp(15px,1.18vw,20px);line-height:1.65;max-width:920px}.side-note{position:absolute;top:-14px;left:-270px;font-family:var(--serif);font-style:italic;font-size:32px;transform:rotate(-6deg);max-width:280px;color:var(--accent-dark)}
-.big-quote{font-family:var(--serif);font-style:italic;font-size:clamp(42px,6vw,100px);line-height:1;margin:70px 0 0;max-width:1100px;color:var(--accent-dark)}
-
-
-.project-intro{display:grid;grid-template-columns:1fr .8fr;align-items:center;gap:70px}.project-intro .display-pair{margin:0}.workspace-art{height:min(70vh,700px);background:linear-gradient(135deg,#1d1d1d,#57504a);}.project-intro .big-quote{grid-column:1/-1;margin-top:0}
-.project{display:grid;grid-template-columns:minmax(320px,1fr) 2fr 280px;grid-template-rows:auto 1fr;gap:26px 36px;align-items:start}.project-copy{grid-column:1/3;display:grid;grid-template-columns:140px 1fr;gap:0 28px}.project-index{font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--muted);padding-top:12px}.project-copy h2{font-size:clamp(30px,3.2vw,58px);line-height:1.05;letter-spacing:-.045em;margin:0 0 18px}.project-copy p{grid-column:2;margin:4px 0;line-height:1.5;max-width:1050px}.project-media{grid-column:1/3;grid-row:2;height:min(65vh,690px);border:1px solid var(--ink);border-radius:var(--radius)}.project-preview::after{content:"";position:absolute;inset:0;background:linear-gradient(145deg,transparent,rgba(0,0,0,.25));pointer-events:none}.project-one{background:linear-gradient(135deg,#171717,#5f6870)}.project-two{background:linear-gradient(135deg,#dde7dc,#918f7c)}.project-three{background:linear-gradient(135deg,#262626,#755947)}.project-four{background:linear-gradient(135deg,#e5d8d1,#b0887c)}.project-five{background:linear-gradient(135deg,#111,#4d4d4d)}.tag-stack{grid-column:3;grid-row:2;display:flex;flex-direction:column;gap:13px}.tag-stack span{border:1px solid var(--ink);background:var(--accent);border-radius:999px;padding:13px 18px;text-align:center;font-family:var(--mono);font-size:12px}
-.why{display:grid;grid-template-columns:1.15fr .85fr;gap:50px}.why .display-pair{grid-column:1}.why-copy{grid-column:1;max-width:880px}.why-photo{grid-column:2;grid-row:1/3;height:min(84vh,900px);align-self:center}.why-statement{font-family:var(--serif);font-style:italic;font-size:clamp(28px,3vw,52px)!important;color:var(--accent-dark);line-height:1.15!important;margin-top:40px}.side-note.right{left:auto;right:6%;top:12%;font-size:36px;z-index:3}
-.testimonials .display-pair{font-size:clamp(64px,9vw,150px)}.testimonial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:70px}.testimonial-grid blockquote{margin:0;border:1px solid var(--ink);border-radius:var(--radius);padding:36px;background:#f18a69;min-height:360px;display:flex;flex-direction:column;justify-content:space-between}.testimonial-grid blockquote:nth-child(2){transform:translateY(28px)}.testimonial-grid p{font-family:var(--serif);font-style:italic;font-size:22px;line-height:1.4;margin:0}.testimonial-grid footer{display:flex;flex-direction:column;gap:5px}.testimonial-grid footer span{font-size:12px;color:#4d4039}.testimonial-footer{font-size:clamp(34px,5vw,86px);font-weight:700;letter-spacing:-.045em;max-width:1300px;margin:95px 0 30px}.linkedin-note{font-family:var(--mono);font-size:12px}.linkedin-note a{color:var(--accent-dark)}
-.contact{display:grid;grid-template-columns:1.15fr .85fr;align-items:center;background:#191919;color:var(--white)}.contact .pretitle{font-size:clamp(28px,3vw,58px);margin:0}.contact .display-pair{margin:20px 0 35px}.contact-copy>p{color:#d7d0c6}.contact-links{display:flex;flex-direction:column;gap:14px;margin-top:38px;max-width:520px}.contact-links a{border:1px solid rgba(255,255,255,.45);border-radius:999px;padding:16px 22px;text-decoration:none;font-family:var(--mono);font-size:13px}.contact-links a:hover{background:var(--accent);color:var(--ink);border-color:var(--accent)}.contact-photo{height:min(76vh,820px);background:linear-gradient(145deg,#39332e,#9d8b78)}
-.site-footer{display:flex;justify-content:space-between;padding:28px clamp(28px,5.7vw,110px);font-family:var(--mono);font-size:11px;background:var(--paper)}.site-footer a{text-decoration:none}
-@media (max-width: 1050px){:root{--section-pad-y:clamp(64px,8svh,84px);--section-pad-x:clamp(24px,5vw,72px)}.panel{min-height:auto}.panel::before{display:none}.split{grid-template-columns:1fr}.portrait-tall{height:65vh}.side-note{display:none}.project-intro{grid-template-columns:1fr}.project{grid-template-columns:1fr}.project-copy{grid-column:1;display:block}.project-copy p{grid-column:auto}.project-media{grid-column:1;grid-row:auto;height:55vh}.tag-stack{grid-column:1;grid-row:auto;flex-direction:row;flex-wrap:wrap}.why{grid-template-columns:1fr}.why .display-pair,.why-copy,.why-photo{grid-column:1}.why-photo{grid-row:auto;height:65vh}.testimonial-grid{grid-template-columns:1fr}.testimonial-grid blockquote:nth-child(2){transform:none}.contact{grid-template-columns:1fr;gap:50px}.contact-photo{height:60vh}}
-@media (max-width: 650px){:root{--section-pad-y:64px;--section-pad-x:20px}.panel{padding:var(--section-pad-y) var(--section-pad-x)}.display-pair{font-size:22vw}.project-copy h2{font-size:10vw}.project-media{height:42vh}.tag-stack span{padding:9px 12px;font-size:10px}.testimonial-grid p{font-size:18px}.site-footer{padding:24px 20px;gap:20px;flex-direction:column}}
-.project-media video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}.project-media.has-video::after{z-index:2}.project-media.has-video>span{display:none}
-
-
-
-
-.signature-text{
-  font-family:var(--script);
-  font-weight:400;
-  font-style:normal;
-}
-.signature-font-loading .signature-text{visibility:hidden}
-
-.fonts-loading .hero-canva h1,
-.fonts-loading .hero-canva .hero-kicker,
-.fonts-loading .hero-canva .pill{visibility:hidden}
-
-/* Canva hero — single source of truth */
-.hero-canva{
-  --hero-bg:#161a1d;
-  --hero-orange:#ff751f;
-  --hero-light:#d9d9d9;
+main{width:100%}
+.panel{
+  position:relative;
   min-height:100svh;
-  height:100svh;
   padding:var(--section-pad-y) var(--section-pad-x);
-  border-bottom:0;
-  background:var(--hero-bg);
-  color:var(--hero-light);
   overflow:hidden;
-  isolation:isolate;
+  border-bottom:1px solid rgba(255,117,31,.16);
 }
-.hero-canva::before{display:none}
-.hero-canva h1{
-  position:absolute;
-  z-index:1;
-  top:7.2%;
-  left:50%;
-  transform:translateX(-50%);
-  width:max-content;
-  margin:0;
-  color:var(--hero-orange);
-  font-family:var(--display);
-  font-size:clamp(150px,15.2vw,295px);
-  font-weight:500;
-  font-stretch:100%;
-  line-height:.9;
-  letter-spacing:-.055em;
-  text-align:center;
-  white-space:nowrap;
-}
-.hero-canva h1 span{color:inherit}
-.hero-canva .hero-kicker{
-  position:absolute;
-  z-index:5;
-  top:4.1%;
-  left:42.7%;
-  transform:translateX(-50%);
-  width:clamp(360px,21.72vw,430px);
-  max-width:none;
-  color:var(--hero-light);
-  font-family:var(--sans);
-  font-size:clamp(15px,1.22vw,25px);
-  font-weight:400;
-  line-height:1.42;
-  letter-spacing:-.035em;
-  text-align:center;
-}
-.hero-scribble{
-  position:absolute;
-  z-index:3;
-  top:15.2%;
-  left:18.2%;
-  color:var(--hero-light);
-  font-size:clamp(150px,12vw,230px);
-  line-height:.8;
-  white-space:nowrap;
-  pointer-events:none;
-}
-.hero-person{
-  position:absolute;
-  z-index:2;
-  left:50%;
-  bottom:-1.2%;
-  transform:translateX(-50%);
-  width:clamp(455px,28.2vw,555px);
-  height:auto;
-  display:block;
-  object-fit:contain;
-  object-position:center bottom;
-  filter:drop-shadow(0 14px 24px rgba(0,0,0,.18));
-}
-.hero-canva .pill{
-  position:absolute;
-  z-index:5;
-  min-width:270px;
-  padding:15px 30px;
-  border:2px solid var(--hero-orange);
-  border-radius:999px;
-  background:transparent;
-  color:var(--hero-light);
-  font-family:var(--sans);
-  font-size:clamp(15px,1.1vw,22px);
-  font-weight:400;
-  line-height:1;
-  letter-spacing:-.03em;
-  text-align:center;
-}
-.hero-canva .pill-left{left:19.6%;top:47.2%}
-.hero-canva .pill-right{right:15.6%;top:62.5%}
-.hero-canva .hello-signature{
-  position:absolute;
-  z-index:6;
-  left:50%;
-  bottom:19.2%;
-  transform:translateX(-50%);
-  margin:0;
-  color:#fff;
-  font-size:clamp(58px,5.7vw,112px);
-  line-height:.8;
-  white-space:nowrap;
-  pointer-events:none;
-}
-
-/* Hero scroll cue */
-.hero-scroll{
-  position:absolute;
-  z-index:8;
-  right:5.2vw;
-  bottom:5.2vh;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  color:#ff751f;
-  text-decoration:none;
-  user-select:none;
-}
-.scroll-arrows{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:1px;
-}
-.scroll-arrows i{
-  width:22px;
-  height:22px;
-  border-right:2.5px solid currentColor;
-  border-bottom:2.5px solid currentColor;
-  transform:rotate(45deg);
-  opacity:.16;
-  transition:opacity .18s ease,filter .18s ease,transform .18s ease;
-  margin-top:-5px;
-}
-.scroll-arrows i:first-child{margin-top:0}
-.scroll-arrows i.is-active{
-  opacity:1;
-  filter:drop-shadow(0 0 8px rgba(255,117,31,.9));
-  transform:rotate(45deg) scale(1.12);
-}
-.hero-scroll:hover .scroll-arrows i{opacity:.7}
-
-/* Custom cursor */
-.cursor-dot,.cursor-ring{
-  position:fixed;
-  left:0;
-  top:0;
-  z-index:99999;
-  pointer-events:none;
-  opacity:0;
-  will-change:transform;
-}
-@media (pointer:fine){
-  html,body,a,button,[role="button"]{cursor:none!important}
-  .cursor-dot{
-    width:7px;
-    height:7px;
-    margin:-3.5px 0 0 -3.5px;
-    border-radius:50%;
-    background:#ff751f;
-    box-shadow:0 0 10px rgba(255,117,31,.65);
-  }
-  .cursor-ring{
-    width:34px;
-    height:34px;
-    margin:-17px 0 0 -17px;
-    border:1.5px solid rgba(255,117,31,.8);
-    border-radius:50%;
-  }
-  body.cursor-ready .cursor-dot,
-  body.cursor-ready .cursor-ring{opacity:1}
-  body.cursor-hover .cursor-ring{
-    width:48px;
-    height:48px;
-    margin:-24px 0 0 -24px;
-  }
-}
-@media (pointer:coarse){.cursor-dot,.cursor-ring{display:none!important}}
-
-/* Canva desktop reconstruction — Pages 2–3 */
-.contents-canva,
-.about-canva{
-  background:#161a1d!important;
-  color:#f2f2f2!important;
-  border-bottom:0!important;
-}
-.contents-canva::before,
-.about-canva::before{display:none!important}
-
-/* Page 2 — Table of Contents
-   Canva source geometry: 1920 × 1080. The stage preserves that 16:9 coordinate
-   system, so desktop spacing does not distort on wider browser windows. */
-.contents-canva{
-  display:block!important;
-  min-height:100svh;
-  height:100svh;
-  padding:var(--section-pad-y) var(--section-pad-x)!important;
-  overflow:hidden;
-}
-.contents-stage{
-  position:absolute;
-  left:50%;
-  top:50%;
-  width:min(100%,calc(100svh * 16 / 9));
-  aspect-ratio:16 / 9;
-  transform:translate(-50%,-50%);
-  container-type:size;
-}
-
-/* Exact Canva element origins:
-   Table of: 106.13,55.29
-   Contents: 108,197.80 */
-.toc-title{
-  position:absolute;
-  inset:0;
-}
-.toc-title-main{
-  position:absolute;
-  z-index:1;
-  left:5.5276%;
-  top:5.1193%;
-  display:block;
-  color:#ff751f;
-  font-family:var(--display);
-  font-size:12cqw;
-  font-weight:500;
-  line-height:.82;
-  letter-spacing:-.065em;
-  white-space:nowrap;
-}
-.toc-title-signature{
-  position:absolute;
-  z-index:3;
-  left:5.625%;
-  top:18.3145%;
-  display:block;
-  color:#d6d6d6;
-  font-size:10.9cqw;
-  line-height:.8;
-  white-space:nowrap;
-  pointer-events:none;
-}
-
-/* Exact Canva menu origins:
-   column X: 108 / 655.01 / 1244.80
-   first row Y: 652.49
-   circle: 83.31 × 83.31
-   text begins ~39.7px after each circle. */
-.toc-columns{
-  position:absolute;
-  inset:0;
-}
-.toc-column{
-  position:absolute;
-  top:60.416%;
-  display:grid;
-  row-gap:3.2cqh;
-}
-.toc-column:nth-child(1){left:5.625%;width:25cqw}
-.toc-column:nth-child(2){left:34.115%;width:27cqw}
-.toc-column:nth-child(3){left:64.833%;width:29.5cqw}
-.toc-column a{
-  display:grid;
-  grid-template-columns:4.34cqw 1fr;
-  align-items:center;
-  column-gap:2.067cqw;
-  height:7.714cqh;
-  color:#d3d3d3;
-  text-decoration:none;
-  background:transparent;
-  border:0;
-  padding:0;
-  transition:color .2s ease,transform .2s ease;
-}
-.toc-column a:hover{
-  color:#ff751f;
-  transform:translateX(.25cqw);
-}
-.toc-column b{
-  display:grid;
-  place-items:center;
-  width:4.34cqw;
-  aspect-ratio:1;
-  border:.078cqw solid #ff751f;
-  border-radius:50%;
-  color:#d3d3d3;
-  font-family:var(--sans);
-  font-size:1.28cqw;
-  font-weight:400;
-  line-height:1;
-}
-.toc-column span{
-  font-family:var(--sans);
-  font-size:1.36cqw;
-  font-weight:400;
-  line-height:1.12;
-  letter-spacing:-.035em;
-}
-
-/* On narrower screens, keep the same stage coordinates until the dedicated
-   mobile reconstruction is done; the stage simply scales down as one unit. */
-@media(max-width:1100px){
-  .contents-stage{
-    width:min(100%,calc(100svh * 16 / 9));
-  }
-}
-
-/* Page 3 — About Me
-   Screenshot-matched desktop composition.
-   Unlike Slide 2, this page uses the full viewport as its coordinate system so
-   the portrait, headline and copy keep the same visual proportions on a wide
-   desktop browser instead of being letterboxed inside a smaller 16:9 stage. */
-.about-canva{
-  position:relative;
-  display:block!important;
-  min-height:100svh;
-  height:100svh;
-  padding:var(--section-pad-y) var(--section-pad-x)!important;
-  overflow:hidden;
-}
-.about-stage{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  transform:none;
-  aspect-ratio:auto;
-  container-type:size;
-}
-
-/* Canva reference: portrait occupies roughly x 5.6–35.6%, y 10–90.5%. */
-.about-photo{
-  position:absolute;
-  left:4.85cqw;
-  top:8.6cqh;
-  width:25.9cqw;
-  height:79.5cqh!important;
-  border-radius:0!important;
-  background-position:center 42%!important;
-  background-size:cover!important;
-  filter:grayscale(1) contrast(1.03);
-}
-
-/* Handwritten note sits over the portrait's upper-right edge in Canva. */
-.about-note{
-  position:absolute;
-  z-index:3;
-  left:28.9cqw;
-  top:3.2cqh;
-  width:19.4cqw;
-  color:#d7d7d7;
-  font-size:4.2cqw;
-  line-height:.68;
-  text-align:center;
-  transform:rotate(-6deg);
-  transform-origin:center;
-  pointer-events:none;
-}
-
-/* Full-slide copy layer. */
-.about-copy{
-  position:absolute;
-  inset:0;
-  margin:0;
-}
-.about-heading{
-  position:absolute;
-  inset:0;
-  margin:0;
-  height:auto;
-}
-
-/* Screenshot-matched headline geometry. */
-.about-heading span{
-  position:absolute;
-  left:46.05cqw;
-  top:13.05cqh;
-  color:#ff751f;
-  font-family:var(--display);
-  font-size:13.85cqw;
-  font-weight:500;
-  line-height:.72;
-  letter-spacing:-.07em;
-  white-space:nowrap;
-}
-.about-heading em{
-  position:absolute;
-  left:71.8cqw;
-  top:12.9cqh;
-  color:#dedede;
-  font-size:13.2cqw;
-  font-weight:400;
-  line-height:.72;
-  white-space:nowrap;
-}
-
-/* Canva screenshot places BACKGROUND at ~31.5% page height and the copy at
-   ~45.6% from the left. */
-.about-body{
-  position:absolute;
-  left:45.7cqw;
-  top:36.15cqh;
-  width:41.1cqw;
-}
-.about-label{
-  margin:0 0 1.65cqh;
-  color:#ff751f;
-  font-family:var(--sans);
-  font-size:1.15cqw;
-  font-weight:700;
-  line-height:1;
-}
-.about-text{
-  width:100%;
-}
-.about-text p{
-  margin:0 0 1.75cqh;
-  color:#fff;
-  font-family:var(--sans);
-  font-size:1.05cqw!important;
-  font-weight:400;
-  line-height:1.28!important;
-  letter-spacing:-.012em;
-}
-.about-text p:last-child{margin-bottom:0}
-.about-text strong{
-  color:#ff751f;
-  font-weight:700;
-}
-
-/* Keep the desktop composition intact until the dedicated responsive pass. */
-@media(max-width:1100px){
-  .about-note{font-size:4.2cqw}
-  .about-text p{font-size:1.25cqw!important}
-}
-
-/* Page 6 — My Education
-   Rebuilt from the Canva source: overlapping Signature My + orange Education,
-   one left-side education list, divider, and right-side handwritten statement. */
-.education-canva{
-  position:relative;
-  display:block;
-  min-height:100svh;
-  height:100svh;
-  background:#161a1d;
-  color:#f2f2f2;
-  overflow:hidden;
-}
-.education-canva::before{display:none}
-.education-stage{
-  position:absolute;
-  inset:0;
-  container-type:size;
-}
-
-/* Canva source origins: My x244.83 y0; Education x496.40 y-16.16. */
-.education-heading{
-  position:absolute;
-  inset:0;
-}
-.education-my{
-  position:absolute;
-  z-index:2;
-  left:12.75cqw;
-  top:5.6cqh;
-  color:#dedede;
-  font-size:11.2cqw;
-  line-height:.76;
-  white-space:nowrap;
-  transform:rotate(-5deg);
-  transform-origin:center;
-}
-.education-word{
-  position:absolute;
-  z-index:1;
-  left:25.85cqw;
-  top:3.2cqh;
-  color:#ff751f;
-  font-family:var(--display);
-  font-size:11.55cqw;
-  font-weight:500;
-  line-height:.82;
-  letter-spacing:-.065em;
-  white-space:nowrap;
-}
-
-/* Canva list origin x227.36 y294.26, width1049.08. */
-.education-list{
-  position:absolute;
-  left:11.84cqw;
-  top:27.25cqh;
-  width:54.64cqw;
-  color:#dedede;
-  font-family:var(--sans);
-}
-.education-entry{
-  margin:0 0 2.45cqh;
-}
-.education-entry h3{
-  margin:0 0 .18cqh;
-  color:#ff751f;
-  font-size:1.03cqw;
-  font-weight:700;
-  line-height:1.13;
-}
-.education-entry p{
-  margin:0 0 .14cqh;
-  color:#dedede;
-  font-size:.98cqw;
-  font-weight:400;
-  line-height:1.22;
-  letter-spacing:-.02em;
-}
-.education-entry p:last-child{margin-bottom:0}
-
-/* Divider and handwritten quote from the right-hand Canva composition. */
-.education-divider{
-  position:absolute;
-  left:71.75cqw;
-  top:28.8cqh;
-  width:1px;
-  height:62.5cqh;
-  background:rgba(230,230,230,.62);
-}
-.education-signature{
-  position:absolute;
-  left:75.2cqw;
-  top:45.4cqh;
-  width:20.5cqw;
-  margin:0;
-  color:#dedede;
-  font-size:4.15cqw;
-  line-height:1.02;
-  text-align:center;
-  transform:rotate(-4deg);
-  transform-origin:center;
-}
-
-@media(max-width:1100px){
-  .education-entry h3{font-size:1.14cqw}
-  .education-entry p{font-size:1.08cqw}
-  .education-signature{font-size:4.5cqw}
-}
-
-/* Page 5 — Work History
-   Rebuilt from the Canva page structure: overlapping handwritten Work + orange
-   History, followed by one compact single-column role block. */
-.work-canva{
-  position:relative;
-  display:block;
-  min-height:100svh;
-  height:100svh;
-  background:#161a1d;
-  color:#f2f2f2;
-  overflow:hidden;
-}
-.work-canva::before{display:none}
-.work-stage{
-  position:absolute;
-  inset:0;
-  container-type:size;
-}
-
-/* Canva text origins:
-   Work x244.83 y40.19
-   History x590.06 y21.40 */
-.work-heading{
-  position:absolute;
-  inset:0;
-}
-.work-word{
-  position:absolute;
-  z-index:2;
-  left:13.1cqw;
-  top:4.45cqh;
-  color:#dedede;
-  font-size:10.15cqw;
-  line-height:.76;
-  white-space:nowrap;
-  transform:rotate(-4deg);
-  transform-origin:center;
-}
-.history-word{
-  position:absolute;
-  z-index:1;
-  left:30.73cqw;
-  top:1.98cqh;
-  color:#ff751f;
-  font-family:var(--display);
-  font-size:11.35cqw;
-  font-weight:500;
-  line-height:.82;
-  letter-spacing:-.065em;
-  white-space:nowrap;
-}
-
-/* Canva company pill x242.96 y311, width328.76 height52.28. */
-.work-details{
-  position:absolute;
-  left:12.65cqw;
-  top:28.8cqh;
-  width:72.5cqw;
-  color:#dedede;
-  font-family:var(--sans);
-}
-.work-company-pill{
-  display:grid;
-  place-items:center;
-  width:17.12cqw;
-  height:4.84cqh;
-  border:.1cqw solid #ff751f;
-  border-radius:999px;
-  color:#dedede;
-  font-size:.95cqw;
-  font-weight:700;
-  line-height:1;
-  text-transform:uppercase;
-}
-.work-role{
-  display:flex;
-  flex-direction:column;
-  gap:.25cqh;
-  margin-top:2.3cqh;
-  font-size:1.02cqw;
-  line-height:1.2;
-}
-.work-role strong{
-  color:#ff751f;
-  font-weight:700;
-}
-.work-role span{
-  color:#dedede;
-  font-weight:400;
-}
-.work-details h3{
-  margin:2.65cqh 0 1.4cqh;
-  color:#ff751f;
-  font-size:1.02cqw;
-  font-weight:700;
-  line-height:1.1;
-}
-.work-details p{
-  width:100%;
-  margin:0;
-  color:#dedede;
-  font-size:.94cqw;
-  line-height:1.28;
-  letter-spacing:-.018em;
-}
-.work-responsibilities{
-  width:100%;
-  margin:0;
-  padding-left:1.25cqw;
-  columns:1;
-  color:#dedede;
-  font-size:.9cqw;
-  line-height:1.22;
-}
-.work-responsibilities li{
-  margin:0 0 .34cqh;
-  break-inside:avoid;
-}
-
-@media(max-width:1100px){
-  .work-word{font-size:9.2cqw}
-  .history-word{font-size:12cqw}
-  .work-details{width:74cqw}
-  .work-role,
-  .work-details h3{font-size:1.15cqw}
-  .work-details p,
-  .work-responsibilities{font-size:1.04cqw}
-}
-
-/* Page 4 — Skills & Expertise
-   Structured to mirror the Canva reference rather than the legacy card layout. */
-.skills-canva{
-  position:relative;
-  display:block;
-  min-height:100svh;
-  height:100svh;
-  background:#161a1d;
-  color:#f2f2f2;
-  overflow:hidden;
-}
-.skills-canva::before{display:none}
-.skills-stage{
-  position:absolute;
-  inset:0;
-  container-type:size;
-}
-
-/* Shared skill-group treatment */
-.skill-group{
-  position:absolute;
-  margin:0;
-  color:#dedede;
-}
-.skill-group h3{
-  position:absolute;
-  margin:0;
-  display:grid;
-  place-items:center;
-  height:4.84cqh;
-  border:.1cqw solid #ff751f;
-  border-radius:999px;
-  color:#dedede;
-  font-family:var(--sans);
-  font-size:.94cqw;
-  font-weight:700;
-  line-height:1;
-  white-space:nowrap;
-}
-.skill-group ul{
-  position:absolute;
-  margin:0;
-  padding-left:1.15cqw;
-  color:#dedede;
-  font-family:var(--sans);
-  font-size:.91cqw;
-  font-weight:400;
-  line-height:1.28;
-}
-.skill-group li{margin:0 0 .25cqh}
-
-/* Canva coordinates:
-   platform label x108 y108; list x484.25 y108
-   technical label x1092.72 y108.86; list x1482.22 y108
-   systems label x1092.72 y498.02; list x1482.22 y498.02 */
-.skill-platform{
-  left:5.625cqw;
-  top:10cqh;
-  width:39.7cqw;
-  height:34.8cqh;
-}
-.skill-platform h3{
-  left:0;
-  top:0;
-  width:17.12cqw;
-}
-.skill-platform ul{
-  left:19.6cqw;
-  top:0;
-  width:20.2cqw;
-}
-
-.skill-technical{
-  left:56.912cqw;
-  top:10cqh;
-  width:37.5cqw;
-  height:34.8cqh;
-}
-.skill-technical h3{
-  left:0;
-  top:0;
-  width:16.04cqw;
-}
-.skill-technical ul{
-  left:20.29cqw;
-  top:0;
-  width:17.18cqw;
-}
-
-.skill-systems{
-  left:56.912cqw;
-  top:46.11cqh;
-  width:37.5cqw;
-  height:28.5cqh;
-}
-.skill-systems h3{
-  left:0;
-  top:0;
-  width:16.04cqw;
-}
-.skill-systems ul{
-  left:20.29cqw;
-  top:0;
-  width:17.18cqw;
-}
-
-/* Large lower-left statement from the Canva layout. */
-.skills-heading{
-  position:absolute;
-  left:5.625cqw;
-  top:48.3cqh;
-  margin:0;
-  color:#ff751f;
-  font-family:var(--display);
-  font-size:10.25cqw;
-  font-weight:500;
-  line-height:.72;
-  letter-spacing:-.07em;
-}
-
-/* Handwritten problem-solver statement. */
-.skills-signature{
-  position:absolute;
-  left:40.75cqw;
-  top:77.8cqh;
-  width:40.4cqw;
-  margin:0;
-  color:#dedede;
-  font-size:3.8cqw;
-  line-height:.76;
-  transform:rotate(-6deg);
-  transform-origin:center;
-  white-space:nowrap;
-}
-
-@media(max-width:1100px){
-  .skill-group ul{font-size:1.08cqw}
-  .skill-group h3{font-size:1.06cqw}
-  .skills-signature{font-size:4.2cqw}
-}
-
-/* Subtle slide-to-slide divider */
+.panel::before{display:none}
 .panel::after{
   content:"";
   position:absolute;
@@ -885,10 +44,419 @@ main{width:100%}.panel{position:relative;min-height:100vh;padding:var(--section-
   bottom:0;
   height:1px;
   pointer-events:none;
-  background:linear-gradient(90deg,transparent 0%,rgba(255,255,255,.08) 18%,rgba(255,117,31,.38) 50%,rgba(255,255,255,.08) 82%,transparent 100%);
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.08) 18%,rgba(255,117,31,.38) 50%,rgba(255,255,255,.08) 82%,transparent);
+}
+.progress{position:fixed;inset:0 0 auto;height:3px;z-index:1000;background:transparent}
+.progress span{display:block;height:100%;width:0;background:var(--accent)}
+.media-slot{
+  position:relative;
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+  background:#202428 center/cover no-repeat;
+}
+.media-slot>span{
+  font-family:var(--mono);
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.15em;
+  color:rgba(255,255,255,.55);
+}
+.media-slot.has-image>span,.project-media.has-video>span{display:none}
+.project-media video{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:1;
+}
+.signature-text{font-family:var(--script);font-weight:400;font-style:normal}
+.signature-font-loading .signature-text{visibility:hidden}
+.fonts-loading .hero-canva h1,
+.fonts-loading .hero-canva .hero-kicker,
+.fonts-loading .hero-canva .pill{visibility:hidden}
+
+/* Hero */
+.hero-canva{
+  --hero-bg:#161a1d;
+  --hero-orange:#ff751f;
+  --hero-light:#d9d9d9;
+  height:100svh;
+  min-height:100svh;
+  background:var(--hero-bg);
+  color:var(--hero-light);
+  isolation:isolate;
+}
+.hero-canva h1{
+  position:absolute;z-index:1;top:7.2%;left:50%;transform:translateX(-50%);
+  width:max-content;margin:0;color:var(--hero-orange);font-family:var(--display);
+  font-size:clamp(150px,15.2vw,295px);font-weight:500;line-height:.9;
+  letter-spacing:-.055em;text-align:center;white-space:nowrap;
+}
+.hero-canva h1 span{color:inherit}
+.hero-canva .hero-kicker{
+  position:absolute;z-index:5;top:4.1%;left:42.7%;transform:translateX(-50%);
+  width:clamp(360px,21.72vw,430px);max-width:none;color:var(--hero-light);
+  font-size:clamp(15px,1.22vw,25px);line-height:1.42;letter-spacing:-.035em;text-align:center;
+}
+.hero-scribble{
+  position:absolute;z-index:3;top:15.2%;left:18.2%;color:var(--hero-light);
+  font-size:clamp(150px,12vw,230px);line-height:.8;white-space:nowrap;pointer-events:none;
+}
+.hero-person{
+  position:absolute;z-index:2;left:50%;bottom:-1.2%;transform:translateX(-50%);
+  width:clamp(455px,28.2vw,555px);height:auto;display:block;object-fit:contain;
+  object-position:center bottom;filter:drop-shadow(0 14px 24px rgba(0,0,0,.18));
+}
+.hero-canva .pill{
+  position:absolute;z-index:5;min-width:270px;padding:15px 30px;
+  border:2px solid var(--hero-orange);border-radius:999px;background:transparent;
+  color:var(--hero-light);font-size:clamp(15px,1.1vw,22px);line-height:1;
+  letter-spacing:-.03em;text-align:center;
+}
+.hero-canva .pill-left{left:19.6%;top:47.2%}
+.hero-canva .pill-right{right:15.6%;top:62.5%}
+.hero-canva .hello-signature{
+  position:absolute;z-index:6;left:50%;bottom:19.2%;transform:translateX(-50%);
+  margin:0;color:#fff;font-size:clamp(58px,5.7vw,112px);line-height:.8;white-space:nowrap;
+}
+.hero-scroll{
+  position:absolute;z-index:8;right:5.2vw;bottom:5.2vh;display:flex;flex-direction:column;
+  align-items:center;color:var(--accent);text-decoration:none;user-select:none;
+}
+.scroll-arrows{display:flex;flex-direction:column;align-items:center;gap:1px}
+.scroll-arrows i{
+  width:22px;height:22px;border-right:2.5px solid currentColor;border-bottom:2.5px solid currentColor;
+  transform:rotate(45deg);opacity:.16;transition:.18s ease;margin-top:-5px;
+}
+.scroll-arrows i:first-child{margin-top:0}
+.scroll-arrows i.is-active{opacity:1;filter:drop-shadow(0 0 8px rgba(255,117,31,.9));transform:rotate(45deg) scale(1.12)}
+.hero-scroll:hover .scroll-arrows i{opacity:.7}
+
+/* Slide 2 — Contents */
+.contents-canva{height:100svh;min-height:100svh;background:var(--slide-bg)}
+.contents-stage{
+  position:absolute;left:50%;top:50%;width:min(100%,calc(100svh * 16 / 9));
+  aspect-ratio:16/9;transform:translate(-50%,-50%);container-type:size;
+}
+.toc-title{position:absolute;inset:0}
+.toc-title-main{
+  position:absolute;z-index:1;left:5.5276%;top:5.1193%;color:var(--accent);
+  font-family:var(--display);font-size:12cqw;font-weight:500;line-height:.82;
+  letter-spacing:-.065em;white-space:nowrap;
+}
+.toc-title-signature{
+  position:absolute;z-index:3;left:5.625%;top:18.3145%;color:#d6d6d6;
+  font-size:10.9cqw;line-height:.8;white-space:nowrap;
+}
+.toc-columns{position:absolute;inset:0}
+.toc-column{position:absolute;top:60.416%;display:grid;row-gap:3.2cqh}
+.toc-column:nth-child(1){left:5.625%;width:25cqw}
+.toc-column:nth-child(2){left:34.115%;width:27cqw}
+.toc-column:nth-child(3){left:64.833%;width:29.5cqw}
+.toc-column a{
+  display:grid;grid-template-columns:4.34cqw 1fr;align-items:center;column-gap:2.067cqw;
+  height:7.714cqh;color:#d3d3d3;text-decoration:none;transition:.2s ease;
+}
+.toc-column a:hover{color:var(--accent);transform:translateX(.25cqw)}
+.toc-column b{
+  display:grid;place-items:center;width:4.34cqw;aspect-ratio:1;border:.078cqw solid var(--accent);
+  border-radius:50%;font-size:1.28cqw;font-weight:400;line-height:1;
+}
+.toc-column span{font-size:1.36cqw;font-weight:400;line-height:1.12;letter-spacing:-.035em}
+
+/* Slide 3 — About */
+.about-canva{height:100svh;min-height:100svh;background:var(--slide-bg)}
+.about-stage{position:absolute;inset:0;width:100%;height:100%;container-type:size}
+.about-photo{
+  position:absolute;left:4.85cqw;top:8.6cqh;width:25.9cqw;height:79.5cqh!important;
+  background-position:center 42%!important;filter:grayscale(1) contrast(1.03);
+}
+.about-note{
+  position:absolute;z-index:3;left:28.9cqw;top:3.2cqh;width:19.4cqw;color:#d7d7d7;
+  font-size:4.2cqw;line-height:.68;text-align:center;transform:rotate(-6deg);transform-origin:center;
+}
+.about-copy{position:absolute;inset:0}
+.about-heading{position:absolute;inset:0}
+.about-heading span{
+  position:absolute;left:46.05cqw;top:13.05cqh;color:var(--accent);font-family:var(--display);
+  font-size:13.85cqw;font-weight:500;line-height:.72;letter-spacing:-.07em;white-space:nowrap;
+}
+.about-heading em{
+  position:absolute;left:71.8cqw;top:12.9cqh;color:#dedede;font-size:13.2cqw;
+  font-weight:400;line-height:.72;white-space:nowrap;
+}
+.about-body{position:absolute;left:45.7cqw;top:36.15cqh;width:41.1cqw}
+.about-label{margin:0 0 1.65cqh;color:var(--accent);font-size:1.15cqw;font-weight:700;line-height:1}
+.about-text p{
+  margin:0 0 1.75cqh;color:#fff;font-size:1.05cqw!important;line-height:1.28!important;
+  letter-spacing:-.012em;
+}
+.about-text p:last-child{margin-bottom:0}
+.about-text strong{color:var(--accent);font-weight:700}
+
+/* Slide 4 — Skills */
+.skills-canva{height:100svh;min-height:100svh;background:var(--slide-bg)}
+.skills-stage{position:absolute;inset:0;container-type:size}
+.skill-group{position:absolute;margin:0;color:#dedede}
+.skill-group h3{
+  position:absolute;margin:0;display:grid;place-items:center;height:4.84cqh;
+  border:.1cqw solid var(--accent);border-radius:999px;color:#dedede;
+  font-size:.94cqw;font-weight:700;line-height:1;white-space:nowrap;
+}
+.skill-group ul{
+  position:absolute;margin:0;padding-left:1.15cqw;color:#dedede;font-size:.91cqw;
+  line-height:1.28;
+}
+.skill-group li{margin:0 0 .25cqh}
+.skill-platform{left:5.625cqw;top:10cqh;width:39.7cqw;height:34.8cqh}
+.skill-platform h3{left:0;top:0;width:17.12cqw}
+.skill-platform ul{left:19.6cqw;top:0;width:20.2cqw}
+.skill-technical{left:56.912cqw;top:10cqh;width:37.5cqw;height:34.8cqh}
+.skill-technical h3{left:0;top:0;width:16.04cqw}
+.skill-technical ul{left:20.29cqw;top:0;width:17.18cqw}
+.skill-systems{left:56.912cqw;top:46.11cqh;width:37.5cqw;height:28.5cqh}
+.skill-systems h3{left:0;top:0;width:16.04cqw}
+.skill-systems ul{left:20.29cqw;top:0;width:17.18cqw}
+.skills-heading{
+  position:absolute;left:5.625cqw;top:48.3cqh;margin:0;color:var(--accent);
+  font-family:var(--display);font-size:10.25cqw;font-weight:500;line-height:.72;letter-spacing:-.07em;
+}
+.skills-signature{
+  position:absolute;left:40.75cqw;top:77.8cqh;width:40.4cqw;margin:0;color:#dedede;
+  font-size:3.8cqw;line-height:.76;transform:rotate(-6deg);white-space:nowrap;
 }
 
+/* Slide 5 — Work History */
+.work-canva{height:100svh;min-height:100svh;background:var(--slide-bg)}
+.work-stage{position:absolute;inset:0;container-type:size}
+.work-heading{position:absolute;inset:0}
+.work-word{
+  position:absolute;z-index:2;left:13.1cqw;top:4.45cqh;color:#dedede;font-size:10.15cqw;
+  line-height:.76;white-space:nowrap;transform:rotate(-4deg);
+}
+.history-word{
+  position:absolute;z-index:1;left:30.73cqw;top:1.98cqh;color:var(--accent);
+  font-family:var(--display);font-size:11.35cqw;font-weight:500;line-height:.82;
+  letter-spacing:-.065em;white-space:nowrap;
+}
+.work-details{
+  position:absolute;left:12.65cqw;top:28.8cqh;width:72.5cqw;color:#dedede;
+}
+.work-company-pill{
+  display:grid;place-items:center;width:17.12cqw;height:4.84cqh;border:.1cqw solid var(--accent);
+  border-radius:999px;font-size:.95cqw;font-weight:700;line-height:1;text-transform:uppercase;
+}
+.work-role{display:flex;flex-direction:column;gap:.25cqh;margin-top:2.3cqh;font-size:1.02cqw;line-height:1.2}
+.work-role strong{color:var(--accent)}
+.work-details h3{margin:2.65cqh 0 1.4cqh;color:var(--accent);font-size:1.02cqw;line-height:1.1}
+.work-details p{width:100%;margin:0;color:#dedede;font-size:.94cqw;line-height:1.28;letter-spacing:-.018em}
+.work-responsibilities{
+  width:100%;margin:0;padding-left:1.25cqw;color:#dedede;font-size:.9cqw;line-height:1.22;
+}
+.work-responsibilities li{margin:0 0 .34cqh}
+
+/* Slide 6 — Education */
+.education-canva{height:100svh;min-height:100svh;background:var(--slide-bg)}
+.education-stage{position:absolute;inset:0;container-type:size}
+.education-heading{position:absolute;inset:0}
+.education-my{
+  position:absolute;z-index:2;left:12.75cqw;top:5.6cqh;color:#dedede;font-size:11.2cqw;
+  line-height:.76;white-space:nowrap;transform:rotate(-5deg);
+}
+.education-word{
+  position:absolute;z-index:1;left:25.85cqw;top:3.2cqh;color:var(--accent);
+  font-family:var(--display);font-size:11.55cqw;font-weight:500;line-height:.82;
+  letter-spacing:-.065em;white-space:nowrap;
+}
+.education-list{position:absolute;left:7.7cqw;top:27.8cqh;width:57.4cqw;color:#dedede}
+.education-entry{margin:0 0 2.45cqh}
+.education-entry h3{margin:0 0 .18cqh;color:var(--accent);font-size:1.03cqw;font-weight:700;line-height:1.13}
+.education-entry p{margin:0 0 .14cqh;color:#dedede;font-size:.98cqw;line-height:1.22;letter-spacing:-.02em}
+.education-entry p:last-child{margin-bottom:0}
+.education-divider{
+  position:absolute;left:71.75cqw;top:28.8cqh;width:1px;height:62.5cqh;background:rgba(230,230,230,.62);
+}
+.education-signature{
+  position:absolute;left:75.2cqw;top:45.4cqh;width:20.5cqw;margin:0;color:#dedede;
+  font-size:4.15cqw;line-height:1.02;text-align:center;transform:rotate(-4deg);
+}
+
+/* Slide 7 — Project intro */
+.project-intro-canva{height:100svh;min-height:100svh;background:var(--slide-bg)}
+.project-intro-stage{position:absolute;inset:0;container-type:size}
+.project-intro-copy{position:absolute;inset:0 36.5cqw 0 0}
+.project-intro-copy h2{
+  position:absolute;left:5.75cqw;top:23.5cqh;margin:0;color:var(--accent);
+  font-family:var(--display);font-size:8.6cqw;font-weight:500;line-height:.85;
+  letter-spacing:-.06em;white-space:nowrap;
+}
+.project-intro-signature{
+  position:absolute;left:6.2cqw;top:39.3cqh;color:#dedede;font-size:8.2cqw;
+  line-height:.8;transform:rotate(-5deg);white-space:nowrap;
+}
+.project-intro-quote{
+  position:absolute;left:25.4cqw;top:66cqh;width:34cqw;margin:0;color:#dedede;
+  font-size:3.25cqw;line-height:.82;text-align:center;transform:rotate(-7deg);
+}
+.workspace-art{
+  position:absolute;right:0;top:0;width:36.5cqw;height:100cqh;
+  background-position:center!important;
+}
+
+/* Slides 8–12 — Project details */
+.project-canva{height:100svh;min-height:100svh;background:var(--slide-bg)}
+.project-stage{position:absolute;inset:0;container-type:size}
+.project-copy{position:absolute;left:4.5cqw;top:4.6cqh;width:82cqw;color:#dedede}
+.project-copy h2{
+  margin:0 0 1.6cqh;color:var(--accent);font-size:1.26cqw;font-weight:700;
+  line-height:1.15;text-transform:uppercase;
+}
+.project-summary{margin:0;padding-left:1.3cqw;font-size:.99cqw;line-height:1.24}
+.project-summary li{margin:0 0 .35cqh}
+.project-media{
+  position:absolute;left:4.5cqw;top:25.7cqh;width:78.3cqw;height:68.2cqh;
+  border:0;border-radius:0;background-position:top center!important;
+}
+.project-preview::after{
+  content:"";position:absolute;inset:0;z-index:2;
+  background:linear-gradient(145deg,transparent 76%,rgba(0,0,0,.08));pointer-events:none;
+}
+.tag-stack{
+  position:absolute;right:3.7cqw;top:26.4cqh;width:12.8cqw;
+  display:flex;flex-direction:column;gap:2.25cqh;
+}
+.tag-stack span{
+  display:grid;place-items:center;min-height:4.9cqh;padding:.65cqh .8cqw;
+  border:.1cqw solid var(--accent);border-radius:999px;color:#dedede;
+  font-size:1.02cqw;line-height:1.05;text-align:center;
+}
+
+/* Slide 13 — Why Me */
+.why-canva{height:100svh;min-height:100svh;background:var(--slide-bg)}
+.why-stage{position:absolute;inset:0;container-type:size}
+.why-heading{position:absolute;inset:0}
+.why-word{
+  position:absolute;left:7.55cqw;top:5.8cqh;color:var(--accent);font-family:var(--display);
+  font-size:11.2cqw;font-weight:500;line-height:.8;letter-spacing:-.07em;
+}
+.why-me{
+  position:absolute;left:12.3cqw;top:16.4cqh;color:#dedede;font-size:10.8cqw;
+  line-height:.7;transform:rotate(-5deg);
+}
+.why-note{
+  position:absolute;left:38.3cqw;top:18cqh;width:20cqw;margin:0;color:#dedede;
+  font-size:3.65cqw;line-height:.8;text-align:center;transform:rotate(-6deg);
+}
+.why-copy{position:absolute;left:7.55cqw;top:42cqh;width:45.6cqw;color:#dedede}
+.why-role{margin-bottom:2.2cqh;color:var(--accent);font-size:1.15cqw;font-weight:700}
+.why-copy p{margin:0 0 2cqh;font-size:.98cqw;line-height:1.34;letter-spacing:-.015em}
+.why-copy strong{color:var(--accent)}
+.why-copy .why-statement{
+  margin-top:2.4cqh;color:var(--accent);font-size:1.35cqw;font-weight:700;line-height:1.28;
+}
+.why-photo{
+  position:absolute;right:4.1cqw;top:6.2cqh;width:34.2cqw;height:87.5cqh;
+  background-position:center top!important;
+}
+
+/* Slide 14 — Testimonials */
+.testimonials-canva{height:100svh;min-height:100svh;background:var(--slide-bg)}
+.testimonials-stage{position:absolute;inset:0;container-type:size}
+.testimonials-heading h2{
+  position:absolute;left:8.72cqw;top:4.7cqh;margin:0;color:var(--accent);
+  font-family:var(--display);font-size:7.5cqw;font-weight:500;line-height:.82;letter-spacing:-.055em;
+}
+.testimonials-signature{
+  position:absolute;left:8.72cqw;top:13.2cqh;color:#dedede;font-size:5.65cqw;
+  line-height:.78;transform:rotate(-4deg);
+}
+.testimonial-grid{
+  position:absolute;left:8.7cqw;right:5.8cqw;top:37.3cqh;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:2cqw;
+}
+.testimonial-grid blockquote{position:relative;margin:0;min-width:0;color:#dedede}
+.testimonial-grid blockquote::before,
+.testimonial-grid blockquote::after{
+  position:absolute;z-index:3;color:var(--accent);font-family:Georgia,serif;font-size:4.4cqw;
+  font-weight:700;line-height:.55;
+}
+.testimonial-grid blockquote::before{content:"“";left:.8cqw;top:-1.1cqh}
+.testimonial-grid blockquote::after{content:"”";right:1cqw;bottom:5.2cqh}
+.testimonial-grid blockquote>p{
+  min-height:16.3cqh;margin:0 0 2.4cqh;padding:2.2cqh 1.4cqw 1.5cqh;
+  border:.11cqw solid var(--accent);border-radius:.45cqw;color:#f3f3f3;
+  font-size:.9cqw;line-height:1.35;text-align:center;
+}
+.testimonial-grid footer{display:flex;flex-direction:column;gap:.75cqh;padding-left:.35cqw}
+.testimonial-grid footer strong{font-size:1.15cqw}
+.testimonial-grid footer span{color:var(--accent);font-size:.95cqw}
+.testimonial-footer{
+  position:absolute;left:8.6cqw;top:75.7cqh;margin:0;color:#dedede;
+  font-size:3.35cqw;line-height:.8;transform:rotate(-3deg);white-space:nowrap;
+}
+.linkedin-note{
+  position:absolute;left:8.6cqw;bottom:8.4cqh;margin:0;color:#dedede;
+  font-size:1.05cqw;font-weight:700;
+}
+.linkedin-note a{color:var(--accent)}
+.linkedin-mark{
+  position:absolute;right:6.2cqw;bottom:7.1cqh;color:#0a66c2;text-decoration:none;
+  font-size:2.55cqw;font-weight:700;letter-spacing:-.04em;
+}
+.linkedin-mark span{font-size:.7em;vertical-align:top}
+
+/* Slide 15 — Contact */
+.contact-canva{height:100svh;min-height:100svh;background:var(--slide-bg)}
+.contact-stage{position:absolute;inset:0;container-type:size}
+.contact-copy{position:absolute;left:6.35cqw;top:13cqh;width:61cqw}
+.contact-heading{position:relative;height:25cqh}
+.contact-heading h2{
+  margin:0;color:var(--accent);font-family:var(--display);font-size:8.9cqw;
+  font-weight:500;line-height:.82;letter-spacing:-.06em;white-space:nowrap;
+}
+.contact-signature{
+  position:absolute;left:0;top:10.8cqh;color:#dedede;font-size:6.8cqw;
+  line-height:.75;transform:rotate(-5deg);white-space:nowrap;
+}
+.contact-subhead{margin:5.2cqh 0 4.5cqh;color:#dedede;font-size:1.45cqw;font-weight:700}
+.contact-links{display:flex;flex-direction:column;gap:1.5cqh;width:21.8cqw}
+.contact-links a{
+  display:grid;place-items:center;min-height:6.8cqh;padding:.8cqh 1.2cqw;
+  border:.11cqw solid var(--accent);border-radius:999px;color:#dedede;
+  text-decoration:none;font-size:1.15cqw;font-weight:700;transition:.2s ease;
+}
+.contact-links a:hover{background:var(--accent);color:var(--slide-bg)}
+.contact-person{
+  position:absolute;right:0;bottom:0;width:28cqw;max-height:78cqh;object-fit:contain;object-position:right bottom;
+  filter:drop-shadow(0 12px 24px rgba(0,0,0,.25));
+}
+
+/* Footer */
+.site-footer{
+  display:flex;justify-content:space-between;gap:20px;padding:28px var(--section-pad-x);
+  background:var(--slide-bg);color:#aaa;font-family:var(--mono);font-size:11px;
+}
+.site-footer a{text-decoration:none}
+
+/* Custom cursor */
+.cursor-dot,.cursor-ring{
+  position:fixed;left:0;top:0;z-index:99999;pointer-events:none;opacity:0;will-change:transform;
+}
+@media (pointer:fine){
+  html,body,a,button,[role="button"]{cursor:none!important}
+  .cursor-dot{width:7px;height:7px;margin:-3.5px 0 0 -3.5px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px rgba(255,117,31,.65)}
+  .cursor-ring{width:34px;height:34px;margin:-17px 0 0 -17px;border:1.5px solid rgba(255,117,31,.8);border-radius:50%}
+  body.cursor-ready .cursor-dot,body.cursor-ready .cursor-ring{opacity:1}
+  body.cursor-hover .cursor-ring{width:48px;height:48px;margin:-24px 0 0 -24px}
+}
+@media (pointer:coarse){.cursor-dot,.cursor-ring{display:none!important}}
+
+/* Tablet */
 @media(max-width:1100px){
+  :root{--section-pad-y:clamp(56px,7svh,78px);--section-pad-x:clamp(28px,5vw,56px)}
+  .panel{min-height:auto}
   .hero-canva{height:100svh;min-height:720px}
   .hero-canva h1{top:13%;font-size:clamp(110px,19vw,190px)}
   .hero-canva .hero-kicker{top:5.5%;left:50%;width:min(82vw,430px)}
@@ -898,17 +466,238 @@ main{width:100%}.panel{position:relative;min-height:100vh;padding:var(--section-
   .hero-canva .pill-left{left:6%;top:47%}
   .hero-canva .pill-right{right:5%;top:63%}
   .hero-canva .hello-signature{bottom:17%;font-size:clamp(58px,10vw,92px)}
+
+  .contents-canva,.about-canva,.skills-canva,.work-canva,.education-canva,
+  .project-intro-canva,.project-canva,.why-canva,.testimonials-canva,.contact-canva{
+    height:auto;min-height:auto;
+  }
+
+  .contents-stage,.about-stage,.skills-stage,.work-stage,.education-stage,
+  .project-intro-stage,.project-stage,.why-stage,.testimonials-stage,.contact-stage{
+    position:relative;inset:auto;left:auto;top:auto;right:auto;bottom:auto;width:100%;height:auto;
+    transform:none;aspect-ratio:auto;container-type:inline-size;
+  }
+
+  /* Contents tablet */
+  .toc-title{position:relative;inset:auto;height:clamp(180px,25vw,250px)}
+  .toc-title-main{left:0;top:0;font-size:clamp(86px,13vw,138px)}
+  .toc-title-signature{left:0;top:37%;font-size:clamp(78px,11vw,118px)}
+  .toc-columns{position:relative;inset:auto;display:grid;grid-template-columns:1fr 1fr;gap:24px 42px}
+  .toc-column,.toc-column:nth-child(1),.toc-column:nth-child(2),.toc-column:nth-child(3){
+    position:static;width:auto;display:grid;gap:14px;
+  }
+  .toc-column a{grid-template-columns:54px 1fr;height:auto;min-height:62px;column-gap:20px}
+  .toc-column b{width:52px;border-width:1.5px;font-size:15px}
+  .toc-column span{font-size:16px}
+
+  /* About tablet */
+  .about-stage{display:grid;grid-template-columns:minmax(250px,40%) 1fr;gap:5vw;align-items:start}
+  .about-photo{position:relative;left:auto;top:auto;width:100%;height:clamp(470px,66vw,680px)!important}
+  .about-note{left:26%;top:-1.2%;width:27%;font-size:6.2vw}
+  .about-copy{position:relative;inset:auto}
+  .about-heading{position:relative;inset:auto;height:180px}
+  .about-heading span{left:0;top:20px;font-size:12vw}
+  .about-heading em{left:57%;top:24px;font-size:11vw}
+  .about-body{position:relative;left:auto;top:auto;width:100%}
+  .about-label{font-size:16px;margin-bottom:16px}
+  .about-text p{font-size:15px!important;line-height:1.45!important;margin-bottom:16px}
+
+  /* Skills tablet */
+  .skills-stage{display:grid;grid-template-columns:1fr 1fr;gap:38px 46px}
+  .skill-group,.skill-platform,.skill-technical,.skill-systems{position:relative;left:auto;top:auto;width:auto;height:auto}
+  .skill-group h3{position:static;width:max-content!important;height:auto;padding:11px 18px;border-width:1.5px;font-size:13px}
+  .skill-group ul{position:static;width:auto!important;margin-top:18px;padding-left:20px;font-size:14px;line-height:1.35}
+  .skill-group li{margin-bottom:5px}
+  .skills-heading{position:relative;left:auto;top:auto;grid-column:1/-1;font-size:clamp(84px,13vw,140px)}
+  .skills-signature{position:relative;left:auto;top:auto;grid-column:1/-1;width:auto;font-size:clamp(40px,6vw,64px);white-space:normal}
+
+  /* Work tablet */
+  .work-heading{position:relative;inset:auto;height:190px}
+  .work-word{left:0;top:24px;font-size:13vw}
+  .history-word{left:24%;top:0;font-size:14vw}
+  .work-details{position:relative;left:auto;top:auto;width:100%}
+  .work-company-pill{width:220px;height:48px;border-width:1.5px;font-size:13px}
+  .work-role{font-size:15px}
+  .work-details h3{font-size:15px}
+  .work-details p,.work-responsibilities{font-size:14px;line-height:1.42}
+  .work-responsibilities{padding-left:20px}
+
+  /* Education tablet */
+  .education-stage{display:grid;grid-template-columns:minmax(0,1fr) minmax(230px,.42fr);gap:40px}
+  .education-heading{position:relative;inset:auto;grid-column:1/-1;height:180px}
+  .education-my{left:0;top:30px;font-size:13vw}
+  .education-word{left:19%;top:0;font-size:14vw}
+  .education-list{position:relative;left:auto;top:auto;width:auto}
+  .education-entry{margin-bottom:26px}
+  .education-entry h3{font-size:16px}
+  .education-entry p{font-size:14px;line-height:1.4}
+  .education-divider{display:none}
+  .education-signature{
+    position:relative;left:auto;top:auto;width:auto;align-self:center;padding-left:30px;
+    border-left:1px solid rgba(230,230,230,.5);font-size:5.6vw;
+  }
+
+  /* Project intro tablet */
+  .project-intro-stage{display:grid;grid-template-columns:1fr 44%;min-height:620px}
+  .project-intro-copy{position:relative;inset:auto;padding:60px 36px 60px 0}
+  .project-intro-copy h2{position:relative;left:auto;top:auto;font-size:10vw}
+  .project-intro-signature{position:relative;left:auto;top:auto;margin-top:-2vw;font-size:10vw}
+  .project-intro-quote{position:relative;left:auto;top:auto;width:100%;margin:90px 0 0;font-size:4.4vw}
+  .workspace-art{position:relative;right:auto;top:auto;width:100%;height:100%;min-height:620px}
+
+  /* Projects tablet */
+  .project-stage{display:grid;grid-template-columns:1fr;gap:28px}
+  .project-copy,.project-media,.tag-stack{position:relative;left:auto;right:auto;top:auto;width:auto;height:auto}
+  .project-copy h2{font-size:18px;margin-bottom:16px}
+  .project-summary{font-size:14px;line-height:1.45;padding-left:20px}
+  .project-media{aspect-ratio:16/9;min-height:0}
+  .tag-stack{flex-direction:row;flex-wrap:wrap;gap:10px}
+  .tag-stack span{min-height:42px;padding:8px 18px;border-width:1.5px;font-size:13px}
+
+  /* Why tablet */
+  .why-stage{display:grid;grid-template-columns:1fr 40%;gap:44px}
+  .why-heading{position:relative;inset:auto;height:185px}
+  .why-word{left:0;top:0;font-size:14vw}
+  .why-me{left:8%;top:82px;font-size:13vw}
+  .why-note{position:relative;left:auto;top:auto;width:auto;align-self:center;font-size:5vw}
+  .why-copy{position:relative;left:auto;top:auto;width:auto}
+  .why-role{font-size:15px}
+  .why-copy p{font-size:14px;line-height:1.48}
+  .why-copy .why-statement{font-size:19px}
+  .why-photo{position:relative;right:auto;top:auto;width:100%;height:620px;grid-column:2;grid-row:1/4}
+
+  /* Testimonials tablet */
+  .testimonials-heading{position:relative;height:180px}
+  .testimonials-heading h2{left:0;top:0;font-size:9.5vw}
+  .testimonials-signature{left:0;top:64px;font-size:7vw}
+  .testimonial-grid{position:relative;left:auto;right:auto;top:auto;grid-template-columns:1fr 1fr;gap:28px}
+  .testimonial-grid blockquote:last-child{grid-column:1/-1;max-width:70%;justify-self:center}
+  .testimonial-grid blockquote>p{min-height:0;font-size:14px;padding:28px 22px}
+  .testimonial-grid blockquote::before,.testimonial-grid blockquote::after{font-size:58px}
+  .testimonial-grid footer strong{font-size:16px}
+  .testimonial-grid footer span{font-size:14px}
+  .testimonial-footer{position:relative;left:auto;top:auto;margin:56px 0 32px;font-size:5vw;white-space:normal}
+  .linkedin-note{position:relative;left:auto;bottom:auto;font-size:14px}
+  .linkedin-mark{position:relative;right:auto;bottom:auto;display:inline-block;margin-top:24px;font-size:32px}
+
+  /* Contact tablet */
+  .contact-stage{display:grid;grid-template-columns:1fr 34%;align-items:end}
+  .contact-copy{position:relative;left:auto;top:auto;width:auto;padding:30px 0}
+  .contact-heading{height:210px}
+  .contact-heading h2{font-size:9.5vw}
+  .contact-signature{top:88px;font-size:8vw}
+  .contact-subhead{margin:28px 0;font-size:18px}
+  .contact-links{width:min(360px,100%);gap:12px}
+  .contact-links a{min-height:52px;border-width:1.5px;font-size:15px}
+  .contact-person{position:relative;right:auto;bottom:auto;width:100%;max-height:none;align-self:end}
 }
+
+/* Mobile */
 @media(max-width:650px){
+  :root{--section-pad-y:56px;--section-pad-x:20px}
+  .panel{padding:var(--section-pad-y) var(--section-pad-x)}
+  .site-footer{flex-direction:column;padding:24px 20px}
+
   .hero-canva{height:100svh;min-height:680px}
   .hero-canva h1{top:15%;font-size:23vw;letter-spacing:-.06em}
   .hero-canva .hero-kicker{top:5.5%;left:50%;width:90%;font-size:12px;line-height:1.35}
   .hero-scribble{left:3%;top:24%;font-size:31vw}
   .hero-person{width:78vw;max-width:420px;bottom:-1%}
-  .hero-canva .pill{min-width:0;width:auto;font-size:10px;padding:10px 15px}
+  .hero-canva .pill{min-width:0;font-size:10px;padding:10px 15px}
   .hero-canva .pill-left{left:5%;top:49%}
   .hero-canva .pill-right{right:4%;top:60%}
   .hero-canva .hello-signature{bottom:16%;font-size:16vw}
   .hero-scroll{right:5vw;bottom:4.5vh}
   .scroll-arrows i{width:18px;height:18px}
+
+  .toc-title{height:155px}
+  .toc-title-main{font-size:19vw}
+  .toc-title-signature{top:38%;font-size:18vw}
+  .toc-columns{grid-template-columns:1fr;gap:0}
+  .toc-column{gap:10px;margin-bottom:10px}
+  .toc-column a{grid-template-columns:48px 1fr;min-height:56px}
+  .toc-column b{width:46px;font-size:13px}
+  .toc-column span{font-size:14px}
+
+  .about-stage{display:block}
+  .about-photo{height:66svh!important;max-height:570px}
+  .about-note{left:43%;top:1%;width:55%;font-size:10vw}
+  .about-copy{margin-top:26px}
+  .about-heading{height:125px}
+  .about-heading span{left:0;top:10px;font-size:22vw}
+  .about-heading em{left:58%;top:18px;font-size:20vw}
+  .about-label{font-size:14px}
+  .about-text p{font-size:14px!important;line-height:1.5!important}
+
+  .skills-stage{grid-template-columns:1fr;gap:34px}
+  .skill-group h3{font-size:12px}
+  .skill-group ul{font-size:14px}
+  .skills-heading{font-size:22vw}
+  .skills-signature{font-size:11vw;line-height:.8}
+
+  .work-heading{height:135px}
+  .work-word{left:0;top:25px;font-size:23vw}
+  .history-word{left:25%;top:0;font-size:22vw}
+  .work-company-pill{width:190px;height:44px;font-size:12px}
+  .work-role,.work-details h3{font-size:14px}
+  .work-details p,.work-responsibilities{font-size:13.5px}
+
+  .education-stage{display:block}
+  .education-heading{height:138px}
+  .education-my{left:0;top:28px;font-size:23vw}
+  .education-word{left:18%;top:0;font-size:21vw}
+  .education-entry h3{font-size:15px}
+  .education-entry p{font-size:13.5px}
+  .education-signature{
+    margin:36px 0 0;padding:30px 0 0;border-left:0;border-top:1px solid rgba(230,230,230,.5);
+    font-size:11vw;
+  }
+
+  .project-intro-stage{display:block;min-height:0}
+  .project-intro-copy{padding:10px 0 48px}
+  .project-intro-copy h2{font-size:18vw}
+  .project-intro-signature{font-size:19vw}
+  .project-intro-quote{margin:50px 0 0;font-size:9vw}
+  .workspace-art{height:60svh;min-height:420px}
+
+  .project-copy h2{font-size:16px;line-height:1.25}
+  .project-summary{font-size:13.5px}
+  .project-media{aspect-ratio:4/3}
+  .tag-stack span{min-height:38px;padding:7px 14px;font-size:12px}
+
+  .why-stage{display:block}
+  .why-heading{height:145px}
+  .why-word{font-size:22vw}
+  .why-me{left:10%;top:63px;font-size:21vw}
+  .why-note{margin:10px auto 34px;width:80%;font-size:10vw}
+  .why-copy{width:100%}
+  .why-role{font-size:14px;line-height:1.35}
+  .why-copy p{font-size:13.5px;line-height:1.5}
+  .why-copy .why-statement{font-size:18px}
+  .why-photo{width:100%;height:68svh;max-height:650px;margin-top:32px}
+
+  .testimonials-heading{height:140px}
+  .testimonials-heading h2{font-size:14vw}
+  .testimonials-signature{top:52px;font-size:12vw}
+  .testimonial-grid{grid-template-columns:1fr;gap:30px}
+  .testimonial-grid blockquote:last-child{grid-column:auto;max-width:none}
+  .testimonial-grid blockquote::before,.testimonial-grid blockquote::after{font-size:52px}
+  .testimonial-footer{font-size:10vw}
+  .linkedin-note{font-size:13px;line-height:1.4}
+  .linkedin-mark{font-size:30px}
+
+  .contact-stage{display:flex;flex-direction:column}
+  .contact-copy{padding:0}
+  .contact-heading{height:165px}
+  .contact-heading h2{font-size:16vw;white-space:normal}
+  .contact-signature{top:80px;font-size:13vw}
+  .contact-subhead{font-size:16px;line-height:1.4}
+  .contact-links{width:100%}
+  .contact-links a{font-size:14px}
+  .contact-person{width:min(88vw,440px);align-self:flex-end;margin:34px -20px -56px 0}
+}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
 }
