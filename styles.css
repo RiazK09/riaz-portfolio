@@ -1027,33 +1027,35 @@ main{width:100%}
 .contact-copy{
   position:absolute;
   left:3cqw;
-  top:9cqh;
-  width:62cqw;
+  top:6cqh;
+  width:64cqw;
 }
-.contact-heading{position:relative;height:32cqh}
+.contact-heading{position:relative;height:39cqh}
 .contact-heading h2{
   margin:0;
   color:var(--accent);
   font-family:var(--display);
-  font-size:5.45cqw;
+  font-size:4.35cqw;
   font-weight:500;
-  line-height:.9;
-  letter-spacing:-.055em;
+  line-height:.93;
+  letter-spacing:-.05em;
 }
 .contact-signature{
   position:absolute;
   left:0;
-  top:22cqh;
+  top:30cqh;
   color:#dedede;
-  font-size:5.4cqw;
+  font-size:5.1cqw;
   line-height:.75;
   transform:rotate(-5deg);
   white-space:nowrap;
 }
 .contact-subhead{
-  margin:2.2cqh 0 3cqh;
+  width:48cqw;
+  margin:1cqh 0 2.2cqh;
   color:#dedede;
-  font-size:1.35cqw;
+  font-size:1.12cqw;
+  line-height:1.4;
   font-weight:700;
 }
 .contact-links{
@@ -1414,10 +1416,10 @@ main{width:100%}
     align-items:end;
   }
   .contact-copy{position:relative;left:auto;top:auto;width:auto;padding:18px 0}
-  .contact-heading{height:170px}
-  .contact-heading h2{font-size:8.6cqw}
-  .contact-signature{top:78px;font-size:7cqw}
-  .contact-subhead{margin:14px 0 20px;font-size:17px}
+  .contact-heading{height:225px}
+  .contact-heading h2{font-size:5.4cqw;line-height:.94}
+  .contact-signature{top:168px;font-size:6.1cqw}
+  .contact-subhead{width:100%;margin:10px 0 20px;font-size:16px;line-height:1.45}
   .contact-links{width:min(350px,100%);gap:11px}
   .contact-links a{min-height:50px;border-width:1.5px;font-size:14px}
   .contact-person{position:relative;right:auto;bottom:auto;width:100%;max-height:none}
@@ -1468,10 +1470,6 @@ main{width:100%}
   .project-case-grid p{font-size:12.5px;line-height:1.45}
 
   
-  .contact-heading{height:215px}
-  .contact-heading h2{font-size:5.8cqw;line-height:.92}
-  .contact-signature{top:145px;font-size:6.3cqw}
-
 }/* Mobile: <=767px */
 @media(max-width:767px){
   :root{
@@ -1715,15 +1713,15 @@ main{width:100%}
   /* Contact */
   .contact-stage{display:flex;flex-direction:column}
   .contact-copy{position:relative;padding:0}
-  .contact-heading{height:104px}
+  .contact-heading{height:168px}
   .contact-heading h2{
     width:100%;
-    font-size:11cqw;
-    line-height:.9;
+    font-size:8.5cqw;
+    line-height:.96;
     white-space:normal;
   }
-  .contact-signature{left:0;top:58px;font-size:8.7cqw}
-  .contact-subhead{margin:9px 0 16px;font-size:13.5px;line-height:1.45}
+  .contact-signature{left:0;top:119px;font-size:8.2cqw}
+  .contact-subhead{width:100%;margin:8px 0 16px;font-size:13px;line-height:1.48}
   .contact-links{width:100%;gap:9px}
   .contact-links a{min-height:45px;font-size:12px}
   .contact-person{
@@ -1790,10 +1788,6 @@ main{width:100%}
   .project-case-grid p{font-size:12.8px;line-height:1.5}
 
   
-  .contact-heading{height:150px}
-  .contact-heading h2{font-size:9.6cqw;line-height:.94}
-  .contact-signature{top:106px;font-size:8.5cqw}
-
 }/* Very small phones */
 @media(max-width:390px){
   :root{--content-width:87vw}
