@@ -1911,7 +1911,31 @@ body.menu-open .menu-toggle{
   }
 
   /* About */
-  .about-heading{order:1}
+  .about-heading{
+    order:1;
+    position:relative;
+    display:block;
+    width:100%;
+    height:124px;
+    margin:0 0 20px;
+    text-align:center;
+  }
+  .about-heading span{
+    position:absolute!important;
+    left:50%!important;
+    top:0!important;
+    transform:translateX(-50%)!important;
+    font-size:16cqw!important;
+    line-height:.82!important;
+  }
+  .about-heading em{
+    position:absolute!important;
+    left:50%!important;
+    top:41%!important;
+    transform:translateX(-50%) rotate(-4deg)!important;
+    font-size:14.5cqw!important;
+    line-height:.8!important;
+  }
   .about-photo{
     order:2;
     position:relative;left:auto;top:auto;
@@ -1921,7 +1945,7 @@ body.menu-open .menu-toggle{
     background-position:center 30%!important;
   }
   .about-note{
-    top:calc(var(--r-title) + 74px);
+    top:152px;
     right:3%;left:auto;
     width:48%;
     font-size:clamp(28px,7.2vw,34px);
