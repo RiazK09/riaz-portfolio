@@ -317,17 +317,6 @@ main{width:100%}
   line-height:1.4;
   text-align:center;
 }
-.hero-value-line{
-  display:block;
-  margin-top:1.1cqh;
-  color:var(--accent);
-  font-family:var(--mono);
-  font-size:clamp(9px,.58cqw,11px);
-  font-weight:500;
-  line-height:1.35;
-  letter-spacing:.075em;
-  white-space:nowrap;
-}
 .hero-scribble{
   position:absolute;
   z-index:3;
@@ -909,23 +898,6 @@ main{width:100%}
   line-height:.7;
   transform:rotate(-5deg);
 }
-.why-note{
-  position:absolute;
-  left:29cqw;
-  top:19cqh;
-  width:29cqw;
-  margin:0;
-  padding:1.1cqh 1cqw;
-  border-top:1px solid rgba(255,117,31,.5);
-  border-bottom:1px solid rgba(255,117,31,.22);
-  color:var(--text-soft);
-  font-family:var(--mono);
-  font-size:.68cqw;
-  font-weight:500;
-  line-height:1.45;
-  letter-spacing:.06em;
-  text-align:center;
-}
 .why-copy{
   position:absolute;
   left:2.8cqw;
@@ -1378,16 +1350,7 @@ main{width:100%}
   .why-heading{grid-area:heading;position:relative;height:155px}
   .why-word{left:0;top:0;font-size:13cqw}
   .why-me{left:8%;top:74px;font-size:11cqw}
-  .why-note{
-    grid-area:note;
-    position:relative;
-    left:auto;top:auto;
-    width:100%;
-    margin:0;
-    font-size:4.4cqw;
-    text-align:center;
-  }
-  .why-copy{grid-area:copy;position:relative;left:auto;top:auto;width:100%}
+    .why-copy{grid-area:copy;position:relative;left:auto;top:auto;width:100%}
   .why-role{font-size:14px}
   .why-copy p{font-size:13.5px;line-height:1.5}
   .why-copy .why-statement{font-size:18px}
@@ -1461,8 +1424,7 @@ main{width:100%}
 
   .menu-toggle-label{font-size:12px}
 
-  .hero-value-line{font-size:10px;margin-top:8px}
-
+  
   .engineering-workflow{
     position:relative;
     left:auto;right:auto;bottom:auto;
@@ -1505,12 +1467,7 @@ main{width:100%}
   .project-case-grid span{font-size:10px}
   .project-case-grid p{font-size:12.5px;line-height:1.45}
 
-  .why-note{
-    font-size:11px;
-    line-height:1.45;
-    transform:none;
-  }
-
+  
   .contact-heading{height:215px}
   .contact-heading h2{font-size:5.8cqw;line-height:.92}
   .contact-signature{top:145px;font-size:6.3cqw}
@@ -1714,19 +1671,7 @@ main{width:100%}
     transform:translateX(-50%) rotate(-5deg);
     font-size:14.5cqw;
   }
-  .why-note{
-    order:2;
-    position:relative;
-    width:88%;
-    margin:0 auto 26px;
-    padding:16px 10px 13px;
-    border-top:1px solid rgba(255,117,31,.45);
-    border-bottom:1px solid rgba(255,117,31,.22);
-    font-size:7.8cqw;
-    line-height:.86;
-    text-align:center;
-  }
-  .why-copy{order:3;position:relative;width:100%}
+    .why-copy{order:3;position:relative;width:100%}
   .why-role{font-size:13px;line-height:1.42}
   .why-copy p{font-size:12.8px;line-height:1.54}
   .why-copy .why-statement{font-size:16.5px}
@@ -1799,13 +1744,7 @@ main{width:100%}
 
   .menu-toggle-label{font-size:11px}
 
-  .hero-value-line{
-    max-width:74cqw;
-    margin:7px auto 0;
-    font-size:8px;
-    white-space:normal;
-  }
-
+  
   .engineering-workflow{
     order:5;
     position:relative;
@@ -1850,14 +1789,7 @@ main{width:100%}
   .project-case-grid span{font-size:9.5px}
   .project-case-grid p{font-size:12.8px;line-height:1.5}
 
-  .why-note{
-    font-family:var(--mono);
-    font-size:9.5px;
-    line-height:1.5;
-    letter-spacing:.04em;
-    transform:none;
-  }
-
+  
   .contact-heading{height:150px}
   .contact-heading h2{font-size:9.6cqw;line-height:.94}
   .contact-signature{top:106px;font-size:8.5cqw}
