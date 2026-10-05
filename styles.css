@@ -1858,7 +1858,7 @@ body.menu-open .menu-toggle{
     margin-top:22px;
   }
   .hello-signature{
-    bottom:8%;
+    bottom:11%;
     font-size:clamp(42px,11vw,52px);
   }
 
