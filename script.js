@@ -107,6 +107,7 @@ const navTargetMap = {
   skills: 'skills',
   work: 'work',
   education: 'education',
+  'what-i-bring': 'what-i-bring',
   projects: 'projects',
   'project-1': 'projects',
   'project-2': 'projects',
