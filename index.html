@@ -12,8 +12,8 @@
   <link rel="preload" href="https://db.onlinewebfonts.com/t/2cb6945e21496bb0e860b0e319af7dfc.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/hero-cutout.png" as="image" fetchpriority="high">
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261005-rebrand01" />
-    <!-- deploy-version:20261005-rebrand01 -->
+  <link rel="stylesheet" href="styles.css?v=20261005-evidence01" />
+    <!-- deploy-version:20261005-evidence01 -->
 </head>
 <body>
   <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
@@ -37,10 +37,11 @@
         <a href="#skills" data-nav-target="skills"><b>02</b><span>Skills &amp; Expertise</span></a>
         <a href="#work" data-nav-target="work"><b>03</b><span>Work History</span></a>
         <a href="#education" data-nav-target="education"><b>04</b><span>My Education</span></a>
-        <a href="#projects" data-nav-target="projects"><b>05</b><span>Web &amp; Platform Projects</span></a>
-        <a href="#why" data-nav-target="why"><b>06</b><span>Why Me?</span></a>
-        <a href="#testimonials" data-nav-target="testimonials"><b>07</b><span>Testimonials</span></a>
-        <a href="#contact" data-nav-target="contact"><b>08</b><span>Get In Touch</span></a>
+        <a href="#what-i-bring" data-nav-target="what-i-bring"><b>05</b><span>What I Bring</span></a>
+        <a href="#projects" data-nav-target="projects"><b>06</b><span>Web &amp; Platform Projects</span></a>
+        <a href="#why" data-nav-target="why"><b>07</b><span>Why Me?</span></a>
+        <a href="#testimonials" data-nav-target="testimonials"><b>08</b><span>Testimonials</span></a>
+        <a href="#contact" data-nav-target="contact"><b>09</b><span>Get In Touch</span></a>
       </div>
     </nav>
   </div>
@@ -48,7 +49,7 @@
   <main>
     <section class="panel hero hero-canva" id="home" data-section="01">
       <div class="hero-stage section-stage">
-        <div class="hero-kicker">SOFTWARE ENGINEER<br>&amp; FULL-STACK DEVELOPER</div>
+        <div class="hero-kicker">SOFTWARE ENGINEER<br>&amp; FULL-STACK DEVELOPER<span class="hero-value-line">BUSINESS REQUIREMENT → PRODUCTION SYSTEM</span></div>
         <div class="hero-scribble signature-text" aria-hidden="true">My</div>
         <h1>Portfolio<span>.</span></h1>
         <img class="hero-person" src="assets/hero-cutout.png" alt="Riaz Karolia in formal wear" fetchpriority="high" decoding="async" />
@@ -78,12 +79,13 @@
           </div>
           <div class="toc-column">
             <a href="#education"><b>04</b><span>MY<br>EDUCATION</span></a>
-            <a href="#projects"><b>05</b><span>WEB &amp; PLATFORM<br>PROJECTS</span></a>
-            <a href="#why"><b>06</b><span>WHY ME?</span></a>
+            <a href="#what-i-bring"><b>05</b><span>WHAT I<br>BRING</span></a>
+            <a href="#projects"><b>06</b><span>WEB &amp; PLATFORM<br>PROJECTS</span></a>
           </div>
           <div class="toc-column">
-            <a href="#testimonials"><b>07</b><span>CLIENT TESTIMONIALS<br>&amp; COLLABORATIONS</span></a>
-            <a href="#contact"><b>08</b><span>GET IN TOUCH</span></a>
+            <a href="#why"><b>07</b><span>WHY ME?</span></a>
+            <a href="#testimonials"><b>08</b><span>CLIENT TESTIMONIALS<br>&amp; COLLABORATIONS</span></a>
+            <a href="#contact"><b>09</b><span>GET IN TOUCH</span></a>
           </div>
         </div>
       </div>
@@ -162,7 +164,14 @@
           </ul>
         </article>
 
-        <p class="skills-signature signature-text">I turn complexity into systems that work.</p>
+        <div class="engineering-workflow" aria-label="Modern engineering workflow">
+          <span>AI-assisted development</span>
+          <span>Git &amp; GitHub</span>
+          <span>Automated testing</span>
+          <span>Production debugging</span>
+          <span>MCP &amp; developer tooling</span>
+          <span>Code review &amp; documentation</span>
+        </div>
       </div>
     </section>
 
@@ -242,103 +251,140 @@
         </div>
 
         <div class="education-divider" aria-hidden="true"></div>
-        <p class="education-signature signature-text">I’ve changed paths.<br>I’ve kept the<br>engineering mindset.</p>
+        <div class="education-proof" aria-label="Software Engineering performance">
+          <div><strong>100%</strong><span>Software Engineering average</span></div>
+          <div><strong>#1 / 112</strong><span>Bootcamp ranking</span></div>
+        </div>
       </div>
     </section>
 
-    <section class="panel project-intro-canva" id="projects" data-section="07">
+    <section class="panel value value-canva" id="what-i-bring" data-section="07">
+      <div class="value-stage section-stage">
+        <div class="value-heading">
+          <span class="value-kicker">WHAT I BRING</span>
+          <h2>More ownership.<br>Fewer hand-offs.</h2>
+        </div>
+
+        <div class="value-grid">
+          <article>
+            <b>01</b>
+            <h3>Understand the business</h3>
+            <p>Clarify the requirement, users, constraints, dependencies, and what success actually needs to look like.</p>
+          </article>
+          <article>
+            <b>02</b>
+            <h3>Design the solution</h3>
+            <p>Choose a practical architecture, platform, integration path, and delivery approach around the real problem.</p>
+          </article>
+          <article>
+            <b>03</b>
+            <h3>Build &amp; ship</h3>
+            <p>Stay hands-on through development, QA, release readiness, deployment, and the details that determine whether it works.</p>
+          </article>
+          <article>
+            <b>04</b>
+            <h3>Own production</h3>
+            <p>Diagnose failures, optimise performance, support live systems, and keep improving what happens after launch.</p>
+          </article>
+        </div>
+
+        <p class="value-outcome">The value to the business: fewer gaps between the person who understands the requirement and the person accountable for what goes live.</p>
+      </div>
+    </section>
+
+    <section class="panel project-intro-canva" id="projects" data-section="08">
       <div class="project-intro-stage section-stage">
         <div class="project-intro-copy">
           <h2>Web &amp; Platform</h2>
           <div class="project-intro-signature signature-text">Projects</div>
-          <p class="project-intro-quote signature-text">I don’t just build pretty websites. I<br>build systems that drive business.</p>
+          <p class="project-intro-quote">Selected work across client platforms, e-commerce, custom functionality and end-to-end delivery.</p>
         </div>
         <div class="workspace-art media-slot has-image" style="background-image:url('assets/workspace-generated.webp')" role="img" aria-label="Warm modern developer workstation with coding setup"></div>
       </div>
     </section>
 
-    <section class="panel project project-canva" id="project-1" data-section="08">
+    <section class="panel project project-canva" id="project-1" data-section="09">
       <div class="project-stage section-stage">
         <div class="project-copy">
           <h2>PROJECT 01 - CLOUD FACTION - E-COMMERCE WEBSITE REVAMP</h2>
-          <ul class="project-summary">
-            <li>Led a full WordPress and WooCommerce rebuild to modernise the brand and introduce a gated reseller pricing model.</li>
-            <li>Designed and developed the website end-to-end, aligning the user experience with the client’s B2B sales workflow.</li>
-            <li>Built a custom WooCommerce approval plugin controlling price visibility and purchasing access, including registration capture, admin approval workflows, reCAPTCHA protection, and automated notifications.</li>
-          </ul>
+          <div class="project-case-grid">
+            <div><span>BUSINESS NEED</span><p>Modernise the storefront while supporting a reseller-only B2B pricing and purchasing workflow.</p></div>
+            <div><span>MY OWNERSHIP</span><p>Led the WordPress/WooCommerce rebuild end-to-end across UX, implementation, workflow design, and delivery.</p></div>
+            <div><span>DELIVERY</span><p>Built a custom approval plugin controlling price visibility and purchasing access, with registration capture, admin approval, reCAPTCHA, and automated notifications.</p></div>
+          </div>
         </div>
         <div class="project-media media-slot project-preview project-one" data-asset="project-cloud-faction.jpg" data-video="project-cloud-faction.mp4"><span>Project preview</span></div>
         <div class="tag-stack"><span>WordPress</span><span>WooCommerce</span><span>Elementor</span><span>Custom Plugin</span><span>E-Commerce</span></div>
       </div>
     </section>
 
-    <section class="panel project project-canva" id="project-2" data-section="09">
+    <section class="panel project project-canva" id="project-2" data-section="10">
       <div class="project-stage section-stage">
         <div class="project-copy">
-          <h2>PROJECT 02 – LITTLE LANTERNS – BRAND &amp; SERVICE WEBSITE</h2>
-          <ul class="project-summary">
-            <li>Led the full design and development of a neuroscience-informed coaching website for a GCC-based client.</li>
-            <li>Structured the UX, visual identity, and Elementor build to create a calm, trust-focused experience aligned with the brand.</li>
-            <li>Delivered a conversion-focused service website designed to support enquiries and long-term business growth.</li>
-          </ul>
+          <h2>PROJECT 02 – LITTLE LANTERNS – BRAND & SERVICE WEBSITE</h2>
+          <div class="project-case-grid">
+            <div><span>BUSINESS NEED</span><p>Create a credible digital home for a neuroscience-informed coaching service serving a GCC-based audience.</p></div>
+            <div><span>MY OWNERSHIP</span><p>Led UX structure, visual direction, responsive implementation, and the full Elementor build.</p></div>
+            <div><span>DELIVERY</span><p>Delivered an enquiry-focused service platform aligned to the client’s brand, content, and customer journey.</p></div>
+          </div>
         </div>
         <div class="project-media media-slot project-preview project-two" data-asset="project-little-lanterns.jpg" data-video="project-little-lanterns.mp4"><span>Project preview</span></div>
         <div class="tag-stack"><span>WordPress</span><span>Elementor</span><span>UX Strategy</span><span>Brand Alignment</span><span>Responsive Design</span><span>Site Performance</span><span>Graphic Design</span></div>
       </div>
     </section>
 
-    <section class="panel project project-canva" id="project-3" data-section="10">
+    <section class="panel project project-canva" id="project-3" data-section="11">
       <div class="project-stage section-stage">
         <div class="project-copy">
           <h2>PROJECT 03 – THE GHETTO — SHOPIFY E-COMMERCE STORE</h2>
-          <ul class="project-summary">
-            <li>Handled the full Shopify setup and design for The Ghetto fashion store.</li>
-            <li>Built the storefront, customised the theme, and configured products, collections, payments, and shipping.</li>
-            <li>Delivered a complete e-commerce store ready for live retail operations.</li>
-          </ul>
+          <div class="project-case-grid">
+            <div><span>BUSINESS NEED</span><p>Take a fashion brand from product catalogue requirements to a complete online retail storefront.</p></div>
+            <div><span>MY OWNERSHIP</span><p>Handled the full Shopify setup, storefront structure, theme customisation, product architecture, and launch configuration.</p></div>
+            <div><span>DELIVERY</span><p>Configured products, collections, payments, and shipping into a responsive store ready for live retail operations.</p></div>
+          </div>
         </div>
         <div class="project-media media-slot project-preview project-three" data-asset="project-the-ghetto.jpg" data-video="project-the-ghetto.mp4"><span>Project preview</span></div>
         <div class="tag-stack"><span>Shopify</span><span>E-Commerce</span><span>Store Setup</span><span>SEO</span><span>Responsive Design</span><span>Theme Customisation</span></div>
       </div>
     </section>
 
-    <section class="panel project project-canva" id="project-4" data-section="11">
+    <section class="panel project project-canva" id="project-4" data-section="12">
       <div class="project-stage section-stage">
         <div class="project-copy">
           <h2>PROJECT 04 – WEDDING EVENT WEBSITE TEMPLATE</h2>
-          <ul class="project-summary">
-            <li>Designed and developed a modern wedding website template using WordPress and Elementor as a creative concept project.</li>
-            <li>Structured key sections including RSVP forms, event details, photo galleries, and location maps to simulate a real-world wedding microsite.</li>
-            <li>Demonstrated template-based architecture and elegant UI composition focused on visual storytelling and smooth user flow.</li>
-          </ul>
+          <div class="project-case-grid">
+            <div><span>BUSINESS NEED</span><p>Explore a reusable wedding microsite concept that could package key guest information into one clear experience.</p></div>
+            <div><span>MY OWNERSHIP</span><p>Designed the concept, information architecture, and responsive WordPress/Elementor implementation.</p></div>
+            <div><span>DELIVERY</span><p>Built RSVP forms, event details, galleries, and location maps into a reusable template focused on clear guest flow and visual storytelling.</p></div>
+          </div>
         </div>
         <div class="project-media media-slot project-preview project-four" data-asset="project-wedding.jpg" data-video="project-wedding.mp4"><span>Project preview</span></div>
         <div class="tag-stack"><span>WordPress</span><span>Elementor</span><span>UI Design</span><span>Responsive Design</span><span>Front-End Dev</span></div>
       </div>
     </section>
 
-    <section class="panel project project-canva" id="project-5" data-section="12">
+    <section class="panel project project-canva" id="project-5" data-section="13">
       <div class="project-stage section-stage">
         <div class="project-copy">
           <h2>PROJECT 05 – ZAAKIRAH GHANCHI COUTURE — FASHION BRAND WEBSITE</h2>
-          <ul class="project-summary">
-            <li>Designed and developed a fully custom WordPress website for a luxury couture brand, crafting a refined black-and-white visual identity with meticulous attention to layout, spacing, and typography.</li>
-            <li>Implemented e-commerce functionality, consultation booking workflows, and curated portfolio galleries to showcase bespoke bridal and eveningwear collections.</li>
-            <li>Built a responsive, conversion-focused platform optimised for product discovery, client enquiries, and search visibility using Yoast SEO.</li>
-          </ul>
+          <div class="project-case-grid">
+            <div><span>BUSINESS NEED</span><p>Create a digital platform that matched a luxury couture brand while supporting product discovery and consultation enquiries.</p></div>
+            <div><span>MY OWNERSHIP</span><p>Owned the custom WordPress design and development, including e-commerce, consultation workflows, galleries, and responsive behaviour.</p></div>
+            <div><span>DELIVERY</span><p>Delivered a structured fashion platform built around collection discovery, client enquiries, and search visibility with Yoast SEO.</p></div>
+          </div>
         </div>
         <div class="project-media media-slot project-preview project-five" data-asset="project-zaakirah.jpg" data-video="project-zaakirah.mp4"><span>Project preview</span></div>
         <div class="tag-stack"><span>WordPress</span><span>Elementor</span><span>UI/UX Design</span><span>Yoast SEO</span><span>Photoshop</span><span>Illustrator</span><span>Responsive Design</span></div>
       </div>
     </section>
 
-    <section class="panel why why-canva" id="why" data-section="13">
+    <section class="panel why why-canva" id="why" data-section="14">
       <div class="why-stage section-stage">
         <div class="why-heading" aria-label="Why Me">
           <span class="why-word">Why</span>
           <span class="why-me signature-text">Me</span>
         </div>
-        <p class="why-note signature-text">Engineering thinking.<br>Production experience.</p>
+        <p class="why-note">BUSINESS REQUIREMENT → TECHNICAL SOLUTION → BUILD &amp; QA → PRODUCTION</p>
         <div class="why-copy">
           <div class="why-role">Software Engineer | Full-Stack Developer | Technical Delivery Lead</div>
           <p>I bring something different to software engineering: I entered the discipline with years of real production responsibility already behind me. I’ve shipped client platforms, supported live systems, led technical delivery, and been accountable when things break.</p>
@@ -351,7 +397,7 @@
       </div>
     </section>
 
-    <section class="panel testimonials testimonials-canva" id="testimonials" data-section="14">
+    <section class="panel testimonials testimonials-canva" id="testimonials" data-section="15">
       <div class="testimonials-stage section-stage">
         <div class="testimonials-heading">
           <h2>Client Testimonials</h2>
@@ -373,20 +419,19 @@
           </blockquote>
         </div>
 
-        <p class="testimonial-footer signature-text">Projects I’ve built. Teams I’ve led. Clients I’ve helped succeed.</p>
         <p class="linkedin-note">Full testimonials and additional recommendations can be viewed on my <a href="https://www.linkedin.com/in/riaz-karolia/" target="_blank" rel="noopener">LinkedIn profile</a></p>
         <a class="linkedin-mark" href="https://www.linkedin.com/in/riaz-karolia/" target="_blank" rel="noopener" aria-label="Riaz Karolia on LinkedIn">LinkedIn<span>®</span></a>
       </div>
     </section>
 
-    <section class="panel contact contact-canva" id="contact" data-section="15">
+    <section class="panel contact contact-canva" id="contact" data-section="16">
       <div class="contact-stage section-stage">
         <div class="contact-copy">
           <div class="contact-heading">
-            <h2>If this feels like a fit</h2>
+            <h2>Need someone who can own<br>more than the ticket?</h2>
             <div class="contact-signature signature-text">Let’s Talk.</div>
           </div>
-          <p class="contact-subhead">If you need an engineer who can understand the system, the business, and the delivery behind it — we should speak.</p>
+          <p class="contact-subhead">I’m most useful where engineering, delivery, and business requirements meet.</p>
           <div class="contact-links">
             <a href="mailto:riazkarolia@gmail.com">riazkarolia@gmail.com</a>
             <a href="https://www.linkedin.com/in/riaz-karolia/" target="_blank" rel="noopener">linkedin.com/in/riaz-karolia/</a>
@@ -401,6 +446,6 @@
   <footer class="site-footer"><span>© <span id="year"></span> Riaz Karolia. All Rights Reserved.</span></footer>
   <div class="cursor-dot" aria-hidden="true"></div>
   <div class="cursor-ring" aria-hidden="true"></div>
-  <script src="script.js?v=20261005-rebrand01"></script>
+  <script src="script.js?v=20261005-evidence01"></script>
 </body>
 </html>
