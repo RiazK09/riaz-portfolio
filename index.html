@@ -12,30 +12,59 @@
   <link rel="preload" href="https://db.onlinewebfonts.com/t/2cb6945e21496bb0e860b0e319af7dfc.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/hero-cutout.png" as="image" fetchpriority="high">
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261002-responsive02" />
-    <!-- deploy-version:20261002-responsive02 -->
+  <link rel="stylesheet" href="styles.css?v=20261005-system01" />
+    <!-- deploy-version:20261005-system01 -->
 </head>
 <body>
   <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
 
+  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open portfolio navigation">
+    <span class="menu-toggle-lines" aria-hidden="true"><i></i><i></i></span>
+    <span class="menu-toggle-label">MENU</span>
+  </button>
+
+  <div class="site-menu" id="site-menu" aria-hidden="true">
+    <div class="site-menu-backdrop" data-menu-close></div>
+    <nav class="site-menu-panel" aria-label="Portfolio navigation">
+      <div class="site-menu-top">
+        <span class="site-menu-kicker">PORTFOLIO NAVIGATION</span>
+        <button class="menu-close" type="button" aria-label="Close portfolio navigation">CLOSE</button>
+      </div>
+      <div class="site-menu-title signature-text">Contents</div>
+      <div class="site-menu-links">
+        <a href="#home" data-nav-target="home"><b>00</b><span>Home</span></a>
+        <a href="#about" data-nav-target="about"><b>01</b><span>About Me</span></a>
+        <a href="#skills" data-nav-target="skills"><b>02</b><span>Skills &amp; Expertise</span></a>
+        <a href="#work" data-nav-target="work"><b>03</b><span>Work History</span></a>
+        <a href="#education" data-nav-target="education"><b>04</b><span>My Education</span></a>
+        <a href="#projects" data-nav-target="projects"><b>05</b><span>Web Design Projects</span></a>
+        <a href="#why" data-nav-target="why"><b>06</b><span>Why Me?</span></a>
+        <a href="#testimonials" data-nav-target="testimonials"><b>07</b><span>Testimonials</span></a>
+        <a href="#contact" data-nav-target="contact"><b>08</b><span>Get In Touch</span></a>
+      </div>
+    </nav>
+  </div>
+
   <main>
     <section class="panel hero hero-canva" id="home" data-section="01">
-      <div class="hero-kicker">FULL STACK WEB DEVELOPER<br>&amp; WORDPRESS SPECIALIST</div>
-      <div class="hero-scribble signature-text" aria-hidden="true">My</div>
-      <h1>Portfolio<span>.</span></h1>
-      <img class="hero-person" src="assets/hero-cutout.png" alt="Riaz Karolia in formal wear" fetchpriority="high" decoding="async" />
-      <div class="pill pill-left">RIAZ KAROLIA</div>
-      <div class="pill pill-right">CODING SINCE 2020</div>
-      <div class="hello-signature signature-text" aria-hidden="true">Hello World...</div>
-      <a class="hero-scroll" href="#contents" aria-label="Scroll to Table of Contents">
-        <span class="scroll-arrows" aria-hidden="true">
-          <i></i><i></i><i></i>
-        </span>
-      </a>
+      <div class="hero-stage section-stage">
+        <div class="hero-kicker">FULL STACK WEB DEVELOPER<br>&amp; WORDPRESS SPECIALIST</div>
+        <div class="hero-scribble signature-text" aria-hidden="true">My</div>
+        <h1>Portfolio<span>.</span></h1>
+        <img class="hero-person" src="assets/hero-cutout.png" alt="Riaz Karolia in formal wear" fetchpriority="high" decoding="async" />
+        <div class="pill pill-left">RIAZ KAROLIA</div>
+        <div class="pill pill-right">CODING SINCE 2020</div>
+        <div class="hello-signature signature-text" aria-hidden="true">Hello World...</div>
+        <a class="hero-scroll" href="#contents" aria-label="Scroll to Table of Contents">
+          <span class="scroll-arrows" aria-hidden="true">
+            <i></i><i></i><i></i>
+          </span>
+        </a>
+      </div>
     </section>
 
     <section class="panel contents contents-canva" id="contents" data-section="02">
-      <div class="contents-stage">
+      <div class="contents-stage section-stage">
         <div class="toc-title" aria-label="Table of Contents">
           <span class="toc-title-main">Table of</span>
           <span class="toc-title-signature signature-text">Contents</span>
@@ -61,40 +90,33 @@
     </section>
 
     <section class="panel about-canva" id="about" data-section="03">
-      <div class="about-stage">
+      <div class="about-stage section-stage">
+        <div class="about-heading" aria-label="About Me">
+          <span>About</span>
+          <em class="signature-text">Me</em>
+        </div>
+
         <div class="portrait-tall media-slot about-photo" data-asset="about-portrait.jpg" role="img" aria-label="Portrait of Riaz Karolia"><span>Portrait asset</span></div>
         <div class="about-note signature-text" aria-hidden="true">From Construction<br>to Code</div>
 
-        <div class="about-copy">
-          <div class="about-heading">
-            <span>About</span>
-            <em class="signature-text">Me</em>
-          </div>
-
-          <div class="about-body">
-            <div class="about-label">BACKGROUND</div>
-            <div class="about-text">
-              <p>I didn’t start my career in tech.</p>
-
-              <p>My foundation began in construction and quantity surveying — a discipline built on structure, precision, and long-term planning. Over time, I realised I was more drawn to building digital systems than physical ones.</p>
-
-              <p>At 26, I made the decision to pivot into technology and became a Full Stack Web Developer.</p>
-
-              <p>Today, I serve as <strong>Senior Web Developer and Head of Web Development</strong> at StudioBotics, leading the delivery of high-performance business and e-commerce platforms.</p>
-
-              <p>In April, I will begin formal studies in Software Engineering to deepen my understanding of system architecture, scalability, and backend engineering — strengthening the technical foundation behind the work I already do.</p>
-
-              <p>My path hasn’t been conventional — but it’s shaped how I think, build, and lead.</p>
-
-              <p>And that perspective is reflected in every project I touch.</p>
-            </div>
+        <div class="about-body">
+          <div class="about-label">BACKGROUND</div>
+          <div class="about-text">
+            <p>I didn’t start my career in tech.</p>
+            <p>My foundation began in construction and quantity surveying — a discipline built on structure, precision, and long-term planning. Over time, I realised I was more drawn to building digital systems than physical ones.</p>
+            <p>At 26, I made the decision to pivot into technology and became a Full Stack Web Developer.</p>
+            <p>Today, I serve as <strong>Senior Web Developer and Head of Web Development</strong> at StudioBotics, leading the delivery of high-performance business and e-commerce platforms.</p>
+            <p>In April, I will begin formal studies in Software Engineering to deepen my understanding of system architecture, scalability, and backend engineering — strengthening the technical foundation behind the work I already do.</p>
+            <p>My path hasn’t been conventional — but it’s shaped how I think, build, and lead.</p>
+            <p>And that perspective is reflected in every project I touch.</p>
           </div>
         </div>
       </div>
     </section>
 
     <section class="panel skills skills-canva" id="skills" data-section="04">
-      <div class="skills-stage">
+      <div class="skills-stage section-stage">
+        <h2 class="skills-heading">Skills &amp;<br>Expertise</h2>
         <article class="skill-group skill-platform">
           <h3>WEB PLATFORM EXPERTISE</h3>
           <ul>
@@ -140,13 +162,13 @@
           </ul>
         </article>
 
-        <h2 class="skills-heading">Skills &amp;<br>Expertise</h2>
+        
         <p class="skills-signature signature-text">At the core, I’m just a problem solver.</p>
       </div>
     </section>
 
     <section class="panel work work-canva" id="work" data-section="05">
-      <div class="work-stage">
+      <div class="work-stage section-stage">
         <div class="work-heading" aria-label="Work History">
           <span class="work-word signature-text">Work</span>
           <span class="history-word">History</span>
@@ -180,7 +202,7 @@
     </section>
 
     <section class="panel education education-canva" id="education" data-section="06">
-      <div class="education-stage">
+      <div class="education-stage section-stage">
         <div class="education-heading" aria-label="My Education">
           <span class="education-my signature-text">My</span>
           <span class="education-word">Education</span>
@@ -226,7 +248,7 @@
     </section>
 
     <section class="panel project-intro-canva" id="projects" data-section="07">
-      <div class="project-intro-stage">
+      <div class="project-intro-stage section-stage">
         <div class="project-intro-copy">
           <h2>Web Design</h2>
           <div class="project-intro-signature signature-text">Projects</div>
@@ -237,7 +259,7 @@
     </section>
 
     <section class="panel project project-canva" id="project-1" data-section="08">
-      <div class="project-stage">
+      <div class="project-stage section-stage">
         <div class="project-copy">
           <h2>PROJECT 01 - CLOUD FACTION - E-COMMERCE WEBSITE REVAMP</h2>
           <ul class="project-summary">
@@ -252,7 +274,7 @@
     </section>
 
     <section class="panel project project-canva" id="project-2" data-section="09">
-      <div class="project-stage">
+      <div class="project-stage section-stage">
         <div class="project-copy">
           <h2>PROJECT 02 – LITTLE LANTERNS – BRAND &amp; SERVICE WEBSITE</h2>
           <ul class="project-summary">
@@ -267,7 +289,7 @@
     </section>
 
     <section class="panel project project-canva" id="project-3" data-section="10">
-      <div class="project-stage">
+      <div class="project-stage section-stage">
         <div class="project-copy">
           <h2>PROJECT 03 – THE GHETTO — SHOPIFY E-COMMERCE STORE</h2>
           <ul class="project-summary">
@@ -282,7 +304,7 @@
     </section>
 
     <section class="panel project project-canva" id="project-4" data-section="11">
-      <div class="project-stage">
+      <div class="project-stage section-stage">
         <div class="project-copy">
           <h2>PROJECT 04 – WEDDING EVENT WEBSITE TEMPLATE</h2>
           <ul class="project-summary">
@@ -297,7 +319,7 @@
     </section>
 
     <section class="panel project project-canva" id="project-5" data-section="12">
-      <div class="project-stage">
+      <div class="project-stage section-stage">
         <div class="project-copy">
           <h2>PROJECT 05 – ZAAKIRAH GHANCHI COUTURE — FASHION BRAND WEBSITE</h2>
           <ul class="project-summary">
@@ -312,7 +334,7 @@
     </section>
 
     <section class="panel why why-canva" id="why" data-section="13">
-      <div class="why-stage">
+      <div class="why-stage section-stage">
         <div class="why-heading" aria-label="Why Me">
           <span class="why-word">Why</span>
           <span class="why-me signature-text">Me</span>
@@ -331,7 +353,7 @@
     </section>
 
     <section class="panel testimonials testimonials-canva" id="testimonials" data-section="14">
-      <div class="testimonials-stage">
+      <div class="testimonials-stage section-stage">
         <div class="testimonials-heading">
           <h2>Client Testimonials</h2>
           <div class="testimonials-signature signature-text">&amp; Collaborations</div>
@@ -359,7 +381,7 @@
     </section>
 
     <section class="panel contact contact-canva" id="contact" data-section="15">
-      <div class="contact-stage">
+      <div class="contact-stage section-stage">
         <div class="contact-copy">
           <div class="contact-heading">
             <h2>If this feels like a fit</h2>
@@ -380,6 +402,6 @@
   <footer class="site-footer"><span>© <span id="year"></span> Riaz Karolia. All Rights Reserved.</span></footer>
   <div class="cursor-dot" aria-hidden="true"></div>
   <div class="cursor-ring" aria-hidden="true"></div>
-  <script src="script.js?v=20261002-batch01"></script>
+  <script src="script.js?v=20261005-system01"></script>
 </body>
 </html>
