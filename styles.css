@@ -1797,11 +1797,16 @@ body.menu-open .menu-toggle{
   .skills-heading,
   .value-heading{
     width:100%;
-    min-height:var(--m-heading-lockup);
     margin:0!important;
     display:grid;
     place-items:center;
     text-align:center;
+  }
+  .value-heading{min-height:var(--m-heading-lockup)}
+  .skills-heading{
+    min-height:0;
+    padding:0;
+    margin-bottom:24px!important;
   }
   .skills-heading,
   .value-heading h2{
@@ -2048,16 +2053,37 @@ body.menu-open .menu-toggle{
   .skill-platform{order:2}
   .skill-technical{order:3}
   .skill-systems{order:4}
-  .skill-group{width:100%;margin-top:20px}
+  .skill-group{
+    width:min(330px,100%);
+    margin:28px auto 0;
+    text-align:center;
+  }
   .skills-heading + .skill-group{margin-top:0}
-  .skill-group h3{font-size:10px;padding:8px 12px}
-  .skill-group ul{margin-top:12px;padding-left:16px;font-size:12.2px;line-height:1.48}
+  .skill-group h3{
+    width:max-content!important;
+    max-width:100%;
+    margin-inline:auto;
+    font-size:10px;
+    padding:8px 12px;
+    text-align:center;
+  }
+  .skill-group ul{
+    width:max-content!important;
+    max-width:100%;
+    margin:12px auto 0;
+    padding-left:18px;
+    font-size:12.2px;
+    line-height:1.48;
+    text-align:left;
+  }
+  .skill-group li{padding-left:2px}
   .skill-systems ul{columns:1}
   .engineering-workflow{
     order:5;
+    width:min(330px,100%);
+    margin:28px auto 0;
     grid-template-columns:1fr 1fr;
     gap:9px;
-    margin-top:22px;
   }
   .engineering-workflow span{
     min-height:60px;
