@@ -1967,6 +1967,17 @@ body.menu-open .menu-toggle{
     border:1px solid rgba(255,255,255,.075);
     border-radius:12px;
     background:rgba(255,255,255,.018);
+    transition:border-color .18s ease,background .18s ease,transform .18s ease;
+  }
+  .toc-column a:hover,
+  .toc-column a:focus-visible{
+    border-color:var(--accent);
+    background:rgba(255,117,31,.045);
+  }
+  .toc-column a:active{
+    border-color:var(--accent);
+    background:rgba(255,117,31,.075);
+    transform:scale(.99);
   }
   .toc-column b{
     width:38px;
