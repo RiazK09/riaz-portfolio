@@ -2064,45 +2064,93 @@ body.menu-open .menu-toggle{
   .skill-platform{order:2}
   .skill-technical{order:3}
   .skill-systems{order:4}
+
   .skill-group{
-    width:min(330px,100%);
-    margin:28px auto 0;
-    text-align:center;
-  }
-  .skills-heading + .skill-group{margin-top:0}
-  .skill-group h3{
-    width:max-content!important;
-    max-width:100%;
-    margin-inline:auto;
-    font-size:10px;
-    padding:8px 12px;
-    text-align:center;
-  }
-  .skill-group ul{
-    width:max-content!important;
-    max-width:100%;
+    width:min(340px,100%);
     margin:12px auto 0;
-    padding-left:18px;
-    font-size:12.2px;
-    line-height:1.48;
+    padding:15px 14px 9px;
+    border:1px solid rgba(255,255,255,.085);
+    border-top:2px solid rgba(255,117,31,.78);
+    border-radius:14px;
+    background:rgba(255,255,255,.018);
     text-align:left;
   }
-  .skill-group li{padding-left:2px}
+  .skills-heading + .skill-group{margin-top:0}
+
+  .skill-group h3{
+    position:static;
+    width:100%!important;
+    max-width:none;
+    height:auto;
+    margin:0;
+    padding:0 0 10px;
+    border:0;
+    border-bottom:1px solid rgba(255,117,31,.28);
+    border-radius:0;
+    color:var(--accent);
+    font-family:var(--mono);
+    font-size:10px;
+    font-weight:500;
+    line-height:1.35;
+    letter-spacing:.06em;
+    text-align:left;
+  }
+
+  .skill-group ul{
+    position:static;
+    width:100%!important;
+    max-width:none;
+    margin:7px 0 0;
+    padding:0;
+    list-style:none;
+    font-size:11.8px;
+    line-height:1.4;
+    text-align:left;
+  }
+  .skill-group li{
+    position:relative;
+    margin:0;
+    padding:7px 0 7px 14px;
+    border-bottom:1px solid rgba(255,255,255,.055);
+  }
+  .skill-group li:last-child{border-bottom:0}
+  .skill-group li::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:13px;
+    width:4px;
+    height:4px;
+    border-radius:50%;
+    background:var(--accent);
+  }
   .skill-systems ul{columns:1}
+
   .engineering-workflow{
     order:5;
-    width:min(330px,100%);
-    margin:28px auto 0;
+    width:min(340px,100%);
+    margin:14px auto 0;
     grid-template-columns:1fr 1fr;
-    gap:9px;
+    gap:8px;
+  }
+  .engineering-workflow::before{
+    content:"ENGINEERING WORKFLOW";
+    grid-column:1/-1;
+    margin:2px 0 3px;
+    color:var(--accent);
+    font-family:var(--mono);
+    font-size:9.5px;
+    font-weight:500;
+    letter-spacing:.08em;
+    text-align:center;
   }
   .engineering-workflow span{
-    min-height:60px;
-    padding:10px;
-    border:1px solid rgba(255,117,31,.32);
+    min-height:56px;
+    padding:9px;
+    border:1px solid rgba(255,117,31,.26);
     border-radius:9px;
-    background:rgba(255,255,255,.02);
-    font-size:9.7px;
+    background:rgba(255,255,255,.018);
+    font-size:9.5px;
   }
 
   /* Work */
