@@ -488,18 +488,6 @@ body.menu-open .menu-toggle{
   background-position:center 42%!important;
   filter:grayscale(1) contrast(1.03);
 }
-.about-note{
-  position:absolute;
-  z-index:4;
-  left:26cqw;
-  top:0;
-  width:20cqw;
-  color:#d7d7d7;
-  font-size:3.6cqw;
-  line-height:.7;
-  text-align:center;
-  transform:rotate(-6deg);
-}
 .about-body{
   position:absolute;
   left:45.5cqw;
@@ -1464,14 +1452,7 @@ body.menu-open .menu-toggle{
     aspect-ratio:4/5;
     border-radius:12px;
   }
-  .about-note{
-    z-index:4;
-    left:21%;top:calc(var(--r-title) + 55px);
-    width:28%;
-    font-size:clamp(34px,4.6vw,48px);
-    line-height:.74;
-  }
-  .about-body{
+    .about-body{
     grid-area:body;
     position:relative;left:auto;top:auto;width:100%;
     align-self:start;
@@ -1758,8 +1739,7 @@ body.menu-open .menu-toggle{
     grid-template-columns:35% 1fr;
     gap:0 30px;
   }
-  .about-note{left:18%;width:31%;font-size:5vw}
-
+  
   .skills-stage{grid-template-columns:1fr}
   .skills-heading,.skill-systems,.engineering-workflow{grid-column:1}
   .skill-systems ul{columns:1}
@@ -1944,19 +1924,25 @@ body.menu-open .menu-toggle{
     border-radius:10px;
     background-position:center 30%!important;
   }
-  .about-note{
-    top:152px;
-    right:3%;left:auto;
-    width:48%;
-    font-size:clamp(28px,7.2vw,34px);
-  }
-  .about-body{
+    .about-body{
     order:3;
     position:relative;left:auto;top:auto;width:100%;
     margin-top:20px;
   }
-  .about-label{font-size:11.5px;margin-bottom:10px}
-  .about-text p{font-size:var(--r-copy);line-height:1.52;margin-bottom:12px}
+  .about-label{
+    font-size:11.5px;
+    margin-bottom:10px;
+    text-align:center;
+  }
+  .about-text{
+    text-align:center;
+  }
+  .about-text p{
+    font-size:var(--r-copy);
+    line-height:1.52;
+    margin-bottom:12px;
+    text-align:center;
+  }
 
   /* Skills */
   .skills-heading{order:1}
