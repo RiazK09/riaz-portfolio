@@ -1884,7 +1884,11 @@ body.menu-open .menu-toggle{
     min-height:49px;
   }
   .toc-column b{width:38px;font-size:10.5px}
-  .toc-column span{font-size:11.7px;text-align:left}
+  .toc-column span{
+    font-size:11.7px;
+    text-align:center;
+    justify-self:stretch;
+  }
 
   /* One-column content flow */
   .about-stage,
