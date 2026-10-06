@@ -1787,6 +1787,7 @@ body.menu-open .menu-toggle{
     --m-heading-main:16cqw;
     --m-heading-script:14.5cqw;
     --m-heading-lockup:124px;
+    --m-media-radius:10px;
   }
 
   .panel{padding-block:var(--section-pad-y)}
@@ -2038,7 +2039,7 @@ body.menu-open .menu-toggle{
     position:relative;left:auto;top:auto;
     width:100%;height:auto;
     aspect-ratio:1/1;
-    border-radius:10px;
+    border-radius:var(--m-media-radius);
     background-position:center 30%!important;
   }
     .about-body{
@@ -2362,7 +2363,7 @@ body.menu-open .menu-toggle{
   .project-intro-quote{
     position:relative;left:auto;top:auto;
     width:min(340px,100%);
-    margin:20px auto 18px;
+    margin:20px auto 24px;
     padding:0;
     border:0;
     font-size:12px;
@@ -2374,7 +2375,7 @@ body.menu-open .menu-toggle{
     position:relative;right:auto;top:auto;
     width:100%;height:auto;
     aspect-ratio:1/1;
-    border-radius:10px;
+    border-radius:var(--m-media-radius);
   }
 
   /* Projects */
