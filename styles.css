@@ -2154,9 +2154,31 @@ body.menu-open .menu-toggle{
   }
 
   /* Work */
-  .work-heading{order:1}
-  .work-word{order:1}
-  .history-word{order:2}
+  .work-heading{
+    order:1;
+    position:relative;
+    display:block;
+    width:100%;
+    height:var(--m-heading-lockup);
+    margin:0;
+    text-align:center;
+  }
+  .work-word{
+    position:absolute!important;
+    left:50%!important;
+    top:0!important;
+    transform:translateX(-50%) rotate(-4deg)!important;
+    font-size:var(--m-heading-script)!important;
+    line-height:.8!important;
+  }
+  .history-word{
+    position:absolute!important;
+    left:50%!important;
+    top:41%!important;
+    transform:translateX(-50%)!important;
+    font-size:var(--m-heading-main)!important;
+    line-height:.82!important;
+  }
   .work-details{order:2;position:relative;left:auto;top:auto;width:100%}
   .work-company-pill{width:164px;height:39px;font-size:10px}
   .work-role{font-size:12.5px;margin-top:15px}
