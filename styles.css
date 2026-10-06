@@ -877,12 +877,36 @@ body.menu-open .menu-toggle{
   width:83cqw;
   color:#dedede;
 }
-.project-copy h2{
-  margin:0 0 1.5cqh;
+.project-intro-block{
+  position:relative;
+  margin-bottom:1.7cqh;
+  padding-bottom:1.6cqh;
+  border-bottom:1px solid rgba(255,117,31,.34);
+}
+.project-number{
+  display:block;
+  margin-bottom:.55cqh;
   color:var(--accent);
-  font-size:1.15cqw;
-  font-weight:700;
-  line-height:1.15;
+  font-family:var(--mono);
+  font-size:.68cqw;
+  font-weight:500;
+  letter-spacing:.12em;
+}
+.project-intro-block h2{
+  margin:0;
+  color:var(--text);
+  font-family:var(--display);
+  font-size:3.65cqw;
+  font-weight:500;
+  line-height:.88;
+  letter-spacing:-.055em;
+}
+.project-type{
+  margin:.85cqh 0 0;
+  color:var(--accent);
+  font-size:.95cqw;
+  font-weight:600;
+  line-height:1.25;
 }
 .project-case-grid{
   display:grid;
@@ -919,9 +943,9 @@ body.menu-open .menu-toggle{
 .project-media{
   position:absolute;
   left:0;
-  top:31cqh;
+  top:39cqh;
   width:80cqw;
-  height:65cqh;
+  height:57cqh;
   border:0;
   border-radius:0;
   background-position:top center!important;
@@ -937,7 +961,7 @@ body.menu-open .menu-toggle{
 .tag-stack{
   position:absolute;
   right:0;
-  top:32cqh;
+  top:40cqh;
   width:13cqw;
   display:flex;
   flex-direction:column;
@@ -1612,7 +1636,13 @@ body.menu-open .menu-toggle{
   /* Projects */
   .project-stage{display:grid;gap:18px}
   .project-copy,.project-media,.tag-stack{position:relative;left:auto;right:auto;top:auto;width:auto;height:auto}
-  .project-copy h2{font-size:15.5px;margin-bottom:13px}
+  .project-intro-block{
+    margin-bottom:18px;
+    padding-bottom:16px;
+  }
+  .project-number{font-size:10px;margin-bottom:6px}
+  .project-intro-block h2{font-size:clamp(42px,5.4vw,62px);line-height:.9}
+  .project-type{margin-top:7px;font-size:13px}
   .project-case-grid{grid-template-columns:repeat(3,1fr);gap:11px}
   .project-case-grid>div{min-height:0;padding:13px 12px}
   .project-case-grid span{font-size:9.5px}
@@ -2387,8 +2417,33 @@ body.menu-open .menu-toggle{
     width:min(340px,100%);
     margin-inline:auto;
   }
-  .project-copy h2{font-size:12.5px;line-height:1.32;margin-bottom:10px}
-  .project-case-grid{grid-template-columns:1fr;gap:7px}
+  .project-intro-block{
+    margin:0 0 18px;
+    padding:0 0 16px;
+    text-align:center;
+  }
+  .project-number{
+    margin-bottom:6px;
+    font-size:9px;
+    text-align:center;
+  }
+  .project-intro-block h2{
+    margin:0;
+    font-size:clamp(34px,10.5cqw,44px);
+    line-height:.9;
+    text-align:center;
+  }
+  .project-type{
+    margin:7px 0 0;
+    font-size:11.5px;
+    line-height:1.3;
+    text-align:center;
+  }
+  .project-case-grid{
+    grid-template-columns:1fr;
+    gap:7px;
+    text-align:left;
+  }
   .project-case-grid>div{padding:11px}
   .project-case-grid span{font-size:8.7px}
   .project-case-grid p{font-size:11.8px;line-height:1.5}
