@@ -2188,9 +2188,31 @@ body.menu-open .menu-toggle{
   .work-responsibilities li{margin-bottom:6px}
 
   /* Education */
-  .education-heading{order:1}
-  .education-my{order:1}
-  .education-word{order:2}
+  .education-heading{
+    order:1;
+    position:relative;
+    display:block;
+    width:100%;
+    height:var(--m-heading-lockup);
+    margin:0;
+    text-align:center;
+  }
+  .education-my{
+    position:absolute!important;
+    left:50%!important;
+    top:0!important;
+    transform:translateX(-50%) rotate(-4deg)!important;
+    font-size:var(--m-heading-script)!important;
+    line-height:.8!important;
+  }
+  .education-word{
+    position:absolute!important;
+    left:50%!important;
+    top:41%!important;
+    transform:translateX(-50%)!important;
+    font-size:var(--m-heading-main)!important;
+    line-height:.82!important;
+  }
   .education-proof{
     order:2;
     position:relative;left:auto;top:auto;width:100%;
