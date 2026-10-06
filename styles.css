@@ -523,9 +523,11 @@ body.menu-open .menu-toggle{
 .skills-stage{
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
-  grid-template-rows:auto 1fr auto;
-  gap:2.2cqh 1.5cqw;
+  grid-template-rows:auto auto auto;
+  column-gap:1.5cqw;
+  row-gap:2.4cqh;
   align-items:stretch;
+  align-content:start;
   box-sizing:border-box;
   padding:3cqh 2.8cqw 2cqh;
 }
@@ -534,7 +536,7 @@ body.menu-open .menu-toggle{
   left:auto;
   top:auto;
   grid-column:1/-1;
-  margin:0;
+  margin:0 0 1.2cqh;
   color:var(--accent);
   font-family:var(--display);
   font-size:7.4cqw;
@@ -553,6 +555,7 @@ body.menu-open .menu-toggle{
   width:auto;
   height:auto;
   min-width:0;
+  align-self:stretch;
   padding:1.7cqh 1.2cqw 1.35cqh;
   border:1px solid rgba(255,255,255,.085);
   border-top:2px solid rgba(255,117,31,.72);
@@ -597,7 +600,7 @@ body.menu-open .menu-toggle{
   display:grid;
   grid-template-columns:repeat(6,1fr);
   gap:1cqw;
-  margin:0;
+  margin-top:.4cqh;
 }
 .engineering-workflow span{
   padding:1.15cqh .6cqw;
