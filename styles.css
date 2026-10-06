@@ -458,11 +458,18 @@ body.menu-open .menu-toggle{
 .toc-column span{font-size:1.36cqw;line-height:1.12;letter-spacing:-.035em}
 
 /* About */
-.about-heading{position:absolute;inset:0}
-.about-heading span{
+.about-heading{
   position:absolute;
   left:45.4cqw;
-  top:9.5cqh;
+  top:7.5cqh;
+  display:flex;
+  align-items:flex-end;
+  gap:.7cqw;
+  width:auto;
+  height:auto;
+}
+.about-heading span{
+  position:static;
   color:var(--accent);
   font-family:var(--display);
   font-size:10.8cqw;
@@ -472,11 +479,10 @@ body.menu-open .menu-toggle{
   white-space:nowrap;
 }
 .about-heading em{
-  position:absolute;
-  left:75.5cqw;
-  top:10.8cqh;
+  position:static;
+  margin-bottom:.2cqh;
   color:#dedede;
-  font-size:10.2cqw;
+  font-size:9.6cqw;
   line-height:.72;
   white-space:nowrap;
 }
@@ -512,77 +518,111 @@ body.menu-open .menu-toggle{
 .about-text strong{color:var(--accent)}
 
 /* Skills */
-.skill-group{position:absolute;color:#dedede}
-.skill-group h3{
-  position:absolute;
+.skills-stage{
   display:grid;
-  place-items:center;
-  height:5.2cqh;
-  margin:0;
-  border:.09cqw solid var(--accent);
-  border-radius:999px;
-  font-size:.89cqw;
-  font-weight:700;
-  white-space:nowrap;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  grid-template-rows:auto 1fr auto;
+  gap:2.2cqh 1.5cqw;
+  align-items:stretch;
+  box-sizing:border-box;
+  padding:3cqh 2.8cqw 2cqh;
 }
-.skill-group ul{
-  position:absolute;
-  margin:0;
-  padding-left:1.05cqw;
-  color:#dedede;
-  font-size:.88cqw;
-  line-height:1.3;
-}
-.skill-group li{margin-bottom:.25cqh}
-.skill-platform{left:2.8cqw;top:7cqh;width:40cqw;height:36cqh}
-.skill-platform h3{left:0;top:0;width:17.2cqw}
-.skill-platform ul{left:19.5cqw;top:0;width:20cqw}
-.skill-technical{left:56cqw;top:7cqh;width:39cqw;height:36cqh}
-.skill-technical h3{left:0;top:0;width:18.8cqw;font-size:.78cqw}
-.skill-technical ul{left:20.5cqw;top:0;width:18.3cqw}
-.skill-systems{left:56cqw;top:49cqh;width:39cqw;height:30cqh}
-.skill-systems h3{left:0;top:0;width:20cqw;font-size:.72cqw}
-.skill-systems ul{left:20.5cqw;top:0;width:18.3cqw}
 .skills-heading{
-  position:absolute;
-  left:2.8cqw;
-  top:51cqh;
+  position:relative;
+  left:auto;
+  top:auto;
+  grid-column:1/-1;
   margin:0;
   color:var(--accent);
   font-family:var(--display);
-  font-size:9.6cqw;
+  font-size:7.4cqw;
   font-weight:500;
-  line-height:.74;
-  letter-spacing:-.07em;
+  line-height:.78;
+  letter-spacing:-.065em;
+  text-align:center;
 }
-
-
+.skill-group,
+.skill-platform,
+.skill-technical,
+.skill-systems{
+  position:relative;
+  left:auto;
+  top:auto;
+  width:auto;
+  height:auto;
+  min-width:0;
+  padding:1.7cqh 1.2cqw 1.35cqh;
+  border:1px solid rgba(255,255,255,.085);
+  border-top:2px solid rgba(255,117,31,.72);
+  border-radius:16px;
+  background:rgba(255,255,255,.018);
+  color:#dedede;
+}
+.skill-group h3{
+  position:static;
+  display:block;
+  width:auto!important;
+  height:auto;
+  margin:0;
+  padding:0 0 1.15cqh;
+  border:0;
+  border-bottom:1px solid rgba(255,117,31,.3);
+  border-radius:0;
+  color:var(--accent);
+  font-family:var(--mono);
+  font-size:.72cqw;
+  font-weight:500;
+  letter-spacing:.06em;
+  text-align:left;
+  white-space:normal;
+}
+.skill-group ul{
+  position:static;
+  width:auto!important;
+  margin:1.1cqh 0 0;
+  padding-left:1.1cqw;
+  color:var(--text-soft);
+  font-size:.8cqw;
+  line-height:1.38;
+}
+.skill-group li{margin-bottom:.45cqh}
 .engineering-workflow{
-  position:absolute;
-  left:2.8cqw;
-  right:2.8cqw;
-  bottom:2cqh;
+  position:relative;
+  left:auto;
+  right:auto;
+  bottom:auto;
+  grid-column:1/-1;
   display:grid;
   grid-template-columns:repeat(6,1fr);
   gap:1cqw;
+  margin:0;
 }
 .engineering-workflow span{
-  padding-top:1.1cqh;
-  border-top:1px solid rgba(255,117,31,.5);
+  padding:1.15cqh .6cqw;
+  border:1px solid rgba(255,117,31,.28);
+  border-radius:10px;
+  background:rgba(255,255,255,.016);
   color:var(--text-soft);
   font-family:var(--mono);
-  font-size:.63cqw;
+  font-size:.61cqw;
   line-height:1.35;
   text-align:center;
 }
 
 /* Work */
-.work-heading{position:absolute;inset:0}
-.work-word{
+.work-heading{
   position:absolute;
-  z-index:2;
   left:9.5cqw;
-  top:2cqh;
+  top:1.5cqh;
+  display:flex;
+  align-items:flex-end;
+  gap:.25cqw;
+  width:auto;
+  height:auto;
+}
+.work-word{
+  position:static;
+  z-index:2;
   color:#dedede;
   font-size:9.4cqw;
   line-height:.75;
@@ -590,10 +630,8 @@ body.menu-open .menu-toggle{
   white-space:nowrap;
 }
 .history-word{
-  position:absolute;
+  position:static;
   z-index:1;
-  left:29cqw;
-  top:0;
   color:var(--accent);
   font-family:var(--display);
   font-size:10.8cqw;
@@ -671,22 +709,27 @@ body.menu-open .menu-toggle{
 .work-responsibilities li{margin-bottom:.75cqh}
 
 /* Education */
-.education-heading{position:absolute;inset:0}
-.education-my{
+.education-heading{
   position:absolute;
-  z-index:2;
   left:9cqw;
-  top:2cqh;
+  top:1.5cqh;
+  display:flex;
+  align-items:flex-end;
+  gap:.25cqw;
+  width:auto;
+  height:auto;
+}
+.education-my{
+  position:static;
+  z-index:2;
   color:#dedede;
   font-size:9.8cqw;
   line-height:.75;
   transform:rotate(-5deg);
 }
 .education-word{
-  position:absolute;
+  position:static;
   z-index:1;
-  left:24cqw;
-  top:0;
   color:var(--accent);
   font-family:var(--display);
   font-size:10.5cqw;
@@ -999,37 +1042,42 @@ body.menu-open .menu-toggle{
 }
 
 /* Why */
-.why-heading{position:absolute;inset:0}
-.why-word{
+.why-heading{
   position:absolute;
   left:2.8cqw;
   top:4cqh;
+  width:52cqw;
+  display:flex;
+  align-items:flex-end;
+  gap:.45cqw;
+}
+.why-word{
+  position:static;
   color:var(--accent);
   font-family:var(--display);
-  font-size:10.7cqw;
+  font-size:8.6cqw;
   font-weight:500;
   line-height:.8;
   letter-spacing:-.07em;
 }
 .why-me{
-  position:absolute;
-  left:7cqw;
-  top:15cqh;
+  position:static;
+  margin-bottom:.25cqh;
   color:#dedede;
-  font-size:10cqw;
+  font-size:7.7cqw;
   line-height:.7;
   transform:rotate(-5deg);
 }
 .why-copy{
   position:absolute;
   left:2.8cqw;
-  top:39cqh;
-  width:52cqw;
+  top:26cqh;
+  width:54cqw;
   color:#dedede;
 }
 .why-role{
-  width:31cqw;
-  margin-bottom:2.2cqh;
+  width:34cqw;
+  margin-bottom:1.8cqh;
   padding:1.45cqh 1.2cqw;
   display:flex;
   flex-direction:column;
@@ -1071,9 +1119,10 @@ body.menu-open .menu-toggle{
 .why-photo{
   position:absolute;
   right:0;
-  top:0;
-  width:34cqw;
-  height:100cqh;
+  top:2cqh;
+  width:33cqw;
+  height:96cqh;
+  border-radius:18px;
   background-position:center top!important;
 }
 
