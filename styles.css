@@ -523,7 +523,7 @@ body.menu-open .menu-toggle{
 .skills-stage{
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
-  grid-template-rows:auto auto auto;
+  grid-template-rows:max-content max-content max-content;
   column-gap:1.5cqw;
   row-gap:2.4cqh;
   align-items:stretch;
@@ -542,7 +542,8 @@ body.menu-open .menu-toggle{
   font-size:7.4cqw;
   font-weight:500;
   line-height:.78;
-  letter-spacing:-.065em;
+  letter-spacing:-.055em;
+  word-spacing:.1em;
   text-align:center;
 }
 .skill-group,
@@ -555,6 +556,7 @@ body.menu-open .menu-toggle{
   width:auto;
   height:auto;
   min-width:0;
+  min-height:0;
   align-self:stretch;
   padding:1.7cqh 1.2cqw 1.35cqh;
   border:1px solid rgba(255,255,255,.085);
@@ -600,7 +602,7 @@ body.menu-open .menu-toggle{
   display:grid;
   grid-template-columns:repeat(6,1fr);
   gap:1cqw;
-  margin-top:.4cqh;
+  margin-top:0;
 }
 .engineering-workflow span{
   padding:1.15cqh .6cqw;
