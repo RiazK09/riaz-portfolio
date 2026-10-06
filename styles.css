@@ -718,7 +718,7 @@ body.menu-open .menu-toggle{
 /* Education */
 .education-heading{
   position:absolute;
-  left:9cqw;
+  left:3cqw;
   top:1.5cqh;
   display:flex;
   align-items:flex-end;
@@ -807,36 +807,50 @@ body.menu-open .menu-toggle{
 }
 
 /* What I Bring */
-.value-stage{position:relative}
-.value-heading{position:absolute;left:2.8cqw;top:4cqh;width:72cqw}
-.value-kicker{
-  color:var(--accent);
-  font-family:var(--mono);
-  font-size:.78cqw;
-  font-weight:500;
-  letter-spacing:.12em;
+.value-stage{
+  position:relative;
+  display:grid;
+  grid-template-columns:31cqw 1fr;
+  gap:3.2cqw;
+  align-items:center;
+  box-sizing:border-box;
+  padding:4cqh 2.8cqw;
+}
+.value-heading{
+  position:relative;
+  left:auto;
+  top:auto;
+  width:auto;
+  align-self:center;
 }
 .value-heading h2{
-  margin:1.3cqh 0 0;
-  color:var(--text);
+  margin:0;
+  color:var(--accent);
   font-family:var(--display);
-  font-size:5.9cqw;
+  font-size:6.5cqw;
   font-weight:500;
   line-height:.86;
   letter-spacing:-.055em;
 }
+.value-intro{
+  margin:2.2cqh 0 0;
+  max-width:27cqw;
+  color:var(--text-soft);
+  font-size:1.02cqw;
+  line-height:1.48;
+}
 .value-grid{
-  position:absolute;
-  left:2.8cqw;
-  right:2.8cqw;
-  top:48cqh;
+  position:relative;
+  left:auto;
+  right:auto;
+  top:auto;
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:1.6cqw;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:1.4cqw;
 }
 .value-grid article{
-  min-height:23cqh;
-  padding:2cqh 1.35cqw 1.7cqh;
+  min-height:22cqh;
+  padding:2.1cqh 1.45cqw 1.8cqh;
   border:1px solid rgba(255,255,255,.09);
   border-top:2px solid rgba(255,117,31,.7);
   border-radius:14px;
@@ -849,16 +863,16 @@ body.menu-open .menu-toggle{
   font-weight:500;
 }
 .value-grid h3{
-  margin:1.4cqh 0 1cqh;
+  margin:1.2cqh 0 .9cqh;
   color:var(--text);
-  font-size:1.25cqw;
+  font-size:1.22cqw;
   line-height:1.15;
 }
 .value-grid p{
   margin:0;
   color:var(--text-soft);
-  font-size:.88cqw;
-  line-height:1.48;
+  font-size:.84cqw;
+  line-height:1.5;
 }
 .value-proof-rail{
   position:absolute;
@@ -1683,9 +1697,15 @@ body.menu-open .menu-toggle{
   /* What I Bring */
   .value-stage{display:flex;flex-direction:column}
   .value-heading{position:relative;left:auto;top:auto;width:100%}
+  .value-intro{
+    margin:14px 0 24px;
+    max-width:680px;
+    font-size:13px;
+    line-height:1.5;
+  }
   .value-grid{
     position:relative;left:auto;right:auto;top:auto;
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:repeat(2,1fr);
     gap:14px;
   }
   .value-grid article{min-height:0;padding:18px 16px 16px}
@@ -2448,6 +2468,7 @@ body.menu-open .menu-toggle{
     padding:0;
     margin:0 0 24px!important;
   }
+  .value-intro{display:none}
   .value-heading h2{
     font-size:var(--m-heading-main)!important;
     line-height:.82!important;
