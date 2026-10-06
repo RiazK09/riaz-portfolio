@@ -609,25 +609,46 @@ body.menu-open .menu-toggle{
   width:75cqw;
   color:#dedede;
 }
-.work-company-pill{
+.work-summary{
   display:grid;
-  place-items:center;
-  width:17cqw;
-  height:5cqh;
-  border:.09cqw solid var(--accent);
-  border-radius:999px;
-  font-size:.9cqw;
-  font-weight:700;
+  grid-template-columns:18cqw 24cqw;
+  gap:1cqw;
+  margin-bottom:2.2cqh;
 }
+.work-company-pill,
 .work-role{
+  min-height:10cqh;
+  padding:1.4cqh 1.1cqw;
   display:flex;
   flex-direction:column;
-  gap:.3cqh;
-  margin-top:2cqh;
-  font-size:1cqw;
-  line-height:1.2;
+  align-items:flex-start;
+  justify-content:center;
+  gap:.45cqh;
+  border:1px solid rgba(255,117,31,.42);
+  border-radius:14px;
+  background:rgba(255,255,255,.018);
 }
-.work-role strong{color:var(--accent)}
+.work-summary-label{
+  display:block;
+  color:var(--accent);
+  font-family:var(--mono);
+  font-size:.62cqw;
+  font-weight:500;
+  letter-spacing:.09em;
+}
+.work-company-pill strong,
+.work-role strong{
+  color:var(--text);
+  font-size:.95cqw;
+  line-height:1.22;
+}
+.work-company-meta,
+.work-role>span:last-child{
+  display:block;
+  color:var(--text-soft);
+  font-size:.75cqw;
+  line-height:1.3;
+}
 .work-details h3{
   margin:2.5cqh 0 1cqh;
   color:var(--accent);
@@ -648,8 +669,6 @@ body.menu-open .menu-toggle{
   line-height:1.42;
 }
 .work-responsibilities li{margin-bottom:.75cqh}
-.work-summary-label,
-.work-company-meta{display:none}
 
 /* Education */
 .education-heading{position:absolute;inset:0}
@@ -1009,19 +1028,24 @@ body.menu-open .menu-toggle{
   color:#dedede;
 }
 .why-role{
+  width:31cqw;
   margin-bottom:2.2cqh;
+  padding:1.45cqh 1.2cqw;
   display:flex;
   flex-direction:column;
   gap:.45cqh;
+  border:1px solid rgba(255,117,31,.40);
+  border-radius:14px;
+  background:rgba(255,255,255,.018);
 }
 .why-role strong{
   color:var(--accent);
-  font-size:1.05cqw;
-  line-height:1.2;
+  font-size:1.02cqw;
+  line-height:1.25;
 }
 .why-role span{
   color:var(--text-soft);
-  font-size:.88cqw;
+  font-size:.82cqw;
   line-height:1.3;
 }
 .why-facts{
@@ -1088,36 +1112,43 @@ body.menu-open .menu-toggle{
   position:relative;
   min-width:0;
   margin:0;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.09);
+  border-top:2px solid rgba(255,117,31,.78);
+  border-radius:14px;
+  background:rgba(255,255,255,.018);
   color:#dedede;
 }
-.testimonial-grid blockquote::before,
-.testimonial-grid blockquote::after{
+.testimonial-grid blockquote::before{
+  content:"“";
   position:absolute;
   z-index:3;
+  left:1.15cqw;
+  top:1.25cqh;
   color:var(--accent);
   font-family:Georgia,serif;
-  font-size:4cqw;
+  font-size:3cqw;
   font-weight:700;
-  line-height:.55;
+  line-height:.6;
 }
-.testimonial-grid blockquote::before{content:"“";left:.8cqw;top:-1cqh}
-.testimonial-grid blockquote::after{content:"”";right:1cqw;bottom:5cqh}
+.testimonial-grid blockquote::after{display:none}
 .testimonial-grid blockquote>p{
   min-height:17cqh;
-  margin:0 0 2.2cqh;
-  padding:2.1cqh 1.35cqw 1.5cqh;
-  border:.1cqw solid var(--accent);
-  border-radius:.45cqw;
+  margin:0;
+  padding:4.4cqh 1.35cqw 1.7cqh;
+  border:0;
+  border-radius:0;
   color:#f3f3f3;
-  font-size:.82cqw;
-  line-height:1.36;
-  text-align:center;
+  font-size:.8cqw;
+  line-height:1.43;
+  text-align:left;
 }
 .testimonial-grid footer{
   display:flex;
   flex-direction:column;
-  gap:.6cqh;
-  padding-left:.3cqw;
+  gap:.45cqh;
+  padding:1.35cqh 1.35cqw 1.5cqh;
+  border-top:1px solid rgba(255,255,255,.07);
 }
 .testimonial-grid footer strong{font-size:1.05cqw}
 .testimonial-grid footer span{color:var(--accent);font-size:.9cqw}
@@ -1544,8 +1575,22 @@ body.menu-open .menu-toggle{
   /* Work */
   .work-heading{margin-bottom:26px}
   .work-details{position:relative;left:auto;top:auto;width:100%}
-  .work-company-pill{width:195px;height:44px;border-width:1.5px;font-size:11.5px}
-  .work-role{font-size:14px;margin-top:17px}
+  .work-summary{
+    display:grid;
+    grid-template-columns:1fr 1.25fr;
+    gap:12px;
+    width:min(560px,100%);
+    margin-bottom:22px;
+  }
+  .work-company-pill,
+  .work-role{
+    min-height:96px;
+    padding:16px 15px;
+    border-radius:14px;
+  }
+  .work-summary-label{font-size:10px}
+  .work-company-pill strong,.work-role strong{font-size:14px}
+  .work-company-meta,.work-role>span:last-child{font-size:12px}
   .work-details h3{font-size:14px;margin:21px 0 9px}
   .work-details p,.work-responsibilities{font-size:13.5px;line-height:1.5}
   .work-details p{max-width:none}
@@ -1667,7 +1712,13 @@ body.menu-open .menu-toggle{
   }
   .why-heading{grid-area:heading}
   .why-copy{grid-area:copy;position:relative;left:auto;top:auto;width:100%}
-  .why-role{margin-bottom:17px;gap:5px}
+  .why-role{
+    width:min(430px,100%);
+    margin-bottom:18px;
+    padding:14px 15px;
+    gap:5px;
+    border-radius:14px;
+  }
   .why-role strong{font-size:13.5px}
   .why-role span{font-size:12px}
   .why-facts{gap:14px}
@@ -1719,8 +1770,9 @@ body.menu-open .menu-toggle{
     width:100%;
     justify-self:stretch;
   }
-  .testimonial-grid blockquote>p{min-height:0;font-size:13px;padding:21px 17px}
-  .testimonial-grid blockquote::before,.testimonial-grid blockquote::after{font-size:48px}
+  .testimonial-grid blockquote>p{min-height:0;padding:46px 17px 18px;font-size:13px;line-height:1.5}
+  .testimonial-grid blockquote::before{left:16px;top:15px;font-size:42px}
+  .testimonial-grid footer{padding:14px 17px 16px}
   .testimonial-grid footer strong{font-size:14px}
   .testimonial-grid footer span{font-size:12px}
   .linkedin-note{
@@ -1892,7 +1944,7 @@ body.menu-open .menu-toggle{
     width:100%;
     height:var(--m-heading-lockup);
     min-height:0;
-    margin:0 0 24px;
+    margin:0;
     display:block;
     text-align:center;
   }
@@ -2598,28 +2650,33 @@ body.menu-open .menu-toggle{
     padding:0;
     text-align:center;
   }
-  .contact-heading{height:auto;text-align:center}
-  .contact-heading h2{
-    margin:0;
-    font-size:clamp(30px,7.8vw,36px);
-    line-height:1;
+  .contact-heading{
+    height:auto;
     text-align:center;
   }
+  .contact-heading h2{
+    width:min(330px,100%);
+    margin:0 auto;
+    font-size:clamp(28px,7.2vw,34px);
+    line-height:1.04;
+    text-align:center;
+  }
+  .contact-break{display:none}
   .contact-signature{
     position:relative;left:auto;top:auto;
     display:block;
-    margin-top:6px;
+    margin-top:14px;
     font-size:var(--m-heading-script);
     text-align:center;
   }
   .contact-subhead{
-    width:100%;
-    margin:14px 0;
+    width:min(330px,100%);
+    margin:18px auto 14px;
     font-size:12px;
     line-height:1.5;
     text-align:center;
   }
-  .contact-links{width:100%;gap:7px}
+  .contact-links{width:min(330px,100%);margin-inline:auto;gap:7px}
   .contact-links a{min-height:43px;font-size:11px}
   .contact-person{
     order:2;
