@@ -23,6 +23,7 @@
 
   --section-pad-y:clamp(72px,8svh,96px);
   --content-width:min(90vw,1680px);
+  --media-radius:18px;
   --stage-height:calc(100svh - (var(--section-pad-y) * 2));
 
   --body-size:clamp(14px,.93vw,18px);
@@ -492,6 +493,7 @@ body.menu-open .menu-toggle{
   top:2.5cqh;
   width:31cqw;
   height:95cqh;
+  border-radius:var(--media-radius);
   background-position:center 42%!important;
   filter:grayscale(1) contrast(1.03);
 }
@@ -928,6 +930,7 @@ body.menu-open .menu-toggle{
   top:0;
   width:35cqw;
   height:100cqh;
+  border-radius:var(--media-radius);
   background-position:center!important;
 }
 
@@ -1009,7 +1012,7 @@ body.menu-open .menu-toggle{
   width:80cqw;
   height:57cqh;
   border:0;
-  border-radius:0;
+  border-radius:var(--media-radius);
   background-position:top center!important;
 }
 .project-preview::after{
@@ -1122,7 +1125,7 @@ body.menu-open .menu-toggle{
   top:2cqh;
   width:33cqw;
   height:96cqh;
-  border-radius:18px;
+  border-radius:var(--media-radius);
   background-position:center top!important;
 }
 
@@ -1325,6 +1328,7 @@ body.menu-open .menu-toggle{
   :root{
     --section-pad-y:64px;
     --content-width:90vw;
+    --media-radius:14px;
     --stage-height:auto;
     --r-title:clamp(54px,7.2vw,78px);
     --r-script:clamp(42px,5.8vw,62px);
@@ -1556,7 +1560,7 @@ body.menu-open .menu-toggle{
     position:relative;left:auto;top:auto;
     width:100%;height:auto;
     aspect-ratio:4/5;
-    border-radius:12px;
+    border-radius:var(--media-radius);
   }
     .about-body{
     grid-area:body;
@@ -1723,7 +1727,7 @@ body.menu-open .menu-toggle{
     position:relative;right:auto;top:auto;
     width:100%;height:auto;min-height:0;
     aspect-ratio:1/1;
-    border-radius:12px;
+    border-radius:var(--media-radius);
   }
 
   /* Projects */
@@ -1740,7 +1744,7 @@ body.menu-open .menu-toggle{
   .project-case-grid>div{min-height:0;padding:13px 12px}
   .project-case-grid span{font-size:9.5px}
   .project-case-grid p{font-size:12px;line-height:1.48}
-  .project-media{aspect-ratio:16/9;border-radius:10px}
+  .project-media{aspect-ratio:16/9;border-radius:var(--media-radius)}
   .tag-stack{
     flex-direction:row;
     flex-wrap:wrap;
@@ -1779,7 +1783,7 @@ body.menu-open .menu-toggle{
     position:relative;right:auto;top:auto;
     width:100%;height:auto;min-height:0;
     aspect-ratio:4/5;
-    border-radius:12px;
+    border-radius:var(--media-radius);
   }
 
   /* Testimonials */
@@ -1913,7 +1917,7 @@ body.menu-open .menu-toggle{
     --m-heading-main:16cqw;
     --m-heading-script:14.5cqw;
     --m-heading-lockup:124px;
-    --m-media-radius:10px;
+    --media-radius:10px;
   }
 
   .panel{padding-block:var(--section-pad-y)}
@@ -2169,7 +2173,7 @@ body.menu-open .menu-toggle{
     position:relative;left:auto;top:auto;
     width:100%;height:auto;
     aspect-ratio:1/1;
-    border-radius:var(--m-media-radius);
+    border-radius:var(--media-radius);
     background-position:center 30%!important;
   }
     .about-body{
@@ -2505,7 +2509,7 @@ body.menu-open .menu-toggle{
     position:relative;right:auto;top:auto;
     width:100%;height:auto;
     aspect-ratio:1/1;
-    border-radius:var(--m-media-radius);
+    border-radius:var(--media-radius);
   }
 
   /* Projects */
@@ -2553,7 +2557,7 @@ body.menu-open .menu-toggle{
     height:auto;
     margin-inline:auto;
     aspect-ratio:16/10;
-    border-radius:8px;
+    border-radius:var(--media-radius);
   }
   .tag-stack{
     order:3;
@@ -2635,7 +2639,7 @@ body.menu-open .menu-toggle{
     position:relative;width:100%;height:auto;
     aspect-ratio:1/1;
     margin-top:18px;
-    border-radius:10px;
+    border-radius:var(--media-radius);
     background-position:center 20%!important;
   }
 
