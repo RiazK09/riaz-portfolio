@@ -1010,9 +1010,19 @@ body.menu-open .menu-toggle{
 }
 .why-role{
   margin-bottom:2.2cqh;
+  display:flex;
+  flex-direction:column;
+  gap:.45cqh;
+}
+.why-role strong{
   color:var(--accent);
   font-size:1.05cqw;
-  font-weight:700;
+  line-height:1.2;
+}
+.why-role span{
+  color:var(--text-soft);
+  font-size:.88cqw;
+  line-height:1.3;
 }
 .why-facts{
   display:grid;
@@ -1121,17 +1131,6 @@ body.menu-open .menu-toggle{
   font-weight:700;
 }
 .linkedin-note a{color:var(--accent)}
-.linkedin-mark{
-  position:absolute;
-  right:2cqw;
-  bottom:1cqh;
-  color:#0a66c2;
-  text-decoration:none;
-  font-size:2.4cqw;
-  font-weight:700;
-  letter-spacing:-.04em;
-}
-.linkedin-mark span{font-size:.7em;vertical-align:top}
 
 /* Contact */
 .contact-copy{
@@ -1668,7 +1667,9 @@ body.menu-open .menu-toggle{
   }
   .why-heading{grid-area:heading}
   .why-copy{grid-area:copy;position:relative;left:auto;top:auto;width:100%}
-  .why-role{font-size:13.5px;margin-bottom:17px}
+  .why-role{margin-bottom:17px;gap:5px}
+  .why-role strong{font-size:13.5px}
+  .why-role span{font-size:12px}
   .why-facts{gap:14px}
   .why-facts article{padding:11px 0 0 12px}
   .why-facts h3{font-size:14.5px}
@@ -1689,7 +1690,7 @@ body.menu-open .menu-toggle{
     justify-content:flex-start;
     gap:12px;
     height:auto;
-    margin:0 0 28px;
+    margin:0 0 32px;
     text-align:left;
   }
   .testimonials-heading h2{
@@ -1727,12 +1728,6 @@ body.menu-open .menu-toggle{
     margin-top:25px;
     font-size:12px;
     text-align:left;
-  }
-  .linkedin-mark{
-    position:relative;right:auto;bottom:auto;
-    display:block;width:max-content;
-    margin:16px 0 0;
-    font-size:27px;
   }
 
   /* Contact */
@@ -1893,20 +1888,20 @@ body.menu-open .menu-toggle{
   }
 
   .testimonials-heading{
+    position:relative;
     width:100%;
-    min-height:var(--m-heading-lockup);
-    margin:0;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    gap:0;
+    height:var(--m-heading-lockup);
+    min-height:0;
+    margin:0 0 24px;
+    display:block;
     text-align:center;
   }
   .testimonials-heading h2{
-    position:static;
-    width:100%;
-    max-width:none;
+    position:absolute;
+    left:50%;
+    top:0;
+    width:max-content;
+    max-width:100%;
     margin:0;
     color:var(--accent);
     font-family:var(--display);
@@ -1915,17 +1910,20 @@ body.menu-open .menu-toggle{
     line-height:.82;
     letter-spacing:-.055em;
     text-align:center;
-    white-space:normal;
-    transform:none;
+    white-space:nowrap;
+    transform:translateX(-50%);
   }
   .testimonials-signature{
-    position:static;
-    margin-top:2px;
+    position:absolute;
+    left:50%;
+    top:41%;
+    width:max-content;
+    margin:0;
     color:#dedede;
     font-size:var(--m-heading-script);
     line-height:.8;
     text-align:center;
-    transform:rotate(-4deg);
+    transform:translateX(-50%) rotate(-4deg);
   }
 
   /* Menu */
@@ -2467,13 +2465,68 @@ body.menu-open .menu-toggle{
   .tag-stack span{min-height:33px;padding:6px 10px;font-size:10px}
 
   /* Why */
-  .why-heading{order:1}
-  .why-word{order:1}
-  .why-me{order:2}
-  .why-copy{order:2;position:relative;width:100%}
-  .why-role{font-size:12.2px;line-height:1.42;margin-bottom:16px}
-  .why-facts{gap:12px}
-  .why-facts article{padding:10px 0 0 10px}
+  .why-heading{
+    order:1;
+    position:relative;
+    display:block;
+    width:100%;
+    height:var(--m-heading-lockup);
+    margin:0;
+    text-align:center;
+  }
+  .why-word{
+    position:absolute!important;
+    left:50%!important;
+    top:0!important;
+    transform:translateX(-50%)!important;
+    font-size:var(--m-heading-main)!important;
+    line-height:.82!important;
+  }
+  .why-me{
+    position:absolute!important;
+    left:50%!important;
+    top:41%!important;
+    transform:translateX(-50%) rotate(-4deg)!important;
+    font-size:var(--m-heading-script)!important;
+    line-height:.8!important;
+  }
+  .why-copy{
+    order:2;
+    position:relative;
+    width:100%;
+    text-align:left;
+  }
+  .why-role{
+    width:min(340px,100%);
+    margin:0 auto 22px;
+    padding:14px 15px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:4px;
+    border:1px solid rgba(255,117,31,.42);
+    border-radius:14px;
+    background:rgba(255,255,255,.018);
+    text-align:center;
+  }
+  .why-role strong{
+    color:var(--accent);
+    font-size:12.5px;
+    line-height:1.3;
+  }
+  .why-role span{
+    color:var(--text-soft);
+    font-size:10.5px;
+    line-height:1.35;
+  }
+  .why-facts{
+    width:min(340px,100%);
+    margin-inline:auto;
+    gap:10px;
+  }
+  .why-facts article{
+    padding:11px 0 0 11px;
+  }
   .why-facts h3{font-size:13px}
   .why-facts p{font-size:11.8px;line-height:1.5}
   .why-photo{
@@ -2486,14 +2539,56 @@ body.menu-open .menu-toggle{
   }
 
   /* Testimonials */
-  .testimonial-grid{grid-template-columns:1fr;gap:18px}
-  .testimonial-grid blockquote:last-child{grid-column:auto;width:100%}
-  .testimonial-grid blockquote>p{font-size:11.8px;line-height:1.5;padding:18px 14px}
-  .testimonial-grid blockquote::before,.testimonial-grid blockquote::after{font-size:40px}
-  .testimonial-grid footer strong{font-size:13px}
-  .testimonial-grid footer span{font-size:11px}
-  .linkedin-note{margin-top:21px;font-size:11px;line-height:1.45;text-align:left}
-  .linkedin-mark{font-size:25px;margin-top:14px}
+  .testimonial-grid{
+    width:min(340px,100%);
+    margin-inline:auto;
+    grid-template-columns:1fr;
+    gap:12px;
+  }
+  .testimonial-grid blockquote,
+  .testimonial-grid blockquote:last-child{
+    width:100%;
+    margin:0;
+    padding:0;
+    grid-column:auto;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.085);
+    border-top:2px solid rgba(255,117,31,.78);
+    border-radius:14px;
+    background:rgba(255,255,255,.018);
+  }
+  .testimonial-grid blockquote::before{
+    left:14px;
+    top:14px;
+    font-size:34px;
+    line-height:.65;
+  }
+  .testimonial-grid blockquote::after{display:none}
+  .testimonial-grid blockquote>p{
+    min-height:0;
+    margin:0;
+    padding:34px 15px 15px;
+    border:0;
+    border-radius:0;
+    background:transparent;
+    font-size:11.7px;
+    line-height:1.52;
+    text-align:left;
+  }
+  .testimonial-grid footer{
+    gap:3px;
+    padding:12px 15px 14px;
+    border-top:1px solid rgba(255,255,255,.07);
+  }
+  .testimonial-grid footer strong{font-size:12.8px}
+  .testimonial-grid footer span{font-size:10.5px}
+  .linkedin-note{
+    width:min(340px,100%);
+    margin:20px auto 0;
+    font-size:10.8px;
+    line-height:1.45;
+    text-align:center;
+  }
 
   /* Contact */
   .contact-copy{
