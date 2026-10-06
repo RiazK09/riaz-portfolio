@@ -527,9 +527,9 @@ body.menu-open .menu-toggle{
   column-gap:1.5cqw;
   row-gap:2.4cqh;
   align-items:stretch;
-  align-content:start;
+  align-content:center;
   box-sizing:border-box;
-  padding:3cqh 2.8cqw 2cqh;
+  padding:2cqh 2.8cqw;
 }
 .skills-heading{
   position:relative;
