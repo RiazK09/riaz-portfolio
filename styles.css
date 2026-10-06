@@ -648,6 +648,8 @@ body.menu-open .menu-toggle{
   line-height:1.42;
 }
 .work-responsibilities li{margin-bottom:.75cqh}
+.work-summary-label,
+.work-company-meta{display:none}
 
 /* Education */
 .education-heading{position:absolute;inset:0}
@@ -2179,9 +2181,58 @@ body.menu-open .menu-toggle{
     font-size:var(--m-heading-main)!important;
     line-height:.82!important;
   }
-  .work-details{order:2;position:relative;left:auto;top:auto;width:100%}
-  .work-company-pill{width:164px;height:39px;font-size:10px}
-  .work-role{font-size:12.5px;margin-top:15px}
+  .work-details{
+    order:2;
+    position:relative;left:auto;top:auto;
+    width:100%;
+    text-align:left;
+  }
+  .work-summary{
+    width:min(340px,100%);
+    margin:0 auto 22px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:9px;
+  }
+  .work-company-pill,
+  .work-role{
+    width:auto;
+    height:auto;
+    min-height:104px;
+    margin:0;
+    padding:15px 12px;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    justify-content:center;
+    gap:5px;
+    border:1px solid rgba(255,117,31,.46);
+    border-radius:14px;
+    background:rgba(255,255,255,.018);
+    text-align:left;
+  }
+  .work-summary-label{
+    display:block;
+    color:var(--accent);
+    font-family:var(--mono);
+    font-size:8.8px;
+    font-weight:500;
+    letter-spacing:.08em;
+  }
+  .work-company-meta{display:block}
+  .work-company-pill strong,
+  .work-role strong{
+    color:var(--text);
+    font-size:12px;
+    line-height:1.28;
+  }
+  .work-company-meta,
+  .work-role>span:last-child{
+    color:var(--text-soft);
+    font-size:10px;
+    line-height:1.35;
+  }
+  .work-summary + h3{margin-top:0}
   .work-details h3{font-size:12.5px;margin:18px 0 7px}
   .work-details p,.work-responsibilities{font-size:12.3px;line-height:1.52}
   .work-responsibilities{padding-left:16px}
