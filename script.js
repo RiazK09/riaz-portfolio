@@ -99,7 +99,7 @@ document.addEventListener('keydown', (event) => {
 });
 
 /* Keep the floating nav aware of the section currently in view.
-   All five project pages intentionally map back to Web Design Projects. */
+   All six project pages intentionally map back to Web Design Projects. */
 const navTargetMap = {
   home: 'home',
   contents: 'home',
@@ -114,6 +114,7 @@ const navTargetMap = {
   'project-3': 'projects',
   'project-4': 'projects',
   'project-5': 'projects',
+  'project-6': 'projects',
   why: 'why',
   testimonials: 'testimonials',
   contact: 'contact'
@@ -153,6 +154,7 @@ if ('IntersectionObserver' in window && sections.length) {
 const assetMap = {
   'about-portrait.jpg': 'assets/about-portrait.jpg',
   'workspace.jpg': 'assets/workspace.jpg',
+  'project-hrsm.webp': 'assets/project-hrsm.webp',
   'project-cloud-faction.jpg': 'assets/project-cloud-faction.jpg',
   'project-little-lanterns.jpg': 'assets/project-little-lanterns.jpg',
   'project-the-ghetto.jpg': 'assets/project-the-ghetto.jpg',
