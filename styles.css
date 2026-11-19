@@ -3030,8 +3030,8 @@ body.menu-open .menu-toggle{
    The portrait is used only after script.js confirms the image loaded successfully. */
 @media(max-width:767px){
   #project-1 .project-hrsm.has-mobile-preview{
-    aspect-ratio:800 / 1214;
-    background-image:url("assets/project-hrsm-mobile.webp")!important;
+    aspect-ratio:2 / 3;
+    background-image:url("assets/project-hrsm-mobile.avif")!important;
     background-position:center center!important;
     background-size:cover!important;
   }
