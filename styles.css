@@ -3025,6 +3025,18 @@ body.menu-open .menu-toggle{
   .contact-person{width:min(60cqw,260px)}
 }
 
+
+/* HRSM mobile-only portrait artwork. Other projects and desktop layout are unchanged.
+   The portrait is used only after script.js confirms the image loaded successfully. */
+@media(max-width:767px){
+  #project-1 .project-hrsm.has-mobile-preview{
+    aspect-ratio:800 / 1214;
+    background-image:url("assets/project-hrsm-mobile.webp")!important;
+    background-position:center center!important;
+    background-size:cover!important;
+  }
+}
+
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{
