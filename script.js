@@ -193,6 +193,32 @@ if ('IntersectionObserver' in window) {
   backgroundTargets.forEach(loadBackground);
 }
 
+
+/* HRSM only: use a portrait preview on phones when the asset exists.
+   Keep the original desktop image as a safe fallback before upload or on error. */
+const hrsmPreview = document.querySelector('#project-1 .project-hrsm[data-mobile-asset]');
+if (hrsmPreview && window.matchMedia) {
+  const mobileQuery = window.matchMedia('(max-width:767px)');
+  const portraitProbe = new Image();
+  let portraitRequested = false;
+  const updateHrsmPreview = () => {
+    if (!mobileQuery.matches) {
+      hrsmPreview.classList.remove('has-mobile-preview');
+      return;
+    }
+    if (portraitProbe.complete && portraitProbe.naturalWidth > 0) {
+      hrsmPreview.classList.add('has-mobile-preview', 'has-image');
+      return;
+    }
+    if (portraitRequested) return;
+    portraitRequested = true;
+    portraitProbe.onload = () => updateHrsmPreview();
+    portraitProbe.src = 'assets/' + hrsmPreview.dataset.mobileAsset;
+  };
+  updateHrsmPreview();
+  mobileQuery.addEventListener?.('change', updateHrsmPreview);
+}
+
 /* Project videos mount only when near the viewport and pause off-screen. */
 const videoTargets = [...document.querySelectorAll('[data-video]')];
 
